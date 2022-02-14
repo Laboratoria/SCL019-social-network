@@ -2,5 +2,5 @@
 
 export const myFunction = () => {
   // aqui tu codigo
-  console.log('Hola cabras!');
+  console.log('Hola cabras!');g
 };
