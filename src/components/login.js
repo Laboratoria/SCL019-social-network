@@ -10,5 +10,9 @@ const formulario = () => {
     email.className = 'email';
     form.appendChild(email);
 
+    const password = document.createElement ('input')
+    password.className = 'password';
+    form.appendChild(password);
+
     return content
 }
