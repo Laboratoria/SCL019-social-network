@@ -1,7 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
-console.log("Hola mundo!");
-console.log("Prueba");
+import formulario from './components/login.js';
 
-myFunction();
+
+document.getElementById('root').appendChild(formulario());
