@@ -1,5 +1,6 @@
-// Este es el punto de entrada de tu aplicacion
 
+import {register, getAuth} from "./components/register.js"
+// Este es el punto de entrada de tu aplicacion
 import formulario from './components/login.js';
 
 
