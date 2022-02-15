@@ -5,8 +5,7 @@ const formulario = () => {
     const head = document.createElement('head');
     head.className = 'head';
     content.appendChild(head);
-
-    
+  
 
     const box = document.createElement('div');
     box.className = 'box';
