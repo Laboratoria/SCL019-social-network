@@ -1,1 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
 
+.logo {
+    font-family: 'Shizuru';
+    font-size: 9vw;
+    padding: 10%;
+    padding-left: 42%;
+    background-image: url(./img/logo.png);
+    background-repeat: no-repeat;
+    background-position-x: 28%;
+    background-position-y: 57%;
+    background-size: 16%;
+}
+.box {
+    font-family: 'Supermercado One';
+    text-align: center;
+    font-size: 2em;
+    padding: 3%;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.input {
+    font-family: 'Inconsolata'; 
+    font-size: 1.2em;
+    text-align: left;
+    height: 2em;
+    width: 13em;
+    margin: 3%;
+    border-radius: 2px;
+}
+
+.btn {
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    text-align: center;
+    height: 2em;
+    width: 11em;
+    border-radius: 18px;
+    margin: 2% 1% 2% 1%;
+}
+
+.registrado {
+    font-family: 'Inconsolata';
+    font-size: 1em;
+    text-align: center;
+    padding: 2%;
+}
