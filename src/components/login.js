@@ -49,6 +49,7 @@ const formulario = () => {
     btnCrear.id = ('btnCrear')
     btnCrear.textContent = 'Crear cuenta';
     form.appendChild(btnCrear);
+    //Aca se llama la funcion de firebase
 
     const btnGoogle = document.createElement ('button');
     btnGoogle.className = 'btn';
