@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "/firebase/auth";
 
 
 
@@ -27,6 +27,7 @@ createUserWithEmailAndPassword(auth, username, email, password, confPassword)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert(errorMessage)
     // ..
   });
 
