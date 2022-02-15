@@ -22,7 +22,7 @@ const formulario = () => {
 
     const username = document.createElement ('input')
     username.className = 'input';
-    username.id = 'password';
+    username.id = 'username';
     username.placeholder = 'Nombre de usuario'
     form.appendChild(username);
 
@@ -46,6 +46,7 @@ const formulario = () => {
 
     const btnCrear = document.createElement ('button');
     btnCrear.className = 'btn';
+    btnCrear.id = ('btnCrear')
     btnCrear.textContent = 'Crear cuenta';
     form.appendChild(btnCrear);
 
