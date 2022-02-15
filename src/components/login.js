@@ -2,11 +2,10 @@ const formulario = () => {
     const content = document.createElement('div');
     content.className = 'content';
 
-    const head = document.createElement('head');
-    head.className = 'head';
-    content.appendChild(head);
-
-    
+    const logo = document.createElement('div');
+    logo.className = 'logo';
+    logo.textContent = 'Kitter'
+    content.appendChild(logo);
 
     const box = document.createElement('div');
     box.className = 'box';
@@ -62,7 +61,11 @@ const formulario = () => {
 
     const btnMode = document.createElement ('input');
     btnMode.className = 'btnMode';
-    form.appendChild(btnMode);
+    btnMode.type = 'range';
+    btnMode.min = '1';
+    btnMode.max = '2';
+    btnMode.setAttribute('value', 1)
+    content.appendChild(btnMode);
 
     return content
 }
