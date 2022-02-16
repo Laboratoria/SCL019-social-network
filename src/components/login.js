@@ -1,3 +1,4 @@
+
 const formulario = () => {
     const content = document.createElement('div');
     content.className = 'content';
