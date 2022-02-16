@@ -7,6 +7,39 @@
   <title>Document</title>
 </head>
 <body>
+ 
+  <Stack gap={3}>
+    <!-- <container>
+  </container> <h1>{estaRegistrandose ? "Regístrate" : "Inicia Sesión"}</h1>-->
+    <form class="mb-3" id="formBasicEmail">
+        <label for= "Email address">Correo Electrónico</label>
+        <input type="email" placeholder="Igresar email">
+        </form>
+      
+
+      <form class="mb-3"  id="formBasicPassword">
+        <label for="Password">Contraseña</label>
+        <input type="password" placeholder="Ingresa tu Contraseña">
+        </form>
+
+     <!-- <form class="mb-3"  id="formBasicCheckbox">
+         <label for="Check me out">
+         <input type="checkbox"> 
+      </form>-->
+
+<button type="submit" class= "primary" >¿Ya tienes cuenta? Inicia Sesión</button>
+</Stack>
+<button class="primary1" onClick="btnRegistrar()"; >¿No tienes cuenta? Regístrate</button>
+
+<!-- setEstaRegistrandose(!estaRegistrandose)}>
+  {estaRegistrandose ? "¿Ya tienes cuenta? Inicia Sesión" : "¿No tienes cuenta? Regístrate"}
+</Button>-->
+    
+
+  
+  <section>
+    <div class="films" id="films.anime"></div>
+  </section>
   <script type="module" src="main.js"></script>
 </body>
 </html>
