@@ -33,7 +33,8 @@ createUserWithEmailAndPassword(auth, email, password)
 
 }
  
-export const googleAuth = () => {
+export const googleAuth = (e) => {
+  e.preventDefault();
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
 signInWithPopup(auth, provider)
