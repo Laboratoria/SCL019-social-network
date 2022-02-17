@@ -5,12 +5,13 @@ import { getAuth, createUserWithEmailAndPassword } from "/firebase/auth";
   //const analytics = getAnalytics(app);
 
 const register = () => {
-const name = document.getElementById('username').value;
+const username = document.getElementById('username').value;
 const email = document.getElementById ('email').value;
 const password = document.getElementById ('password').value;
 const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
+
 const auth = getAuth();
 createUserWithEmailAndPassword(auth, username, email, password, confPassword)
   .then((userCredential) => {
