@@ -1,4 +1,4 @@
-
+import {register} from './register.js'
 const formulario = () => {
     const content = document.createElement('div');
     content.className = 'content';
@@ -50,6 +50,7 @@ const formulario = () => {
     btnCrear.id = ('btnCrear')
     btnCrear.textContent = 'Crear cuenta';
     form.appendChild(btnCrear);
+    btnCrear.addEventListener('click', register);
     //Aca se llama la funcion de firebase
 
     const btnGoogle = document.createElement ('button');
