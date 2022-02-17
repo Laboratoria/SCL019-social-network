@@ -8,5 +8,5 @@ export const initFirebase = () => {
         appId: "1:881521869616:web:aac1311bd457e483c2bef5",
         measurementId: "G-RY9FW6YWJ5"
       }; 
-      const app = initializeApp(firebaseConfig);
+      const app = initializeApp(firebasConfig);
 };
