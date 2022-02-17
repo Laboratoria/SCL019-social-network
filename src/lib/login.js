@@ -37,13 +37,15 @@ const formulario = () => {
     const password = document.createElement ('input')
     password.className = 'input';
     password.id = 'password';
-    password.placeholder = 'Contraseña'
+    password.placeholder = 'Contraseña';
+    password.type = 'password';
     form.appendChild(password);
-
+          
     const confPassword = document.createElement ('input');
     confPassword.className = 'input';
     confPassword.id = 'confPassword';
     confPassword.placeholder = 'Confirmar contraseña';
+    confPassword.type = 'password';
     form.appendChild(confPassword);
 
     const btnCrear = document.createElement ('button');
@@ -75,5 +77,6 @@ const formulario = () => {
 
     return content
 }
+
 
 export default formulario;
