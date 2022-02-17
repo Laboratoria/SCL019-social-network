@@ -1,4 +1,5 @@
-import {register} from './register.js'
+import {register, googleAuth} from './register.js'
+
 const formulario = () => {
     const content = document.createElement('div');
     content.className = 'content';
@@ -57,6 +58,7 @@ const formulario = () => {
     btnGoogle.className = 'btn';
     btnGoogle.textContent = 'Ingresar con Google';
     form.appendChild(btnGoogle);
+    btnGoogle.addEventListener('click', googleAuth);
 
     const registeredUser = document.createElement ('p');
     registeredUser.textContent = '¿Ya tienes una cuenta?';
