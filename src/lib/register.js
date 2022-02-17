@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  getRedirectResult,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
 
@@ -37,7 +38,9 @@ export const googleAuth = (e) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
-signInWithPopup(auth, provider)
+  getRedirectResult(auth)
+
+  signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -53,7 +56,7 @@ signInWithPopup(auth, provider)
     const email = error.email;
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
+    console.log(errorCode, errorMessage, email, credential);
   });
 }
 
