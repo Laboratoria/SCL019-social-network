@@ -9,10 +9,8 @@ import {
 
 export const register = (e) => {
   e.preventDefault()
-const username = document.getElementById('username').value;
 const email = document.getElementById ('email').value;
 const password = document.getElementById ('password').value;
-const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
 
@@ -35,7 +33,7 @@ createUserWithEmailAndPassword(auth, email, password)
 }
  
 export const googleAuth = (e) => {
-  e.preventDefault();
+  e.preventDefault()
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
   getRedirectResult(auth)
