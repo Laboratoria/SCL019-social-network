@@ -1,38 +1,31 @@
-// aqui exportaras las funciones que necesites
-let container = document.getElementById("films.anime");
- const logueo = () =>{
-  const[estaRegistrandose, setEstaRegistrandose] = useState(false);
-  return `
-  <container>
-      <Stack gap={3}>
-        <h1>{estaRegistrandose ? "Regístrate" : "Inicia Sesión"}</h1>
-      <Form>
-        <Form.group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter mail"></Form.Control>
-          <Form.Text className="text-muted">
-            We'll never Share your email with anyone else.
-          </Form.Text>
-        </Form.group>
+//Modal Registro
+const btnSingUp = document.getElementById("buttonRegistrar");
+const contenedorSingUp=document.getElementById("modalRegistro");
 
-        <Form.group className="mb-3"  controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Enter Password"></Form.Control>
-        </Form.group>
+const singUp = () => {
+return `
+<form id ="form-SingUp" class="form-SingUp">
+   <h1>Regístrate</h1>
+  <form class="mb-3" id="singUpEmail">
+   <input type="text" placeholder="correo electrónico" id="user" required>
+   <br>
+   <input type="email" placeholder="correo electrónico" id="Email" required>
+  </form><br>
+  <form class="mb-3"  id="singUpPassword">
+   <input type="password" placeholder="Contraseña" id="password" required>
+   <br>
+   <input type="password" placeholder="Contraseña" id="password1" required>
+  </form><br>
+<button type="submit" class= "primary" id="button-SingUp">Regístrate</button>
+</form>
+`};
+const modalSingUp= ()=> { 
+  
+   btnSingUp.addEventListener("click", () => {
 
-        <Form.group className="mb-3"  controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" /> 
-        </Form.group>
-
-
-  <Button variant= "primary" type="submit"> </Button>
-
-
-  <Button variant="primary" onClick= {() => setEstaRegistrandose(!estaRegistrandose)}>
-    {estaRegistrandose ? "¿Ya tienes cuenta? Inicia Sesión" : "¿No tienes cuenta? Regístrate"}
-  </Button>
-      </Form>
-  </Stack>
-    </container>
-    `
-};
+        contenedorSingUp.innerHTML = " ";
+        contenedorSingUp.innerHTML=singUp();
+  });
+  }
+  modalSingUp();
+console.log(modalSingUp());
