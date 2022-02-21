@@ -3,16 +3,12 @@
 body {
     background-image: url(./img/FondoKitter.png);
     background-image: no-repeat;
-    background-image: fixed;
-    background-image: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-position: 55% 30%;
 }
 
 .logo {
     font-family: 'Shizuru';
+    color: #8E768A;
     font-size: 9vw;
     padding: 10%;
     padding-left: 42%;
@@ -64,8 +60,9 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     background-color: #FFF7F4;
-    border-radius: 5px;
-    border-color: #686260;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-color: transparent #686260 #686260;
     border-style: solid;
     border-width: 1px;
 }
@@ -95,6 +92,7 @@ body {
     border: 1px solid #686260;
     border-radius: 18px;
     margin: 2% 1% 2% 1%;
+    font-weight: bold;
 }
 
 .registrado {
