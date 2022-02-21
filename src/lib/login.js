@@ -94,10 +94,10 @@ btnCrear.addEventListener('click', (event) => {
     const comp = compare(p1, p2,);
    
    if(comp === false){
-   warning2.innerHTML = 'Las contraseñas no coinciden';
+   warning2.innerHTML = "<img src = './img/x.png'>";
    
 }else{
-    warning2.innerHTML = 'Las contraseñas coinciden';
+    warning2.innerHTML = "<img src = './img/ticket.png'>";;
 }
   
 });
