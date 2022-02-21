@@ -1,6 +1,6 @@
 import { register, googleAuth } from './register.js'
-import { compare, validateReg } from './validate.js';
-import { showPassword, showPassword2 } from './functions.js';
+import { compare, validateReg, showPassword, showPassword2} from './validate.js';
+
 
 const formulario = () => {
     const content = document.createElement('div');
@@ -73,8 +73,7 @@ const formulario = () => {
 
     btnCrear.addEventListener('click', register);
              
-    
-    btnCrear.addEventListener('click', (event) => {
+        btnCrear.addEventListener('click', (event) => {
         event.preventDefault();
         const mail = email.value;
         const pass = password.value;
