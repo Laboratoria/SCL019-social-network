@@ -11,3 +11,10 @@ export const validateReg = (email, password, confPassword) => {
     }
 return true;
 };
+
+export const compare = (password, confPassword) => {
+  if(password !== confPassword){
+  return false;
+}
+return true;
+};

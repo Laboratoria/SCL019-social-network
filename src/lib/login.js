@@ -1,5 +1,6 @@
-import {register, googleAuth} from './register.js'
-import { validateReg } from './validate.js';
+import { register, googleAuth } from './register.js'
+import { compare, validateReg } from './validate.js';
+import { showPassword, showPassword2 } from './functions.js';
 
 const formulario = () => {
     const content = document.createElement('div');
@@ -27,13 +28,16 @@ const formulario = () => {
     warning.id = 'warning';
     form.appendChild(warning);
 
-     
     const email = document.createElement ('input')
     email.className = 'input';
     email.id = 'email';
     email.placeholder = 'Correo electrónico';
     form.appendChild(email);
     
+    const warning2 = document.createElement('div');
+    warning2.id = 'warning2';
+    form.appendChild(warning2);
+
     const password = document.createElement ('input')
     password.className = 'input';
     password.id = 'password';
@@ -42,6 +46,13 @@ const formulario = () => {
     password.maxLength = "6";
     form.appendChild(password);
 
+    const eye = document.createElement('button');
+    eye.className = 'eye';
+    eye.textContent = '👁 Ver Contraseñas';
+    form.appendChild(eye);
+    eye.addEventListener('click', showPassword);
+    eye.addEventListener('click', showPassword2);
+    
     const confPassword = document.createElement ('input');
     confPassword.className = 'input';
     confPassword.id = 'confPassword';
@@ -49,46 +60,56 @@ const formulario = () => {
     confPassword.type = 'password';
     confPassword.maxLength = "6";
     form.appendChild(confPassword);
-
-    const ticket = document.createElement('div');
-    ticket.id = 'ticket'
-    form.appendChild(ticket);
-
-    const comparar = () => {
-    if(password.value === confPassword.value){
-        //Si son iguales
-        console.log("Las contraseñas son iguales");
-    }else{
-        alert("Las contraseñas no coinciden");
-    }
-};
-    
+       
+    const warning3 = document.createElement('div');
+    warning3.id = 'warning3';
+    form.appendChild(warning3);
 
     const btnCrear = document.createElement ('button');
     btnCrear.className = 'btn';
     btnCrear.id = ('btnCrear');
     btnCrear.textContent = 'Crear cuenta';
     form.appendChild(btnCrear);
+
     btnCrear.addEventListener('click', register);
+             
+    
     btnCrear.addEventListener('click', (event) => {
         event.preventDefault();
         const mail = email.value;
         const pass = password.value;
         const conf = confPassword.value;
         const valid = validateReg(mail, pass, conf);
-       if(valid === false){
        
-       warning.innerHTML= 'Oe completa los campoh';
+       if(valid === false){
+       warning.innerHTML = 'Hay campos vacíos';
+       
    }
+      
 });
-    //Aca se llama la funcion de firebase
+
+btnCrear.addEventListener('click', (event) => {
+    event.preventDefault();
+    const p1 = password.value;
+    const p2 = confPassword.value;
+    const comp = compare(p1, p2,);
+   
+   if(comp === false){
+   warning2.innerHTML = 'Las contraseñas no coinciden';
+   
+}else{
+    warning2.innerHTML = 'Las contraseñas coinciden';
+}
+  
+});
+    
 
     const btnGoogle = document.createElement ('button');
     btnGoogle.className = 'btn';
     btnGoogle.textContent = 'Ingresar con Google';
     form.appendChild(btnGoogle);
     btnGoogle.addEventListener('click', googleAuth);
-    btnGoogle.addEventListener('click', comparar);
+    
     
 
     const registeredUser = document.createElement ('p');
@@ -96,6 +117,11 @@ const formulario = () => {
     registeredUser.className = 'registrado';
     form.appendChild(registeredUser);
 
+    const mode = document.createElement('div');
+    mode.className = 'mode';
+    mode.textContent = 'Cambiar a modo noturno';
+    content.appendChild(mode);
+    
     const btnMode = document.createElement ('input');
     btnMode.className = 'btnMode';
     btnMode.type = 'range';
