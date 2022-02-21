@@ -17,12 +17,16 @@ const formulario = () => {
     
     const boxTitle = document.createElement('div');
     boxTitle.className = 'boxTitle';
-    boxTitle.textContent = 'Crea una cuenta';
     box.appendChild(boxTitle);
+
+    const title = document.createElement('p');
+    title.className = 'title';
+    title.textContent = 'Crea una cuenta';
+    boxTitle.appendChild(title);
 
     const form = document.createElement('form');
     form.className = 'form';
-    content.appendChild(form);
+    box.appendChild(form);
 
     const warning = document.createElement('div');
     warning.id = 'warning';
@@ -116,18 +120,18 @@ btnCrear.addEventListener('click', (event) => {
     registeredUser.className = 'registrado';
     form.appendChild(registeredUser);
 
-    const mode = document.createElement('div');
-    mode.className = 'mode';
-    mode.textContent = 'Cambiar a modo noturno';
-    content.appendChild(mode);
+    // const mode = document.createElement('div');
+    // mode.className = 'mode';
+    // mode.textContent = 'Cambiar a modo noturno';
+    // content.appendChild(mode);
     
-    const btnMode = document.createElement ('input');
-    btnMode.className = 'btnMode';
-    btnMode.type = 'range';
-    btnMode.min = '1';
-    btnMode.max = '2';
-    btnMode.setAttribute('value', 1)
-    content.appendChild(btnMode);
+    // const btnMode = document.createElement ('input');
+    // btnMode.className = 'btnMode';
+    // btnMode.type = 'range';
+    // btnMode.min = '1';
+    // btnMode.max = '2';
+    // btnMode.setAttribute('value', 1)
+    // content.appendChild(btnMode);
 
     return content
 }
