@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
 
 body {
-    background-image: url(./assets/img/FondoKitter.png);
+    background-image: url(./img/FondoKitter.png);
     background-image: no-repeat;
     background-position: 55% 30%;
 }
@@ -12,7 +12,7 @@ body {
     font-size: 9vw;
     padding: 10%;
     padding-left: 42%;
-    background-image: url(./assets/img/logo.png);
+    background-image: url(./img/logo.png);
     background-repeat: no-repeat;
     background-position-x: 28%;
     background-position-y: 57%;
