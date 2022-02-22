@@ -1,6 +1,6 @@
 
 export const signUp = () => {
-    const divSignUp = document.createElement(div);
+    const divSignUp = document.createElement("div");
     const viewSignUp =`
   <form id ="form-SignUp" class="form-SignUp">
      <h1>Regístrate</h1>

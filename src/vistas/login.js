@@ -1,8 +1,7 @@
 
 export const signIn = () => {
 
-    const divSignIn = document.createElement(div);
-    divSignIn.innerHTML =`
+    const viewSignIn =  `
     <form id = "form-IniciaSe" class="form-IniciaSe">
     <h1>Inicia Sesión</h1>
    <Stack gap={3}>
@@ -24,9 +23,9 @@ export const signIn = () => {
   `
   
   
-  return divSignIn;
-  console.log(signIn);
-  }
+  return viewSignIn;
+}  
 
-  
+
+
   
