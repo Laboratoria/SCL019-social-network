@@ -9,7 +9,7 @@ import login from './lib/login.js';
 // import { initRouter } from './lib/firebase.js';
 
 
-document.getElementById('root').appendChild(formulario);
+document.getElementById('root').appendChild(formulario());
 document.getElementById('root').appendChild(home);
 document.getElementById('root').appendChild(login);
 const init = () => {

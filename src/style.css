@@ -74,6 +74,12 @@ body {
     text-align: center;
 }
 
+.eye{
+    width: 12%;
+    height: 4%;
+    cursor: pointer;
+}
+
 .input {
     position: relative;
     font-family: 'Inconsolata';
