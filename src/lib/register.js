@@ -55,11 +55,11 @@ const formulario = () => {
   password.maxLength = "6";
   form.appendChild(password);
 
-  const eye = document.createElement("button");
+  const eye = document.createElement("img");
   eye.className = "eye";
-  eye.textContent = "👁 Ver Contraseñas";
+  eye.src = "./img/eye.png";
   form.appendChild(eye);
-  eye.addEventListener("click", showPassword);
+  eye.addEventListener("click", showPassword);    
   eye.addEventListener("click", showPassword2);
 
   const confPassword = document.createElement("input");
