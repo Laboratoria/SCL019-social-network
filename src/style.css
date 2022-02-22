@@ -65,6 +65,13 @@ body {
     border-color: transparent #686260 #686260;
     border-style: solid;
     border-width: 1px;
+    
+}
+
+.campos{
+    font-family: 'arial'; 
+    color: #5C446D;
+    text-align: center;
 }
 
 .input {
@@ -100,6 +107,10 @@ body {
     font-size: 1em;
     text-align: center;
     padding: 2%;
+}
+
+.warning{
+    text-emphasis-color: #5C446D;
 }
 
 /* color de fondo 255 247 244  */

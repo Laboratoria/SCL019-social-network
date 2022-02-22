@@ -19,6 +19,7 @@ export const compare = (password, confPassword) => {
 return true;
 };
 
+
 export const showPassword = (e) =>{
   e.preventDefault()
   let p1 = document.getElementById("password");
