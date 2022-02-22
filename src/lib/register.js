@@ -95,9 +95,9 @@ const formulario = () => {
       warning.innerHTML = message;
     }
     if (comp === false) {
-        warning2.innerHTML = "<img src = './img/x.png'>";
+        warning2.innerHTML = "<img src = './assets/img/x.png'>";
       } else {
-        warning2.innerHTML = "<img src = './img/ticket.png'>";
+        warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
       }
     });
   
