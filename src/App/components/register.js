@@ -1,10 +1,10 @@
-import { register, googleAuth } from "./regFirebase.js";
+import { register, googleAuth } from "../../lib/regFirebase.js";
 import {
   compare,
   validateReg,
   showPassword,
   showPassword2,
-} from "./validate.js";
+} from "../helpers/validate.js";
 
 const formulario = () => {
   const content = document.createElement("div");
@@ -95,9 +95,9 @@ const formulario = () => {
       warning.innerHTML = message;
     }
     if (comp === false) {
-        warning2.innerHTML = "<img src = './img/x.png'>";
+        warning2.innerHTML = "<img src = './assets/img/x.png'>";
       } else {
-        warning2.innerHTML = "<img src = './img/ticket.png'>";
+        warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
       }
     });
   
