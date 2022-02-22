@@ -9,9 +9,9 @@ import login from './components/login.js';
 
 
 
-document.getElementById('root').appendChild(formulario());
-document.getElementById('root').appendChild(home);
-document.getElementById('root').appendChild(login);
+// document.getElementById('root').appendChild(formulario());
+// document.getElementById('root').appendChild(home);
+// document.getElementById('root').appendChild(login);
 
 const init = () => {
       initFirebase();
