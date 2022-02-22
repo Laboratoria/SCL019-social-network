@@ -4,14 +4,13 @@ import {signIn } from "./vistas/login.js";
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 const auth= getAuth(FirebaseApp)*/
 
-
+//div que contiene formularios en Html
 const root = document.getElementById("root");
 
-//div Iniciar Sesión
+// Iniciar Sesión
+const iniciar= root.appendChild(signIn());
 
- const iniciar= root.appendChild(signIn());
-
-//div Registrars
+//Registrar
 let signUpButton = document.getElementById("buttonRegistrar");
 
 signUpButton.addEventListener('click',() => {
