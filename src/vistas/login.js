@@ -1,6 +1,6 @@
 
 export const signIn = () => {
-
+  const divSignIn = document.createElement("div");
     const viewSignIn =  `
     <form id = "form-IniciaSe" class="form-IniciaSe">
     <h1>Inicia Sesión</h1>
@@ -21,9 +21,10 @@ export const signIn = () => {
  </Stack>
   </form></div>
   `
+  divSignIn.innerHTML =viewSignIn;
   
+  return divSignIn;
   
-  return viewSignIn;
 }  
 
 

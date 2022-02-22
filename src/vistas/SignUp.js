@@ -23,3 +23,5 @@ export const signUp = () => {
   
   };
 
+  const password = document.getElementById
+

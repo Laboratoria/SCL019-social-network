@@ -8,13 +8,19 @@ const auth= getAuth(FirebaseApp)*/
 const root = document.getElementById("root");
 
 //div Iniciar Sesión
- let div= document.createElement("div");
- div.innerHTML +=signIn();
- root.appendChild(div);
 
-//div Registrarse
- root.appendChild(signUp());
+ const iniciar= root.appendChild(signIn());
 
+//div Registrars
+let signUpButton = document.getElementById("buttonRegistrar");
+
+signUpButton.addEventListener('click',() => {
+
+        root.innerHTML=" ";
+        root.appendChild(signUp());
+        root.style.display = "block";
+        iniciar.style.display = "none";
+});
 
  
 
