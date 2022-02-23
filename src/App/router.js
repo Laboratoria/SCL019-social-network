@@ -4,14 +4,14 @@ import {login} from "./components/login.js"
 
 const changeView = (hash) => {
         if (hash === '#/' || hash === '' || hash === '#'){
-            return showView('#/login'); 
+            return showView('#/formulario'); //cambiar luego a login cuando esté listo
         } else if (hash === '#/formulario' || hash === '#/login' || hash === '#/home' ){
             return showView(hash);
-        } else {return showView('#/login');
+        } else {return showView('#/formulario'); //cambiar luego a login cuando esté listo
     }
 };
 
-const showView = (routers) => {
+export const showView = (routers) => {
     const router = routers.substr(2, routers.length - 2);
     const root = document.getElementById('root');
 
