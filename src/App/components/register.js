@@ -6,7 +6,7 @@ import {
   showPassword2,
 } from "../helpers/validate.js";
 
-const formulario = () => {
+  const formulario = () => {
   const content = document.createElement("div");
   content.className = "content";
 
