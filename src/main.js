@@ -1,5 +1,6 @@
 import {signUp } from "./vistas/SignUp.js"; 
 import {signIn } from "./vistas/login.js"; 
+import {authGoogle} from "./assets/login-assets.js"
 /*import { FirebaseApp } from "../../compilacion";
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 const auth= getAuth(FirebaseApp)*/
@@ -19,6 +20,11 @@ signUpButton.addEventListener('click',() => {
         root.appendChild(signUp());
         root.style.display = "block";
         iniciar.style.display = "none";
+});
+
+//Login with google
+document.getElementById('iniciaGoogle').addEventListener('click',()=>{
+        authGoogle();
 });
 
  

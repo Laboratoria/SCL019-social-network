@@ -2,6 +2,7 @@
 export const signIn = () => {
   const divSignIn = document.createElement("div");
     const viewSignIn =  `
+    <div class = 'signInContainer' >
     <form id = "form-IniciaSe" class="form-IniciaSe">
     <h1>Inicia Sesión</h1>
    <Stack gap={3}>
@@ -19,10 +20,12 @@ export const signIn = () => {
  <button type="submit" class="primary" id="buttonRegistrar">¿No tienes cuenta? Regístrate</button>
       
  </Stack>
-  </form></div>
+  </form>
+  </div>
+  </div>
   `
   divSignIn.innerHTML =viewSignIn;
-  
+
   return divSignIn;
   
 }  

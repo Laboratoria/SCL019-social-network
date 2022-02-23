@@ -22,5 +22,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export default app;
 
+
 // custom code //
 //<script type="module" src= "main.js"></script>
