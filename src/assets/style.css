@@ -68,11 +68,14 @@ body {
     
 }
 
-.campos{
+.campos, .validMail{
     font-family: 'arial'; 
     color: #5C446D;
     text-align: center;
 }
+
+
+
 
 .eye{
     width: 12%;
@@ -98,7 +101,7 @@ body {
     font-family: 'Inconsolata';
     font-size: 1.2em;
     text-align: center;
-    height: 2em;
+    height: 2.2em;
     width: 11em;
     color: #5C446D;
     background-color: #DDCFE7;
@@ -106,17 +109,45 @@ body {
     border-radius: 18px;
     margin: 2% 1% 2% 1%;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.registrado {
-    font-family: 'Inconsolata';
-    font-size: 1em;
-    text-align: center;
-    padding: 2%;
+.btn:hover{
+    color: #DDCFE7 ;
+    background-color: #5C446D;
+    border: 1px solid #ADDAD7
 }
+
+.btn2 {
+         position: relative;
+        font-family: 'Inconsolata';
+        font-size: 1.2em;
+        text-align: center;
+        height: 2em;
+        width: 12em;
+        color:#ADDAD7 ;
+        background-color:  #5C446D;
+        border: 1px solid #ADDAD7 ;
+        border-radius: 2px;
+        margin: 2% 1% 2% 1%;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn2:hover{
+        color: #5C446D ;
+        background-color: #ADDAD7;
+        border: 1px solid #5C446D  ;
+    }
 
 .warning{
     text-emphasis-color: #5C446D;
 }
 
+.icono{
+    width: 10%;
+    height: 50%;
+    margin-bottom: 20%;
+    
+}
 /* color de fondo 255 247 244  */

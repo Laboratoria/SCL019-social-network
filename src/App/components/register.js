@@ -9,11 +9,7 @@ import {
 // import { showView } from "../router.js";
 // import { login } from "./login.js";
 
-<<<<<<< HEAD
-  const formulario = () => {
-=======
 export const formulario = () => {
->>>>>>> 2359a822d77cdf2add837ea187cb18f16742876c
   const content = document.createElement("div");
   content.className = "content";
 
@@ -64,7 +60,7 @@ export const formulario = () => {
 
   const eye = document.createElement("img");
   eye.className = "eye";
-  eye.src = "./img/eye.png";
+  eye.src = "./assets/img/eye.png";
   form.appendChild(eye);
   eye.addEventListener("click", showPassword);    
   eye.addEventListener("click", showPassword2);
@@ -101,15 +97,13 @@ export const formulario = () => {
     if (valid === false) {
       warning.innerHTML = message;
     }
-    if (comp === false) {
+    if (comp === false && valid === true) {
         warning2.innerHTML = "<img src = './assets/img/x.png'>";
-      } else {
+      } else if (comp === true && valid === true) {
         warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
       }
     });
-  
-
-    
+      
 
   const btnGoogle = document.createElement("button");
   btnGoogle.className = "btn";
@@ -117,9 +111,14 @@ export const formulario = () => {
   form.appendChild(btnGoogle);
   btnGoogle.addEventListener("click", googleAuth);
 
+  const googleIco = document.createElement('img');
+  googleIco.className = 'icono';
+  googleIco.src = "./assets/img/google.png";
+  btnGoogle.appendChild(googleIco);
+
   const registeredUser = document.createElement("button");
   registeredUser.textContent = "¿Ya tienes una cuenta?";
-  registeredUser.className = "registrado";
+  registeredUser.className = "btn2";
   form.appendChild(registeredUser);
   // registeredUser.addEventListener("click", showView('#/login'));
 
