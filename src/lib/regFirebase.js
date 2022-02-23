@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   getRedirectResult,
+  sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
 
@@ -22,6 +23,11 @@ createUserWithEmailAndPassword(auth, email, password)
     // Signed in 
     
     const user = userCredential.user;
+    sendEmailVerification(auth.currentUser)
+  .then(() => {
+   console.log('Mail enviado');
+    // ...
+  });
     
   })
   .catch((error) => {
