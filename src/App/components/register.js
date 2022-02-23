@@ -5,8 +5,11 @@ import {
   showPassword,
   showPassword2,
 } from "../helpers/validate.js";
+//pruebas 
+// import { showView } from "../router.js";
+// import { login } from "./login.js";
 
-const formulario = () => {
+export const formulario = () => {
   const content = document.createElement("div");
   content.className = "content";
 
@@ -101,7 +104,7 @@ const formulario = () => {
       }
     });
   
- 
+
     
 
   const btnGoogle = document.createElement("button");
@@ -110,10 +113,11 @@ const formulario = () => {
   form.appendChild(btnGoogle);
   btnGoogle.addEventListener("click", googleAuth);
 
-  const registeredUser = document.createElement("p");
+  const registeredUser = document.createElement("button");
   registeredUser.textContent = "¿Ya tienes una cuenta?";
   registeredUser.className = "registrado";
   form.appendChild(registeredUser);
+  // registeredUser.addEventListener("click", showView('#/login'));
 
   // const mode = document.createElement('div');
   // mode.className = 'mode';
@@ -127,8 +131,7 @@ const formulario = () => {
   // btnMode.max = '2';
   // btnMode.setAttribute('value', 1)
   // content.appendChild(btnMode);
-
   return content;
 };
 
-export default formulario;
+// export default formulario;

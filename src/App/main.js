@@ -2,10 +2,10 @@
 // Este es el punto de entrada de tu aplicacion
 //import {register, getAuth} from './lib/register.js';
 import { initFirebase } from '../lib/firebase.js';
-import { initRouter } from './lib/router.js';
-import formulario from './components/register.js';
-import home from './components/home.js';
-import login from './components/login.js';
+import { initRouter } from '../App/router.js';
+// import formulario from './components/register.js';
+// import home from './components/home.js';
+// import login from './components/login.js';
 
 
 
