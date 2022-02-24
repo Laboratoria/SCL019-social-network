@@ -7,6 +7,7 @@ import {
   sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
+const auth = getAuth();
 
 export const register = (e) => {
   e.preventDefault()
@@ -17,17 +18,12 @@ const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
 
-const auth = getAuth();
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     
     const user = userCredential.user;
-    sendEmailVerification(auth.currentUser)
-  .then(() => {
-   console.log('Mail enviado');
-    // ...
-  });
+    sendEmail();
     
   })
   .catch((error) => {
@@ -43,7 +39,6 @@ createUserWithEmailAndPassword(auth, email, password)
 export const googleAuth = (e) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
-  const auth = getAuth();
   getRedirectResult(auth)
 
   signInWithPopup(auth, provider)
@@ -66,4 +61,10 @@ export const googleAuth = (e) => {
   });
 }
 
-
+const sendEmail = () => {
+  sendEmailVerification(auth.currentUser)
+  .then(() => {
+   console.log('Mail enviado');
+    // ...
+  });
+}
