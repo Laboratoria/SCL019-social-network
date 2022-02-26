@@ -1,3 +1,4 @@
+//para abrir sesion
 export const validateInput = (email, password) => {
   if (email === '' || password === '') {
     return false;
