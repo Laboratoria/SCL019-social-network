@@ -1,13 +1,13 @@
 import {formulario} from "./components/register.js"
 import {home} from "./components/home.js"
-import {login} from "./components/login.js"
+import {ingresar} from "./components/login.js"
 
 export const changeView = (hash) => {
         if (hash === '#/' || hash === '' || hash === '#'){
-            return showView('#/login');
-        } else if (hash === '#/formulario' || hash === '#/login' || hash === '#/home' ){
+            return showView('#/ingresar');
+        } else if (hash === '#/formulario' || hash === '#/ingresar' || hash === '#/home' ){
             return showView(hash);
-        } else {return showView('#/login');
+        } else {return showView('#/ingresar');
     }
 };
 
@@ -20,8 +20,8 @@ const showView = (routers) => {
         case 'formulario' :
             root.appendChild(formulario());
             break;
-        case 'login' :
-            root.appendChild(login());
+        case 'ingresar' :
+            root.appendChild(ingresar());
             break;
         case 'home' :
             root.appendChild(home());
