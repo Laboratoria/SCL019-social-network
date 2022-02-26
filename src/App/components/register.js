@@ -116,11 +116,11 @@ export const formulario = () => {
   googleIco.src = "./assets/img/google.png";
   btnGoogle.appendChild(googleIco);
 
-  const registeredUser = document.createElement("button");
+  const registeredUser = document.createElement('a');
   registeredUser.textContent = "¿Ya tienes una cuenta?";
   registeredUser.className = "btn2";
+  registeredUser.setAttribute('href', '#/login')
   form.appendChild(registeredUser);
-  // registeredUser.addEventListener("click", showView('#/login'));
 
   // const mode = document.createElement('div');
   // mode.className = 'mode';
