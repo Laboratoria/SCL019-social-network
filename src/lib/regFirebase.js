@@ -7,7 +7,7 @@ import {
   sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
-const auth = getAuth();
+const auth = getAuth;
 
 export const register = (e) => {
   e.preventDefault()

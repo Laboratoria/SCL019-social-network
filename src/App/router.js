@@ -2,16 +2,16 @@ import {formulario} from "./components/register.js"
 import {home} from "./components/home.js"
 import {login} from "./components/login.js"
 
-const changeView = (hash) => {
+export const changeView = (hash) => {
         if (hash === '#/' || hash === '' || hash === '#'){
-            return showView('#/formulario'); //cambiar luego a login cuando esté listo
+            return showView('#/login');
         } else if (hash === '#/formulario' || hash === '#/login' || hash === '#/home' ){
             return showView(hash);
-        } else {return showView('#/formulario'); //cambiar luego a login cuando esté listo
+        } else {return showView('#/login');
     }
 };
 
-export const showView = (routers) => {
+const showView = (routers) => {
     const router = routers.substr(2, routers.length - 2);
     const root = document.getElementById('root');
 
@@ -30,10 +30,17 @@ export const showView = (routers) => {
             root.appendChild(formulario());
             break;
     }
+
 }
 
 
 export const initRouter = () => {
-    window.addEventListener('load',changeView(window.location.hash))
-    if (('onhashchange' in window)) window.onhashchange = () => changeView(window.location.hash)
+    window.addEventListener('load',changeView(window.location.hash));
+    window.addEventListener('hashchange', () => {
+        changeView(window.location.hash)
+    });
+
+
 }
+
+
