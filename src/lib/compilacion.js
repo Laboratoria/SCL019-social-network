@@ -1,5 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getAuth, 
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+ } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,11 +19,13 @@ const firebaseConfig = {
 
 let auth;
 let provider;
+let store;
 // Initialize Firebase
 export const firebaseInit = () => {
   initializeApp(firebaseConfig);
   auth = getAuth();
   provider = new GoogleAuthProvider ();
+ store = getFirestore();
 }
 
 export const authGoogle = () => {
@@ -39,4 +47,40 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
+}
+
+//Iniciando autenficación con Usuario email and password
+export const register =  () => {
+auth = getAuth();
+    let email = document.getElementById('Email').value;
+    let password = document.getElementById('password').value;
+    let user = document.getElementById('user').value;
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
+
+//Iniciar Sesión con Usuario Guardado
+
+export const iniciaSesion = () => {
+   auth = getAuth();
+  
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 }

@@ -1,6 +1,6 @@
 import { signUp } from "./vistas/SignUp.js";
 import { signIn } from "./vistas/SignIn.js";
-import { firebaseInit, authGoogle } from "./lib/compilacion.js";
+import { firebaseInit, authGoogle, register, iniciaSesion } from "./lib/compilacion.js";
 
 //div que contiene formularios en Html
 const root = document.getElementById("root");
@@ -18,9 +18,10 @@ signUpButton.addEventListener('click', () => {
   let btnSU = document.getElementById('button-SignUp');
   btnSU.addEventListener('click', (e) => {
     e.preventDefault();
-    let signupEmail = document.getElementById('Email').value;
-    let signupContraseña = document.getElementById('password').value;
-    console.log(signupEmail, signupContraseña);
+    
+    //console.log(email, password);
+    register();
+    firebaseInit();
   }
   );
 });
@@ -31,4 +32,10 @@ document.getElementById('iniciaGoogle').addEventListener('click', (e) => {
   authGoogle();
 });
 
+document.getElementById('buttoninicia').addEventListener('click', (e) => {
+  e.preventDefault();
+ iniciaSesion();
+});
+
 firebaseInit();
+
