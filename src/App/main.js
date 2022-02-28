@@ -13,8 +13,8 @@ import { initRouter } from '../App/router.js';
 // document.getElementById('root').appendChild(login);
 
 const init = () => {
-      initFirebase();
-      initRouter();
+      const autenticacion = initFirebase();
+      initRouter(autenticacion);
 };
 
 window.addEventListener('load', init());

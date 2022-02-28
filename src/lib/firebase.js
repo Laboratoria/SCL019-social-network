@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
 export const initFirebase = () => {
     const firebaseConfig = {
@@ -11,4 +12,6 @@ export const initFirebase = () => {
         measurementId: "G-RY9FW6YWJ5"
       }; 
        initializeApp(firebaseConfig);
+
+       return getAuth();
 };
