@@ -7,9 +7,7 @@ import {
   sendEmailVerification,
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
 
-const auth = getAuth;
-
-export const register = (e) => {
+export const register = (e, autenticacion) => {
   e.preventDefault()
 
 const email = document.getElementById ('email').value;
@@ -18,11 +16,11 @@ const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
 
-createUserWithEmailAndPassword(auth, email, password)
+createUserWithEmailAndPassword(autenticacion, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    sendEmail();
+    sendEmail(autenticacion);
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -34,12 +32,12 @@ createUserWithEmailAndPassword(auth, email, password)
 
 }
  
-export const googleAuth = (e) => {
+export const googleAuth = (e, autenticacion) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
-  getRedirectResult(auth)
+  getRedirectResult(autenticacion)
 
-  signInWithPopup(auth, provider)
+  signInWithPopup(autenticacion, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -59,8 +57,8 @@ export const googleAuth = (e) => {
   });
 }
 
-const sendEmail = () => {
-  sendEmailVerification(auth.currentUser)
+const sendEmail = (autenticacion) => {
+  sendEmailVerification(autenticacion.currentUser)
   .then(() => {
    console.log('Mail enviado');
     // ...

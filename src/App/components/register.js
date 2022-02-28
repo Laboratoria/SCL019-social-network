@@ -9,7 +9,7 @@ import {
 // import { showView } from "../router.js";
 // import { login } from "./login.js";
 
-export const formulario = () => {
+export const formulario = (autenticacion) => {
   const content = document.createElement("div");
   content.className = "content";
 
@@ -83,7 +83,7 @@ export const formulario = () => {
   btnCrear.textContent = "Crear cuenta";
   form.appendChild(btnCrear);
 
-  btnCrear.addEventListener("click", register);
+  btnCrear.addEventListener("click", (e) => register(e, autenticacion));
 
   btnCrear.addEventListener("click", (event) => {
     event.preventDefault();
@@ -109,7 +109,7 @@ export const formulario = () => {
   btnGoogle.className = "btn";
   btnGoogle.textContent = "Ingresar con Google";
   form.appendChild(btnGoogle);
-  btnGoogle.addEventListener("click", googleAuth);
+  btnGoogle.addEventListener("click", (e) => googleAuth(e, autenticacion));
 
   const googleIco = document.createElement('img');
   googleIco.className = 'icono';
