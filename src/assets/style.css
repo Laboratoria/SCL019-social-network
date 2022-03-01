@@ -76,17 +76,10 @@ body {
 }
 
  
-.x{
-    font-family: 'arial'; 
-    color: #eb5e81;
-    
-    
-}
-
 .cry{
     width: 20%;
     height: auto;
-    margin-left: 100px;
+    margin-left: -6px;
 }
 
 
@@ -159,12 +152,14 @@ body {
     text-align: center;
 }
 
+
+
 .a{
     padding: 5%;
     border: 1px solid #5C446D;
+    border-style:dashed;
     border-radius: 8px;
     text-decoration: none;
-    background-color: #daf5f3;
     width: 40%;
     height: 5%;
     text-align: center;

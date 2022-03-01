@@ -26,6 +26,7 @@ createUserWithEmailAndPassword(autenticacion, email, password)
     sendEmail(autenticacion);
   })
   .catch((error) => showRegErrors(error));
+  console.log(error);
 
 }
 };

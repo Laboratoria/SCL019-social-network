@@ -1,10 +1,10 @@
-import { register, googleAuth } from "../../lib/regFirebase.js";
+import { googleAuth } from "../../lib/regFirebase.js";
 import { login } from "../../lib/logFirebase.js";
 import {
   showPassword, validateReg,
 } from "../helpers/validate.js";
     
-    export const ingresar = () => {
+    export const ingresar = (autenticacion) => {
         const content = document.createElement("div");
         content.className = "content";
 
@@ -23,28 +23,28 @@ import {
 
         const title = document.createElement("p");
         title.className = "title";
-        title.textContent = "Ingresar";
+        title.textContent = "Iniciar sesión en Kitter";
         boxTitle.appendChild(title);
 
-        const form = document.createElement("form");
-        form.className = "form";
-        box.appendChild(form);
+        const formLog = document.createElement("form");
+        formLog.className = "form";
+        box.appendChild(formLog);
 
         const warning = document.createElement("div");
         warning.id = "warning";
         warning.className = "warning";
-        form.appendChild(warning);
+        formLog.appendChild(warning);
 
         const email = document.createElement("input");
         email.className = "input";
         email.id = "emailLogin";
         email.placeholder = "Correo electrónico";
-        form.appendChild(email);
+        formLog.appendChild(email);
 
         const eye2 = document.createElement("img");
         eye2.className = "eye2";
         eye2.src = "./assets/img/eye.png";
-        form.appendChild(eye2);
+        formLog.appendChild(eye2);
         eye2.addEventListener("click", showPassword);
         
         const password = document.createElement("input");
@@ -53,7 +53,7 @@ import {
         password.placeholder = "Contraseña de 6 caracteres";
         password.type = "password";
         password.maxLength = "6";
-        form.appendChild(password);
+        formLog.appendChild(password);
 
         
 
@@ -61,7 +61,7 @@ import {
         btnLogin.className = "btn";
         btnLogin.id = "btnCrear";
         btnLogin.textContent = "Ingresar";
-        form.appendChild(btnLogin);
+        formLog.appendChild(btnLogin);
 
         btnLogin.addEventListener('click', login)
         btnLogin.addEventListener("click", (event) => {
@@ -77,21 +77,18 @@ import {
         })
 
 
-
-
-
         const btnCreateAccount = document.createElement("a");
         btnCreateAccount.className = "a";
         btnCreateAccount.id = "btnCrear";
         btnCreateAccount.textContent = "Crear cuenta";
         btnCreateAccount.setAttribute('href', '#/formulario');
-        form.appendChild(btnCreateAccount);
+        formLog.appendChild(btnCreateAccount);
 
         const btnGoogle = document.createElement("button");
         btnGoogle.className = "btn";
         btnGoogle.textContent = "Ingresar con Google";
-        form.appendChild(btnGoogle);
-        btnGoogle.addEventListener("click", googleAuth);
+        formLog.appendChild(btnGoogle);
+        btnGoogle.addEventListener("click", (e) => googleAuth(e, autenticacion));
 
         const googleIco = document.createElement('img');
         googleIco.className = 'icono';

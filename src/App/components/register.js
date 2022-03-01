@@ -29,7 +29,7 @@ export const formulario = (autenticacion) => {
 
   const title = document.createElement("p");
   title.className = "title";
-  title.textContent = "Crea una cuenta";
+  title.textContent = "Regístrate";
   boxTitle.appendChild(title);
 
   const form = document.createElement("form");
@@ -49,10 +49,12 @@ export const formulario = (autenticacion) => {
   form.appendChild(email);
 
   const warning2 = document.createElement("div");
+  warning2.className = "warning";
   warning2.id = "warning2";
   form.appendChild(warning2);
 
   const warning3 = document.createElement("div");
+  warning3.className = "warning";
   warning3.id = "warning3";
   form.appendChild(warning3);
 
@@ -95,6 +97,10 @@ export const formulario = (autenticacion) => {
     <img src = './assets/img/cryCat.png' class='cry'>
     <p class="x">Las contraseñas no coinciden</p>
     </div>`
+    const message3 = `<div class='noConincidence'>
+    <img src = './assets/img/happyCat.png' class='cry'>
+    <p class="x">Registro exitoso. Revisa tu email</p>
+    </div>`
     const mail = email.value;
     const pass = password.value;
     const conf = confPassword.value;
@@ -110,7 +116,7 @@ export const formulario = (autenticacion) => {
         warning.style.display = 'none';
 
       } else if (comp === true && valid === true && complete == true) {
-        warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
+        warning2.innerHTML = message3;
       }
     });
       
