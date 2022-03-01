@@ -13,6 +13,13 @@ export const validateReg = (email, password, confPassword) => {
 return true;
 };
 
+export const compLength = (password, confPassword) => {
+  if(password.length !== 6 && confPassword.length !== 6){
+   return false;
+  }
+  return true;
+}
+
 export const compare = (password, confPassword) => {
   if(password !== confPassword){
   return false;

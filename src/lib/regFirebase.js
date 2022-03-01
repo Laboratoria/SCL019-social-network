@@ -16,6 +16,9 @@ const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
 
+if(password !== confPassword){
+  return false
+}else{
 createUserWithEmailAndPassword(autenticacion, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -25,7 +28,8 @@ createUserWithEmailAndPassword(autenticacion, email, password)
   .catch((error) => showRegErrors(error));
 
 }
- 
+};
+
 export const googleAuth = (e, autenticacion) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();

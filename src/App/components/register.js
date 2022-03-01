@@ -4,6 +4,7 @@ import {
   validateReg,
   showPassword,
   showPassword2,
+  compLength,
 } from "../helpers/validate.js";
 //pruebas 
 // import { showView } from "../router.js";
@@ -99,6 +100,7 @@ export const formulario = (autenticacion) => {
     const conf = confPassword.value;
     const valid = validateReg(mail, pass, conf);
     const comp = compare(pass, conf);
+    const complete = compLength(pass, conf);
 
     if (valid === false) {
       warning.innerHTML = message;
@@ -107,7 +109,7 @@ export const formulario = (autenticacion) => {
         warning2.innerHTML = message2;
         warning.style.display = 'none';
 
-      } else if (comp === true && valid === true) {
+      } else if (comp === true && valid === true && complete == true) {
         warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
       }
     });
