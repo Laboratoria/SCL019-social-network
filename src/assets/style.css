@@ -155,7 +155,8 @@ body {
     }
 
 .warning{
-    text-emphasis-color: #5C446D;
+    color: #5C446D;
+    text-align: center;
 }
 
 .a{
