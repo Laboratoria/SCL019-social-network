@@ -106,6 +106,7 @@ export const formulario = (autenticacion) => {
     }
     if (comp === false && valid === true) {
         warning2.innerHTML = message2;
+        warning.style.display = 'none';
 
       } else if (comp === true && valid === true) {
         warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
