@@ -22,13 +22,7 @@ createUserWithEmailAndPassword(autenticacion, email, password)
     const user = userCredential.user;
     sendEmail(autenticacion);
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // alert(errorMessage)
-    console.log(error.code, error.message);
-    // ..
-  });
+  .catch((error) => showRegErrors(error));
 
 }
  
@@ -63,4 +57,23 @@ const sendEmail = (autenticacion) => {
    console.log('Mail enviado');
     // ...
   });
+}
+
+const showRegErrors = (error) => {
+
+  const errorCode = error.code;
+  switch(errorCode) {
+    case 'auth/invalid-email':
+      warning.innerHTML='Correo inválido';
+      break;
+    
+    case 'auth/email-already-in-use':
+      warning.innerHTML='Este correo ya está asociado a una cuenta';
+      break;
+
+    case 'auth/weak-password':
+      warning.innerHTML='La contraseña debe ser de 6 dígitos';
+      break;  
+  }
+
 }
