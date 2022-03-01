@@ -1,7 +1,7 @@
 import { register, googleAuth } from "../../lib/regFirebase.js";
 import { login } from "../../lib/logFirebase.js";
 import {
-  showPassword,
+  showPassword, validateReg,
 } from "../helpers/validate.js";
     
     export const ingresar = () => {
@@ -29,6 +29,11 @@ import {
         const form = document.createElement("form");
         form.className = "form";
         box.appendChild(form);
+
+        const warning = document.createElement("div");
+        warning.id = "warning";
+        warning.className = "warning";
+        form.appendChild(warning);
 
         const email = document.createElement("input");
         email.className = "input";
@@ -59,6 +64,21 @@ import {
         form.appendChild(btnLogin);
 
         btnLogin.addEventListener('click', login)
+        btnLogin.addEventListener("click", (event) => {
+          event.preventDefault();
+          const message = `<p class="campos">Hay campos vacíos</p>`;
+          const mail = email.value;
+          const pass = password.value;
+          const valid = validateReg(mail, pass);
+
+          if (valid === false) {
+            warning.innerHTML = message;
+          }
+        })
+
+
+
+
 
         const btnCreateAccount = document.createElement("a");
         btnCreateAccount.className = "a";

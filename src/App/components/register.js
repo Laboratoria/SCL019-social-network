@@ -87,7 +87,6 @@ export const formulario = (autenticacion) => {
   form.appendChild(btnCrear);
 
   btnCrear.addEventListener("click", (e) => register(e, autenticacion));
-
   btnCrear.addEventListener("click", (event) => {
     event.preventDefault();
     const message = `<p class="campos">Hay campos vacíos</p>`;
