@@ -36,19 +36,21 @@ import {
         email.placeholder = "Correo electrónico";
         form.appendChild(email);
 
+        const eye2 = document.createElement("img");
+        eye2.className = "eye2";
+        eye2.src = "./assets/img/eye.png";
+        form.appendChild(eye2);
+        eye2.addEventListener("click", showPassword);
+        
         const password = document.createElement("input");
         password.className = "input";
-        password.id = "passwordLogin";
+        password.id = "password";
         password.placeholder = "Contraseña de 6 caracteres";
         password.type = "password";
         password.maxLength = "6";
         form.appendChild(password);
 
-        const eye = document.createElement("img");
-        eye.className = "eye";
-        eye.src = "./assets/img/eye.png";
-        form.appendChild(eye);
-        eye.addEventListener("click", showPassword);
+        
 
         const btnLogin = document.createElement("button");
         btnLogin.className = "btn";

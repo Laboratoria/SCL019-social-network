@@ -4,6 +4,7 @@ body {
     background-image: url(./img/FondoKitter.png);
     background-image: no-repeat;
     background-position: 55% 30%;
+    
 }
 
 .logo {
@@ -12,7 +13,7 @@ body {
     font-size: 9vw;
     padding: 10%;
     padding-left: 42%;
-    background-image: url(./img/logo.png);
+    background-image: url(./img/logo2.fw.png);
     background-repeat: no-repeat;
     background-position-x: 28%;
     background-position-y: 57%;
@@ -55,7 +56,7 @@ body {
     left: 0;
     right: 0;
     width: 18em;
-    height: 26em;
+    height: 28em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -74,14 +75,27 @@ body {
     text-align: center;
 }
 
+ 
+.x{
+    font-family: 'arial'; 
+    color: #eb5e81;
+    
+    
+}
+
+.cry{
+    width: 20%;
+    height: auto;
+    margin-left: 100px;
+}
 
 
-
-.eye{
+.eye, .eye2{
     width: 12%;
     height: 4%;
     cursor: pointer;
 }
+
 
 .input {
     position: relative;
@@ -142,6 +156,27 @@ body {
 
 .warning{
     text-emphasis-color: #5C446D;
+}
+
+.a{
+    padding: 5%;
+    border: 1px solid #5C446D;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #daf5f3;
+    width: 40%;
+    height: 5%;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Inconsolata';
+    font-weight:bolder;
+    color: #5C446D;
+}
+
+.a:hover{
+    background-color: #5C446D;
+    border: 1px solid #daf5f3;
+    color: #daf5f3;
 }
 
 .icono{

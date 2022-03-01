@@ -40,6 +40,7 @@ export const formulario = (autenticacion) => {
   warning.className = "warning";
   form.appendChild(warning);
 
+  
   const email = document.createElement("input");
   email.className = "input";
   email.id = "email";
@@ -49,6 +50,10 @@ export const formulario = (autenticacion) => {
   const warning2 = document.createElement("div");
   warning2.id = "warning2";
   form.appendChild(warning2);
+
+  const warning3 = document.createElement("div");
+  warning3.id = "warning3";
+  form.appendChild(warning3);
 
   const password = document.createElement("input");
   password.className = "input";
@@ -73,9 +78,7 @@ export const formulario = (autenticacion) => {
   confPassword.maxLength = "6";
   form.appendChild(confPassword);
 
-  const warning3 = document.createElement("div");
-  warning3.id = "warning3";
-  form.appendChild(warning3);
+ 
 
   const btnCrear = document.createElement("button");
   btnCrear.className = "btn";
@@ -88,6 +91,10 @@ export const formulario = (autenticacion) => {
   btnCrear.addEventListener("click", (event) => {
     event.preventDefault();
     const message = `<p class="campos">Hay campos vacíos</p>`;
+    const message2 = `<div class='noConincidence'>
+    <img src = './assets/img/cryCat.png' class='cry'>
+    <p class="x">Las contraseñas no coinciden</p>
+    </div>`
     const mail = email.value;
     const pass = password.value;
     const conf = confPassword.value;
@@ -98,7 +105,8 @@ export const formulario = (autenticacion) => {
       warning.innerHTML = message;
     }
     if (comp === false && valid === true) {
-        warning2.innerHTML = "<img src = './assets/img/x.png'>";
+        warning2.innerHTML = message2;
+
       } else if (comp === true && valid === true) {
         warning2.innerHTML = "<img src = './assets/img/ticket.png'>";
       }
