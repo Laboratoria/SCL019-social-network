@@ -1,7 +1,9 @@
+import { firebaseInit, authGoogle, register} from "../lib/compilacion.js";
 
 export const signUp = () => {
-    const divSignUp = document.createElement("div");
-    const viewSignUp = `
+    const sectSignUp = document.createElement("section");
+    sectSignUp.className = 'signUp-container';
+  sectSignUp.innerHTML = `
   <form id ="form-SignUp" class="form-SignUp">
      <h1>Regístrate</h1>
     
@@ -13,19 +15,29 @@ export const signUp = () => {
      <br>
      <input type="password" placeholder="Contraseña" id="password1" required>
    <br>
-  <button type="button" class="primary" id="button-SignUp">Regístrate</button>
+  <button type="button" class="primary"  id="button-SignUp">Regístrate</button>
+  <button type="submit" class= "primary2" id="iniciaGoogle">Ingresa con Google</button>
   </form>
-  `
-  divSignUp.innerHTML =viewSignUp;
-  
-  return divSignUp;
+  `;
+
+ sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
+    e.preventDefault();
+    authGoogle();
+  });
+
+  sectSignUp.querySelector('#button-SignUp').addEventListener('click', () => {
+    const email = sectSignUp.querySelector('#Email').value;
+    const password = sectSignUp.querySelector('#password').value;
+    console.log(email);
+  register(email, password);
+  });
+  firebaseInit();
+
+  return sectSignUp;
   
   };
 
 
- 
-  //
-  //console.log(btonsignup);
  
   
     
