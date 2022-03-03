@@ -4,7 +4,7 @@ import {
   validateReg,
   showPassword,
   showPassword2,
-  compLength,
+  // compLength,
 } from "../helpers/validate.js";
 //pruebas 
 // import { showView } from "../router.js";
@@ -36,17 +36,32 @@ export const formulario = (autenticacion) => {
   form.className = "form";
   box.appendChild(form);
 
-  const warning = document.createElement("div");
-  warning.id = "warning";
-  warning.className = "warning";
-  form.appendChild(warning);
-
-  
   const email = document.createElement("input");
   email.className = "input";
   email.id = "email";
   email.placeholder = "Correo electrónico";
   form.appendChild(email);
+
+  const password = document.createElement("input");
+  password.className = "input";
+  password.id = "password1";
+  password.placeholder = "Contraseña de 6 caracteres";
+  password.type = "password";
+  password.maxLength = "6";
+  form.appendChild(password);
+
+  const confPassword = document.createElement("input");
+  confPassword.className = "input";
+  confPassword.id = "confPassword";
+  confPassword.placeholder = "Confirmar contraseña";
+  confPassword.type = "password";
+  confPassword.maxLength = "6";
+  form.appendChild(confPassword);
+
+  const warning = document.createElement("div");
+  warning.className = "warning";
+  warning.id = "warning";
+  form.appendChild(warning);
 
   const warning2 = document.createElement("div");
   warning2.className = "warning";
@@ -58,28 +73,12 @@ export const formulario = (autenticacion) => {
   warning3.id = "warning3";
   form.appendChild(warning3);
 
-  const password = document.createElement("input");
-  password.className = "input";
-  password.id = "password";
-  password.placeholder = "Contraseña de 6 caracteres";
-  password.type = "password";
-  password.maxLength = "6";
-  form.appendChild(password);
-
   const eye = document.createElement("img");
   eye.className = "eye";
   eye.src = "./assets/img/eye.png";
   form.appendChild(eye);
   eye.addEventListener("click", showPassword);    
   eye.addEventListener("click", showPassword2);
-
-  const confPassword = document.createElement("input");
-  confPassword.className = "input";
-  confPassword.id = "confPassword";
-  confPassword.placeholder = "Confirmar contraseña";
-  confPassword.type = "password";
-  confPassword.maxLength = "6";
-  form.appendChild(confPassword);
 
  
 
@@ -89,7 +88,7 @@ export const formulario = (autenticacion) => {
   btnCrear.textContent = "Crear cuenta";
   form.appendChild(btnCrear);
 
-  btnCrear.addEventListener("click", (e) => register(e, autenticacion));
+  
   btnCrear.addEventListener("click", (event) => {
     event.preventDefault();
     const message = `<p class="campos">Hay campos vacíos</p>`;
@@ -106,25 +105,34 @@ export const formulario = (autenticacion) => {
     const conf = confPassword.value;
     const valid = validateReg(mail, pass, conf);
     const comp = compare(pass, conf);
-    const complete = compLength(pass, conf);
+    // const complete = compLength(pass, conf);
 
-    if (valid === false) {
-      warning.innerHTML = message;
+    // if (valid === false) {
+    //   warning.innerHTML = message;
+    // }
+
+    if (comp === true){
+      password.setAttribute('id', 'password');
     }
-    if (comp === false && valid === true) {
-        warning2.innerHTML = message2;
-        warning.style.display = 'none';
+    else {
+      warning.innerHTML = message2;
+    }
+    // if (comp === false && valid === true) {
+    //     warning2.innerHTML = message2;
+    //     warning.style.display = 'none';
 
-      } else if (comp === true && valid === true && complete == true) {
-        warning2.innerHTML = message3;
-      }
+    //   } else if (comp === true && valid === true && complete == true) {
+    //     warning2.innerHTML = message3;
+    //   }
     });
-      
+
+  btnCrear.addEventListener("click", (e) => register(e, autenticacion));   
 
   const btnGoogle = document.createElement("button");
-  btnGoogle.className = "btn";
-  btnGoogle.textContent = "Ingresar con Google";
+  btnGoogle.className = "btn"
+  btnGoogle.textContent = "Registrarse con Google";
   form.appendChild(btnGoogle);
+  btnGoogle.classList.add = "btnGoogle"
   btnGoogle.addEventListener("click", (e) => googleAuth(e, autenticacion));
 
   const googleIco = document.createElement('img');

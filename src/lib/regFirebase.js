@@ -1,5 +1,5 @@
 import {
-  getAuth,
+  // getAuth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
@@ -10,15 +10,12 @@ import {
 export const register = (e, autenticacion) => {
   e.preventDefault()
 
-const email = document.getElementById ('email').value;
-const password = document.getElementById ('password').value;
-const confPassword = document.getElementById ('confPassword').value;
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+const confPassword = document.getElementById('confPassword').value;
 console.log(email);
 console.log(password);
 
-if(password !== confPassword || password.length === 6 && confPassword === confPassword.length === 6){
-  return false
-}else{
 createUserWithEmailAndPassword(autenticacion, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -26,9 +23,9 @@ createUserWithEmailAndPassword(autenticacion, email, password)
     sendEmail(autenticacion);
   })
   .catch((error) => showRegErrors(error));
-  console.log(error);
+  // console.log(error);
 
-}
+// }
 };
 
 export const googleAuth = (e, autenticacion) => {
@@ -66,8 +63,15 @@ const sendEmail = (autenticacion) => {
 
 const showRegErrors = (error) => {
 
+  // const errorCode1 = validateReg;
   const errorCode = error.code;
+
   switch(errorCode) {
+    //falta completar
+    // case 'empty-input':
+    //   warning.innerHTML='Debe completar todos los campos'
+    //   break; 
+  
     case 'auth/invalid-email':
       warning.innerHTML='Correo inválido';
       break;

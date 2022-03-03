@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
 
 body {
-    background-image: url(./img/FondoKitter.png);
+    background-image: url(./img/gradiente\ mobile.png);
     background-image: no-repeat;
-    background-position: 55% 30%;
+    /* background-position: 55% 30%; */
+    background-size: cover;
     
 }
 
@@ -23,6 +24,8 @@ body {
 
 .boxTitle {
     z-index: 2;
+    position: absolute;
+    top: 19%;
     width: 18em;
     height: 2.7em;
     margin-left: auto;
@@ -34,25 +37,28 @@ body {
     border-color: #686260;
     border-style: solid;
     border-width: 1px;
-    background-color: #DDCFE7;
+    background-color: #B2C0D9;
 }
 
 .title {
     height: 2.7em;
     top: -0.7em;
-    position: relative;
+    position: absolute;
     font-size: 1.5em;
     font-family: 'Supermercado One';
     text-align: center;
     flex-wrap: wrap;
-    color: #5C446D;
+    left: 0;
+    right: 0;
+    color: #3D274E;
+    font-weight: bold;
 }
 
 .form {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: #ADDAD7 -16px 17px;
+    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
     left: 0;
     right: 0;
     width: 18em;
@@ -60,12 +66,12 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #FFF7F4;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: #FFEEE8;
+    border-radius: 5px;
     border-color: transparent #686260 #686260;
     border-style: solid;
     border-width: 1px;
+    align-content: center;
     
 }
 
@@ -87,16 +93,20 @@ body {
     width: 12%;
     height: 4%;
     cursor: pointer;
+    top: -2.4em;
+    left: 6.3em;
+    position: relative;
+    z-index: 2;
 }
 
 
 .input {
     position: relative;
     font-family: 'Inconsolata';
-    font-size: 1.2em;
+    font-size: 117%;
     text-align: left;
-    height: 2em;
-    width: 13em;
+    height: 8%;
+    width: 91%;
     margin: 3%;
     border-radius: 2px;
     border: 1px solid #686260;
@@ -109,20 +119,26 @@ body {
     font-size: 1.2em;
     text-align: center;
     height: 2.2em;
-    width: 11em;
-    color: #5C446D;
-    background-color: #DDCFE7;
+    width: 13.7em;
+    color: #3D274E;
+    background-color: #B2C0D9;
     border: 1px solid #686260;
     border-radius: 18px;
     margin: 2% 1% 2% 1%;
     font-weight: bold;
     cursor: pointer;
+    line-height: 19px;
+    letter-spacing: -0.3px;
 }
 
 .btn:hover{
     color: #DDCFE7 ;
     background-color: #5C446D;
     border: 1px solid #ADDAD7
+}
+
+.btnGoogle{
+    padding-left: 13%;
 }
 
 .btn2 {
@@ -147,7 +163,17 @@ body {
         border: 1px solid #5C446D  ;
     }
 
-.warning{
+.warning {
+    top: 9%;
+    position: absolute;
+    color: #5C446D;
+    text-align: center;
+}
+
+
+.noConincidence{
+    top: 3.5em;
+    position: absolute;
     color: #5C446D;
     text-align: center;
 }
@@ -155,18 +181,22 @@ body {
 
 
 .a{
-    padding: 5%;
+    padding: 4%;
     border: 1px solid #5C446D;
-    border-style:dashed;
+    border-style: dashed;
     border-radius: 8px;
     text-decoration: none;
-    width: 40%;
-    height: 5%;
+    /* width: 40%; */
+    /* height: 5%; */
     text-align: center;
     cursor: pointer;
     font-family: 'Inconsolata';
-    font-weight:bolder;
+    font-weight: bolder;
     color: #5C446D;
+    font-size: 1.2em;
+    top: 86%;
+    position: absolute;
+    color: #3D274E;
 }
 
 .a:hover{
@@ -176,9 +206,10 @@ body {
 }
 
 .icono{
-    width: 10%;
-    height: 50%;
+    width: 12%;
     margin-bottom: 20%;
-    
+    position: absolute;
+    left: 2%;
+    top: 14%;
 }
 /* color de fondo 255 247 244  */
