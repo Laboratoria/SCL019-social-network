@@ -12,9 +12,6 @@ body {
   left: 0;
   top: 0;
   font-size: 100%;
-  display: grid;
-  place-items:center;
-  
 }
 
 /* ROOT FONT STYLES */
@@ -26,28 +23,56 @@ body {
   line-height: 1.5;
 }
 
-
-
-#root {grid-column: 1;
-grid-row: 2 / 5;
-grid-template-columns: repeat(12, 1fr);
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto); margin-bottom: 10px;
+}
+
+/* @media only screen and (min-width: 768px) { */
+  /* For desktop:  */
+  .col-1 {grid-column: span 1;}
+  .col-2 {grid-column: span 2;}
+  .col-3 {grid-column: span 3;}
+  .col-4 {grid-column: span 4;}
+  .col-5 {grid-column: span 5;}
+  .col-6 {grid-column: span 6;}
+  .col-7 {grid-column: span 7;}
+  .col-8 {grid-column: span 8;}
+  .col-9 {grid-column: span 9;}
+  .col-10 {grid-column: span 10;}
+  .col-11 {grid-column: span 11;}
+  .col-12 {grid-column: span 12;}
+/* } */
+
+.signInMain{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.container-SignIn{
-
-  display: grid;
-  place-items:center;
+.signIn-container{
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  place-items: center;
+  border: 1px solid #ccc;
+  padding: 1rem;
 }
-input {
 
-  width: 10em;
+.primary2{
+  margin: 1rem;
+}
+
+input {
+  width: 100%;
   height: 0,2em;
   background: #EFF9FB;
- 
-}
+  margin-bottom: 1rem;
+ }
  
 /*
 .row::after {

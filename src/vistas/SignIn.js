@@ -2,10 +2,10 @@ import { authGoogle, iniciaSesion } from "../lib/compilacion.js";
 
 export const signIn = () => {
     const sectSignIn = document.createElement("section");
-    sectSignIn.className = 'signIn-container';
+    sectSignIn.className = 'signInMain';
     sectSignIn.innerHTML = `
-    <div class = 'signInContainer col-' >
-    <form id = "form-IniciaSe" class="form-IniciaSe">
+    <div class = 'signIn-container gridContainer' >
+    <form id = "form-IniciaSe" class="form-IniciaSe col-12">
     <h1>Inicia Sesión</h1>
    <Stack gap={3}>
    <button type="submit" class= "primary2" id="iniciaGoogle">Ingresa con Google</button>
