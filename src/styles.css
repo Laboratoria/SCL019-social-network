@@ -46,13 +46,22 @@ body {
   .col-12 {grid-column: span 12;}
 /* } */
 
+.logo {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 10rem;
+  /* place-items: center; */
+  /* border: 1px solid #ccc; */
+  padding: 1rem;
+}
+
 .signInMain{
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .signIn-container{
@@ -70,8 +79,12 @@ width: 100%;
 background-color: #2F8DFA;
 color: white;
 border-color: #2F8DFA;
-
+background-image: url(images/Google-36.png);
+background-repeat: no-repeat;
+background-position: left;
+padding-left: 24px;
 }
+
 
 input {
   width: 100%;
@@ -79,7 +92,7 @@ input {
   background: #EFF9FB;
   margin-bottom: 1rem;
   color:#4285F4;
-  border-radius: 1px #4285F4;
+  border-radius: 4px #4285F4;
  }
 
  button{
@@ -88,8 +101,10 @@ display: block;
 width: 100%;
 margin-bottom: 1rem;
 background-color: #97E128;
+border-radius: 4px #97E128;
 color:white;
  }
+
 /*
 .row::after {
   content: "";
