@@ -11,16 +11,17 @@ body {
 .logo {
     font-family: 'Shizuru';
     color: #8E768A;
-    font-size: 9vw;
+    font-size: 10vw;
     padding: 10%;
     padding-left: 42%;
+    padding-bottom: 8%;
     background-image: url(./img/logo2.fw.png);
     background-repeat: no-repeat;
     background-position-x: 28%;
     background-position-y: 57%;
     background-size: 16%;
 }
-
+ 
 
 .boxTitle {
     z-index: 2;
@@ -37,7 +38,8 @@ body {
     border-color: #686260;
     border-style: solid;
     border-width: 1px;
-    background-color: #B2C0D9;
+    background-color: #DDCFE7;
+    text-align: center;
 }
 
 .title {
@@ -213,3 +215,27 @@ body {
     top: 14%;
 }
 /* color de fondo 255 247 244  */
+
+
+
+
+
+
+
+
+
+/* mediaquerys */
+/* small laptop 1024 x 600 */
+
+@media screen and (min-width: 600px){
+    .logo {
+        font-size: 6vw;
+        padding-top: 1%;
+        padding-bottom: 2%;
+        background-position-x: 38%;
+        background-position-y: 20%;
+        background-size: 10%;
+        padding-left: 48%;
+    } 
+};
+    
