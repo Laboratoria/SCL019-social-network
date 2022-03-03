@@ -16,7 +16,7 @@ const confPassword = document.getElementById ('confPassword').value;
 console.log(email);
 console.log(password);
 
-if(password !== confPassword || password.length === 6 && confPassword === confPassword.length === 6){
+if(password !== confPassword || password.length === 6 && confPassword.length === 6){
   return false
 }else{
 createUserWithEmailAndPassword(autenticacion, email, password)
