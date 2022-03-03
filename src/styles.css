@@ -28,13 +28,19 @@ body {
 
 
 
-/*.root {grid-column: 1;
+#root {grid-column: 1;
 grid-row: 2 / 5;
-grid-template-columns: repeat(1, 1fr);
+grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto); margin-bottom: 10px;
   justify-content: center;
-}*/
+}
+
+.container-SignIn{
+
+  display: grid;
+  place-items:center;
+}
 input {
 
   width: 10em;
@@ -42,7 +48,8 @@ input {
   background: #EFF9FB;
  
 }
-
+ 
+/*
 .row::after {
   content: "";
   clear: both;
@@ -95,13 +102,13 @@ input {
   padding: 15px;
 }
 
-/* For mobile phones: */
+/* For mobile phones: 
 [class*="col-"] {
   width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-  /* For tablets: */
+  /* For tablets: 
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
   .col-s-3 {width: 25%;}
@@ -116,7 +123,7 @@ input {
   .col-s-12 {width: 100%;}
 }
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
+  /* For desktop: 
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}

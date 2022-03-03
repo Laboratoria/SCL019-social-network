@@ -1,10 +1,11 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-//import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
     createUserWithEmailAndPassword,
      signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,15 +19,16 @@ const firebaseConfig = {
 
 let auth;
 let provider;
-//let store;
+let db;
 // Initialize Firebase
 
 export const firebaseInit = () => {
     initializeApp(firebaseConfig);
     auth = getAuth();
     provider = new GoogleAuthProvider();
-    //store = getFirestore()
+    db = getFirestore();
 }
+
 
 export const authGoogle = () => {
     signInWithPopup(auth, provider).then((result) => { // This gives you a Google Access Token. You can use it to access the Google API.
@@ -35,6 +37,7 @@ export const authGoogle = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+          window.location.hash='#/muro';
         // ...
     }).catch((error) => { // Handle Errors here.
         const errorCode = error.code;
@@ -53,6 +56,7 @@ export const register = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
         console.log(user);
+        window.location.hash='#/login';
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -68,8 +72,25 @@ export const iniciaSesion = (email, password) => {
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
         // ...
+        window.location.hash='#/muro'
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
     });
 }
+
+
+/*const guardarUser = () => {
+try {
+  const docRef = await addDoc(collection(db, "users"), {
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+}*/
+
+

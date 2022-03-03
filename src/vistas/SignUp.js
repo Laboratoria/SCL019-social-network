@@ -23,6 +23,7 @@ export const signUp = () => {
  sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
     e.preventDefault();
     authGoogle();
+   
   });
 
   sectSignUp.querySelector('#button-SignUp').addEventListener('click', () => {
@@ -30,6 +31,7 @@ export const signUp = () => {
     const password = sectSignUp.querySelector('#password').value;
     console.log(email);
   register(email, password);
+   
   });
   firebaseInit();
 

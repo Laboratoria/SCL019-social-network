@@ -35,7 +35,7 @@ export const signIn = () => {
     sectSignIn.querySelector('#iniciaGoogle').addEventListener('click', () => {
 
         authGoogle();
-
+  
     });
 
     sectSignIn.querySelector('#buttoninicia').addEventListener('click', (e) => {
@@ -45,6 +45,7 @@ export const signIn = () => {
       console.log(email,password);
 
      iniciaSesion(email, password);
+       
     });
 
     return sectSignIn;
