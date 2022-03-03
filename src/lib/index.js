@@ -2,6 +2,7 @@
 import { signIn } from "/vistas/SignIn.js";
 import { signUp } from "/vistas/SignUp.js";
 import { firstscreen } from "/vistas/muro.js";
+import { welcome } from "/vistas/welcome.js"
 
 export const changeRouter = (hash) => {
     const containerRoot = document.getElementById('root');
@@ -9,6 +10,11 @@ export const changeRouter = (hash) => {
     
 switch (hash) {  
     case '#/':
+    
+    case '#/welcome':  
+    containerRoot.appendChild(welcome());
+    break;
+
     case '#/login':  
       containerRoot.appendChild(signIn());
       break;

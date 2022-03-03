@@ -52,6 +52,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .signIn-container{
@@ -64,16 +65,31 @@ body {
 }
 
 .primary2{
-  margin: 1rem;
+margin-bottom: 1rem;
+width: 100%;
+background-color: #2F8DFA;
+color: white;
+border-color: #2F8DFA;
+
 }
 
 input {
   width: 100%;
-  height: 0,2em;
+  /*height: 0,2em;*/
   background: #EFF9FB;
   margin-bottom: 1rem;
+  color:#4285F4;
+  border-radius: 1px #4285F4;
  }
- 
+
+ button{
+
+display: block;
+width: 100%;
+margin-bottom: 1rem;
+background-color: #97E128;
+color:white;
+ }
 /*
 .row::after {
   content: "";

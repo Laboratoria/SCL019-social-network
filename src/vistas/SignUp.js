@@ -2,9 +2,10 @@ import { firebaseInit, authGoogle, register} from "../lib/compilacion.js";
 
 export const signUp = () => {
     const sectSignUp = document.createElement("section");
-    sectSignUp.className = 'signUp-container';
+    sectSignUp.className = 'signInMain';
   sectSignUp.innerHTML = `
-  <form id ="form-SignUp" class="form-SignUp">
+  <div class = 'signIn-container gridContainer' >
+  <form id ="form-SignUp" class="form-SignUp col-12">
      <h1>Regístrate</h1>
     
      <input type="text" placeholder="Usuario" id="user" required>
@@ -17,7 +18,7 @@ export const signUp = () => {
    <br>
   <button type="button" class="primary"  id="button-SignUp">Regístrate</button>
   <button type="submit" class= "primary2" id="iniciaGoogle">Ingresa con Google</button>
-  </form>
+  </form> </div>
   `;
 
  sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
