@@ -1,3 +1,4 @@
+// import { formulario } from "../components/register";
 //para abrir sesion
 export const validateInput = (email, password) => {
   if (email === '' || password === '') {
@@ -8,9 +9,9 @@ export const validateInput = (email, password) => {
 
 export const validateReg = (email, password, confPassword) => {
     if(email.length === 0 || password.length === 0 || confPassword.length === 0){
-        return false;
+        return 'empty-input';
     }
-return true;
+return false;
 };
 
 export const compLength = (password, confPassword) => {
@@ -21,16 +22,16 @@ export const compLength = (password, confPassword) => {
 }
 
 export const compare = (password, confPassword) => {
-  if(password !== confPassword){
-  return false;
+  if(password.length === 6 && password === confPassword){
+  return true;
 }
-return true;
+return false;
 };
 
 
 export const showPassword = (e) =>{
   e.preventDefault()
-  let p1 = document.getElementById("password");
+  let p1 = document.getElementById("password1");
   if(p1.type == "password"){
       p1.type = "text"; 
   }else{
