@@ -4,21 +4,22 @@ export const signUp = () => {
     const sectSignUp = document.createElement("section");
     sectSignUp.className = 'signInMain';
   sectSignUp.innerHTML = `
-  <div class = 'signIn-container gridContainer' >
-  <form id ="form-SignUp" class="form-SignUp col-12">
+  <div class = 'signIn-container gridContainer'>
+  <img src= "images/logo-1.png" alt="Bazinga_Speech_Bubble" id="logo" class= "logo col-12">
+  <form id ="form-SignUp" class="form-registrar col-12">
+     <Stack gap={3}>
+   
      <h1>Regístrate</h1>
-    
      <input type="text" placeholder="Usuario" id="user" required>
-     <br>
-     <input type="email" placeholder="correo electrónico" id="Email" required>
-     <br>
+     <input type="email" placeholder="Correo electrónico" id="Email" required>
      <input type="password" placeholder="Contraseña" id="password" required>
-     <br>
      <input type="password" placeholder="Contraseña" id="password1" required>
-   <br>
+
   <button type="button" class="primary"  id="button-SignUp">Regístrate</button>
   <button type="submit" class= "primary2" id="iniciaGoogle">Ingresa con Google</button>
-  </form> </div>
+  </Stack>
+  </form>
+  </div>
   `;
 
  sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {

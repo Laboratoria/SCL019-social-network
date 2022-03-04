@@ -1,12 +1,10 @@
 export const welcome= () => {
     const welcomeScreen = document.createElement("div");
-    welcomeScreen.className='welcome signInMain';
+    welcomeScreen.className='signInMain';
     welcomeScreen.innerHTML= `
-    <div class= "contenedor-welcome gridContainer">
-    
+    <div class= "signIn-container gridContainer">
     <img src= "images/logo-1.png" alt="Bazinga_Speech_Bubble" id="logo" class= "logo col-12">
     <form id ="form-welcome" class="form-welcome col-12">
-
     <button type="submit" class="primary" id="buttoninicia">¿Ya tienes cuenta? Inicia Sesión</button>
     <button type="submit" class="primary"  id="buttonRegistrar">¿No tienes cuenta? Regístrate</button>
 
@@ -14,10 +12,12 @@ export const welcome= () => {
     </div>`
 ;
 
-welcomeScreen.querySelector('#buttoninicia').addEventListener('click', () => {
+welcomeScreen.querySelector('#buttoninicia').addEventListener('click', (e) => {
+    e.preventDefault();
     window.location.hash = '#/login';
 });
-welcomeScreen.querySelector('#buttonRegistrar').addEventListener('click', () => {
+welcomeScreen.querySelector('#buttonRegistrar').addEventListener('click', (e) => {
+   e.preventDefault();
     window.location.hash = '#/registrar';
 });
 
