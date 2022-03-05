@@ -26,7 +26,7 @@ body {
 .boxTitle {
     z-index: 2;
     position: absolute;
-    top: 19%;
+    top: 15%;
     width: 18em;
     height: 2.7em;
     margin-left: auto;
@@ -38,7 +38,7 @@ body {
     border-color: #686260;
     border-style: solid;
     border-width: 1px;
-    background-color: #DDCFE7;
+    background-color: #B2C0D9;
     text-align: center;
 }
 
@@ -115,7 +115,7 @@ body {
     background-color: transparent;
 }
 
-.btn {
+.btn{
     position: relative;
     font-family: 'Inconsolata';
     font-size: 1.2em;
@@ -216,26 +216,108 @@ body {
 }
 /* color de fondo 255 247 244  */
 
-
-
-
-
-
-
-
-
 /* mediaquerys */
 /* small laptop 1024 x 600 */
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 800px){
+     
+    body{
+        background-image: url(./img/gradienteWeb.png);
+    }
     .logo {
         font-size: 6vw;
         padding-top: 1%;
         padding-bottom: 2%;
-        background-position-x: 38%;
-        background-position-y: 20%;
-        background-size: 10%;
+        background-position-x: 40%;
+        background-position-y: 60%;
+        background-size: 8%;
         padding-left: 48%;
     } 
+    .title {
+        height: 2.7em;
+        top: -0.7em;
+    }
+    
+    .form{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
+    left: 0;
+    right: 0;
+    width: 30em;
+    height: 22em;
+    display: flex;
+    justify-content: center;
+    background-color: #FFEEE8;
+    border-radius: 5px;
+    border-color: transparent #686260 #686260;
+    border-style: solid;
+    border-width: 1px;
+    align-content: center;
+    
+    
+    }
+
+    .boxTitle {
+        position: relative;
+        top: 19%;
+        width: 30em;
+        height: 3em;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .eye, .eye2{
+    width: 7%;
+    height: 4%;
+    top: 1.5em;
+    left:-3.7em;
+    }
+
+    .input{
+    position: relative;
+    font-family: 'Inconsolata';
+    font-size: 117%;
+    text-align: left;
+    height: 10%;
+    width: 70%;
+    margin: 3%;
+    border-radius: 2px;
+    border: 1px solid #686260;
+    background-color: transparent;
+    }
+
+    .btn{
+    height: 1.8em;
+    width: 13.7em;
+   }
+
+    .a{
+        border-style: none;
+        margin-top: 1.5%;
+        font-size: 1em;
+          
+    }
+
+    .a:hover{
+        border-style: none;
+        background-color:transparent;
+        border: 0px solid #daf5f3;
+        color: #f72bc4;
+          
+    }
+
+    .icono{
+        width: 8%;
+        margin-bottom: 20%;
+        position: absolute;
+        left: 2%;
+        top: 14%;
+    }
+
+    
+    
 };
     

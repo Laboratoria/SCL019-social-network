@@ -41,12 +41,7 @@ import {
         email.placeholder = 'Correo electrónico';
         formLog.appendChild(email);
 
-        const eye2 = document.createElement('img');
-        eye2.className = 'eye2';
-        eye2.src = './assets/img/eye.png';
-        formLog.appendChild(eye2);
-        eye2.addEventListener('click', showPassword);
-        
+         
         const password = document.createElement('input');
         password.className = 'input';
         password.id = 'password';
@@ -55,6 +50,11 @@ import {
         password.maxLength = '6';
         formLog.appendChild(password);
 
+        const eye2 = document.createElement('img');
+        eye2.className = 'eye2';
+        eye2.src = './assets/img/eye.png';
+        formLog.appendChild(eye2);
+        eye2.addEventListener('click', showPassword);
         
 
         const btnLogin = document.createElement('button');
