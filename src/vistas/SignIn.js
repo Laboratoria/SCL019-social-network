@@ -5,9 +5,9 @@ export const signIn = () => {
     sectSignIn.className = 'signInMain';
     sectSignIn.innerHTML = `
     <div class = 'signIn-container gridContainer'>
+    <img src= "images/logo-1.png" alt="Bazinga_Speech_Bubble" id="logo" class= "logo col-12">
     <form id = "form-IniciaSe" class="form-IniciaSe col-12"> 
     <Stack gap={3}>
-     <img src= "images/logo-1.png" alt="Bazinga_Speech_Bubble" id="logo" class= "logo col-12">
      <h1>Inicia Sesión</h1>
     <input type="email" placeholder="Correo Electrónico" id="ingresaEmail" >
     <input type="password"  placeholder="Contraseña" id="ingresaContrasena" >
