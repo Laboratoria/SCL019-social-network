@@ -1,9 +1,7 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 import { getFirestore, collection, addDoc  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import {
-    getAuth, signInWithPopup, GoogleAuthProvider,
-    createUserWithEmailAndPassword,
-     signInWithEmailAndPassword
+    getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
 
@@ -62,6 +60,14 @@ export const register = (email, password) => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
     });
+    sendEmailVerification(auth.currentUser)
+        .then(() => {
+            alert("Email verification sent!")
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+    });
 }
 
 // Iniciar Sesión con Usuario Guardado
@@ -78,7 +84,6 @@ export const iniciaSesion = (email, password) => {
         const errorMessage = error.message;
     });
 }
-
 
 /*const guardarUser = () => {
 try {
