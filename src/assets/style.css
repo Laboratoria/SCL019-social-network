@@ -102,7 +102,7 @@ body {
 }
 
 
-.input {
+.input, .input2 {
     position: relative;
     font-family: 'Inconsolata';
     font-size: 117%;
@@ -214,6 +214,22 @@ body {
     left: 2%;
     top: 14%;
 }
+
+.homeHead{
+    background-color: #B3C5E7;
+    width: 100%;
+    height: 20%;
+}
+
+
+.logout{
+    background-image: url(img/logout.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 10%;
+
+}
 /* color de fondo 255 247 244  */
 
 /* mediaquerys */
@@ -274,6 +290,7 @@ body {
     height: 4%;
     top: 1.5em;
     left:-3.7em;
+    z-index: 2;
     }
 
     .input{
@@ -287,6 +304,12 @@ body {
     border-radius: 2px;
     border: 1px solid #686260;
     background-color: transparent;
+    }
+
+    .input2{
+        height: 10%;
+        width: 70%;
+        margin-left: 10%;
     }
 
     .btn{
