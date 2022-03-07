@@ -43,7 +43,7 @@ import {
 
          
         const password = document.createElement('input');
-        password.className = 'input';
+        password.className = 'input2';
         password.id = 'password';
         password.placeholder = 'Contraseña de 6 caracteres';
         password.type = 'password';

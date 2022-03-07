@@ -51,7 +51,7 @@ export const formulario = (autenticacion) => {
   form.appendChild(password);
 
   const confPassword = document.createElement('input');
-  confPassword.className = 'input';
+  confPassword.className = 'input2';
   confPassword.id = 'confPassword';
   confPassword.placeholder = 'Confirmar contraseña';
   confPassword.type = 'password';
@@ -63,15 +63,15 @@ export const formulario = (autenticacion) => {
   warning.id = 'warning';
   form.appendChild(warning);
 
-  const warning2 = document.createElement('div');
-  warning2.className = 'warning';
-  warning2.id = 'warning2';
-  form.appendChild(warning2);
+  // const warning2 = document.createElement('div');
+  // warning2.className = 'warning';
+  // warning2.id = 'warning2';
+  // form.appendChild(warning2);
 
-  const warning3 = document.createElement('div');
-  warning3.className = 'warning';
-  warning3.id = 'warning3';
-  form.appendChild(warning3);
+  // const warning3 = document.createElement('div');
+  // warning3.className = 'warning';
+  // warning3.id = 'warning3';
+  // form.appendChild(warning3);
 
   const eye = document.createElement('img');
   eye.className = 'eye';

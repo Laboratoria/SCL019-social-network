@@ -102,7 +102,7 @@ body {
 }
 
 
-.input {
+.input, .input2 {
     position: relative;
     font-family: 'Inconsolata';
     font-size: 117%;
@@ -274,6 +274,7 @@ body {
     height: 4%;
     top: 1.5em;
     left:-3.7em;
+    z-index: 2;
     }
 
     .input{
@@ -287,6 +288,12 @@ body {
     border-radius: 2px;
     border: 1px solid #686260;
     background-color: transparent;
+    }
+
+    .input2{
+        height: 10%;
+        width: 70%;
+        margin-left: 10%;
     }
 
     .btn{
