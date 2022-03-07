@@ -1,14 +1,12 @@
 import { register, googleAuth } from '../../lib/regFirebase.js';
 import {
-  compare,
-  validateReg,
+  emptyInput,
+  comparePassword,
   showPassword,
   showPassword2,
-  // compLength,
+  showPassword3,
 } from '../helpers/validate.js';
-//pruebas 
-// import { showView } from '../router.js';
-// import { login } from './login.js';
+
 
 export const formulario = (autenticacion) => {
   const content = document.createElement('div');
@@ -63,24 +61,14 @@ export const formulario = (autenticacion) => {
   warning.id = 'warning';
   form.appendChild(warning);
 
-  // const warning2 = document.createElement('div');
-  // warning2.className = 'warning';
-  // warning2.id = 'warning2';
-  // form.appendChild(warning2);
-
-  // const warning3 = document.createElement('div');
-  // warning3.className = 'warning';
-  // warning3.id = 'warning3';
-  // form.appendChild(warning3);
-
   const eye = document.createElement('img');
   eye.className = 'eye';
   eye.src = './assets/img/eye.png';
   form.appendChild(eye);
-  eye.addEventListener('click', showPassword);    
+  eye.addEventListener('click', showPassword);
   eye.addEventListener('click', showPassword2);
+  eye.addEventListener('click', showPassword3);
 
- 
 
   const btnCrear = document.createElement('button');
   btnCrear.className = 'btn';
@@ -88,45 +76,32 @@ export const formulario = (autenticacion) => {
   btnCrear.textContent = 'Crear cuenta';
   form.appendChild(btnCrear);
 
-  
+
   btnCrear.addEventListener('click', (event) => {
     event.preventDefault();
     const message = `<p class='campos'>Hay campos vacíos</p>`;
-    const message2 = `<div class='noConincidence'>
-    <img src = './assets/img/cryCat.png' class='cry'>
-    <p class='x'>Las contraseñas no coinciden</p>
-    </div>`
-    const message3 = `<div class='noConincidence'>
-    <img src = './assets/img/happyCat.png' class='cry'>
-    <p class='x'>Registro exitoso. Revisa tu email</p>
-    </div>`
+    const message2 = `<p class='campos'>Las contraseñas no coinciden</p>
+    <img src = './assets/img/cryCat.png' class='cry'>`
+
     const mail = email.value;
     const pass = password.value;
     const conf = confPassword.value;
-    const valid = validateReg(mail, pass, conf);
-    const comp = compare(pass, conf);
-    // const complete = compLength(pass, conf);
+    const emptyInputV = emptyInput(mail, pass, conf);
+    const comparePasswordV = comparePassword(pass, conf);
 
-    // if (valid === false) {
-    //   warning.innerHTML = message;
-    // }
-
-    if (comp === true){
+    if (emptyInputV === true) {
+      warning.innerHTML = message;
+    }
+    if (comparePasswordV === false) {
       password.setAttribute('id', 'password');
     }
     else {
       warning.innerHTML = message2;
     }
-    // if (comp === false && valid === true) {
-    //     warning2.innerHTML = message2;
-    //     warning.style.display = 'none';
 
-    //   } else if (comp === true && valid === true && complete == true) {
-    //     warning2.innerHTML = message3;
-    //   }
-    });
+  });
 
-  btnCrear.addEventListener('click', (e) => register(e, autenticacion));   
+  btnCrear.addEventListener('click', (e) => register(e, autenticacion));
 
   const btnGoogle = document.createElement('button');
   btnGoogle.className = 'btn'
@@ -161,5 +136,3 @@ export const formulario = (autenticacion) => {
   // content.appendChild(btnMode);
   return content;
 };
-
-// export default formulario;
