@@ -1,7 +1,7 @@
 import { googleAuth } from '../../lib/regFirebase.js';
 import { login } from '../../lib/logFirebase.js';
 import {
-  showPassword, validateReg,
+  showPassword, emptyInput,
 } from '../helpers/validate.js';
     
     export const ingresar = (autenticacion) => {
@@ -45,7 +45,7 @@ import {
         const password = document.createElement('input');
         password.className = 'input2';
         password.id = 'password';
-        password.placeholder = 'Contraseña de 6 caracteres';
+        password.placeholder = 'Contraseña';
         password.type = 'password';
         password.maxLength = '6';
         formLog.appendChild(password);
@@ -69,7 +69,7 @@ import {
           const message = `<p class='campos'>Hay campos vacíos</p>`;
           const mail = email.value;
           const pass = password.value;
-          const valid = validateReg(mail, pass);
+          const valid = emptyInput(mail, pass);
 
           if (valid === false) {
             warning.innerHTML = message;
