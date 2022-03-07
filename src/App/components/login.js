@@ -8,7 +8,7 @@ import {
         const content = document.createElement('div');
         content.className = 'content';
 
-        const logo = document.createElement("div");
+        const logo = document.createElement('div');
         logo.className = 'logo';
         logo.textContent = 'Kitter';
         content.appendChild(logo);
