@@ -10,7 +10,7 @@ export const signUp = () => {
      <Stack gap={3}>
    
      <h1>Regístrate</h1>
-     <input type="text" placeholder="Usuario" id="user" required>
+     <input type="text" placeholder="Nombre de Usuario" id="user" required>
      <input type="email" placeholder="Correo electrónico" id="Email" required>
      <input type="password" placeholder="Contraseña" id="password" required>
      <input type="password" placeholder="Contraseña" id="password1" required>
@@ -31,6 +31,7 @@ export const signUp = () => {
   sectSignUp.querySelector('#button-SignUp').addEventListener('click', () => {
     const email = sectSignUp.querySelector('#Email').value;
     const password = sectSignUp.querySelector('#password').value;
+    //const name = sectSignUp.querySelector('#user').value;
     console.log(email);
   register(email, password);
    

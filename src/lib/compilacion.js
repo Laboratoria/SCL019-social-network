@@ -1,7 +1,9 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 import { getFirestore, collection, addDoc  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import {
-    getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification
+import { getAuth, signInWithPopup, GoogleAuthProvider,
+     createUserWithEmailAndPassword, signInWithEmailAndPassword,
+      sendEmailVerification,updateProfile 
+      // onAuthStateChanged, signOut
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
 
@@ -35,6 +37,7 @@ export const authGoogle = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+
           window.location.hash='#/muro';
         // ...
     }).catch((error) => { // Handle Errors here.
@@ -48,16 +51,25 @@ export const authGoogle = () => {
     });
 }
 
+
 // Iniciando autenficación con Usuario email and password
 export const register = (email, password) => {
     auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        window.location.hash='#/muro';
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => { 
+    window.location.hash='#/muro';
+    // Signed in
+    const user = userCredential.user;
+    console.log(user);
+    const userName= document.querySelector('#user').value;
+    user.displayName = userName;
+   console.log(userName);
+   // updateProfile(auth.currentUser, { displayName: usuario, });
+        
+        
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert("Ya estás Registrad@")
         console.log(errorCode, errorMessage);
     });
     sendEmailVerification(auth.currentUser)
@@ -77,13 +89,45 @@ export const iniciaSesion = (email, password) => {
 
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
+        console.log(user);
         // ...
         window.location.hash='#/muro';
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+       alert("tú contraseña es inválida");
+        console.log(errorCode); 
+        console.log(errorMessage);
     });
 }
+
+export const signOut=() => {
+    auth = getAuth();
+    signOut(auth).then(() => {
+        //window.location.hash = '#/login';
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+    }
+
+/*export const observador= () => {
+    auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
+
+}
+
+
 
 /*const guardarUser = () => {
 try {
@@ -97,5 +141,3 @@ try {
   console.error("Error adding document: ", e);
 }
 }*/
-
-

@@ -35,9 +35,9 @@ export const signIn = () => {
         e.preventDefault();
         const email = sectSignIn.querySelector('#ingresaEmail').value;
         const password = sectSignIn.querySelector('#ingresaContrasena').value;
-        console.log(email, password);
+        console.log(email);
 
-        iniciaSesion(email, password);
+        iniciaSesion(email,password);
 
     });
 

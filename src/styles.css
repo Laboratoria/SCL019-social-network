@@ -116,6 +116,17 @@ input {
   padding: .4rem;
   }
 
+#form-SignUp{
+display: grid;
+grid-template-columns: repeat(1, 18rem);
+grid-template-rows: repeat(3, 4rem) 3rem 4rem;
+row-gap: 1rem;
+align-items: center;
+justify-content: center;
+margin: 2rem auto;
+margin-top: 7rem;
+  }
+
 /*
 .row::after {
   content: "";
