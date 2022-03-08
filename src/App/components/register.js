@@ -7,7 +7,6 @@ import {
   showPassword3,
 } from '../helpers/validate.js';
 
-
 export const formulario = (autenticacion) => {
   const content = document.createElement('div');
   content.className = 'content';
@@ -69,19 +68,17 @@ export const formulario = (autenticacion) => {
   eye.addEventListener('click', showPassword2);
   eye.addEventListener('click', showPassword3);
 
-
   const btnCrear = document.createElement('button');
   btnCrear.className = 'btn';
   btnCrear.id = 'btnCrear';
   btnCrear.textContent = 'Crear cuenta';
   form.appendChild(btnCrear);
 
-
   btnCrear.addEventListener('click', (event) => {
     event.preventDefault();
     const message = `<p class='campos'>Hay campos vacíos</p>`;
     const message2 = `<p class='campos'>Las contraseñas no coinciden</p>
-    <img src = './assets/img/cryCat.png' class='cry'>`
+    <img src = './assets/img/cryCat.png' class='cry'>`;
 
     const mail = email.value;
     const pass = password.value;
@@ -91,23 +88,21 @@ export const formulario = (autenticacion) => {
 
     if (emptyInputV === true) {
       warning.innerHTML = message;
-    }
+    } 
     if (comparePasswordV === false) {
       password.setAttribute('id', 'password');
-    }
-    else {
+    } else {
       warning.innerHTML = message2;
     }
-
   });
 
   btnCrear.addEventListener('click', (e) => register(e, autenticacion));
 
   const btnGoogle = document.createElement('button');
-  btnGoogle.className = 'btn'
+  btnGoogle.className = 'btn';
   btnGoogle.textContent = 'Registrarse con Google';
   form.appendChild(btnGoogle);
-  btnGoogle.classList.add = 'btnGoogle'
+  btnGoogle.classList.add = 'btnGoogle';
   btnGoogle.addEventListener('click', (e) => googleAuth(e, autenticacion));
 
   const googleIco = document.createElement('img');
