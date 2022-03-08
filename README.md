@@ -1,4 +1,4 @@
-# Creando una Red Social
+# Creando una Red Social para Comedians "Bazinga"
 
 ## Índice
 
