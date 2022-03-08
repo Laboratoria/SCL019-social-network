@@ -5,10 +5,18 @@ import {
   signInWithPopup,
   getRedirectResult,
   sendEmailVerification,
-} from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
+
+const sendEmail = (autenticacion) => {
+  sendEmailVerification(autenticacion.currentUser)
+    .then(() => {
+      console.log('Mail enviado');
+      // ...
+    });
+};
 
 export const register = (e, autenticacion) => {
-  e.preventDefault()
+  e.preventDefault();
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -18,27 +26,28 @@ export const register = (e, autenticacion) => {
   console.log(password);
 
   if (email.length === 0) {
+    /* eslint-disable no-console */
     return console.log('aquí para');
+    /* eslint-enable no-console */
   }
-  if (password !== confPassword){
+  if (password !== confPassword) {
+    /* eslint-disable no-console */
     return console.log('para aqui2');
+    /* eslint-enable no-console */
   }
-  else {
-
-    createUserWithEmailAndPassword(autenticacion, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        sendEmail(autenticacion);
-      })
-      .catch((error) => showRegErrors(error));
-  }
+  createUserWithEmailAndPassword(autenticacion, email, password)
+    .then((userCredential) => {
+    // Signed in
+      const user = userCredential.user;
+      sendEmail(autenticacion);
+    })
+    .catch((error) => showRegErrors(error));
 };
 
 export const googleAuth = (e, autenticacion) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
-  getRedirectResult(autenticacion)
+  getRedirectResult(autenticacion);
 
   signInWithPopup(autenticacion, provider)
     .then((result) => {
@@ -58,34 +67,23 @@ export const googleAuth = (e, autenticacion) => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       console.log(errorCode, errorMessage, email, credential);
     });
-}
-
-const sendEmail = (autenticacion) => {
-  sendEmailVerification(autenticacion.currentUser)
-    .then(() => {
-      console.log('Mail enviado');
-      // ...
-    });
-}
+};
 
 const showRegErrors = (error) => {
-
   // const errorCode1 = validateReg;
   const errorCode = error.code;
 
   switch (errorCode) {
-
     case 'auth/invalid-email':
       warning.innerHTML = 'Correo inválido';
       break;
-
     case 'auth/email-already-in-use':
       warning.innerHTML = 'Este correo ya está asociado a una cuenta';
       break;
-
     case 'auth/weak-password':
       warning.innerHTML = 'La contraseña debe ser de 6 dígitos';
       break;
+    default:
+      warning.innerHTML = 'Hay campos vacios';
   }
-
-}
+};
