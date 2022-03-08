@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
+
+body {
+    background-image: url(./img/gradiente\ mobile.png);
+    background-image: no-repeat;
+    /* background-position: 55% 30%; */
+    background-size: cover;
+    
+}
+
+.logo {
+    font-family: 'Shizuru';
+    color: #8E768A;
+    font-size: 10vw;
+    padding: 10%;
+    padding-left: 42%;
+    padding-bottom: 8%;
+    background-image: url(./img/logo2.fw.png);
+    background-repeat: no-repeat;
+    background-position-x: 28%;
+    background-position-y: 57%;
+    background-size: 16%;
+}
+ 
+
+.boxTitle {
+    z-index: 2;
+    position: absolute;
+    top: 15%;
+    width: 18em;
+    height: 2.7em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-color: #686260;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #B2C0D9;
+    text-align: center;
+}
+
+.title {
+    height: 2.7em;
+    top: -0.7em;
+    position: absolute;
+    font-size: 1.5em;
+    font-family: 'Supermercado One';
+    text-align: center;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    color: #3D274E;
+    font-weight: bold;
+}
+
+.form {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
+    left: 0;
+    right: 0;
+    width: 18em;
+    height: 28em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #FFEEE8;
+    border-radius: 5px;
+    border-color: transparent #686260 #686260;
+    border-style: solid;
+    border-width: 1px;
+    align-content: center;
+    
+}
+
+.campos, .validMail{
+    font-family: 'arial'; 
+    color: #5C446D;
+    text-align: center;
+}
+
+ 
+.cry{
+    width: 17%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: -44%;
+}
+
+
+.eye, .eye2{
+    width: 12%;
+    height: 4%;
+    cursor: pointer;
+    top: -2.4em;
+    left: 6.3em;
+    position: relative;
+    z-index: 2;
+}
+
+
+.input, .input2 {
+    position: relative;
+    font-family: 'Inconsolata';
+    font-size: 117%;
+    text-align: left;
+    height: 8%;
+    width: 91%;
+    margin: 3%;
+    border-radius: 2px;
+    border: 1px solid #686260;
+    background-color: transparent;
+}
+
+.btn{
+    position: relative;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    text-align: center;
+    height: 2.2em;
+    width: 13.7em;
+    color: #3D274E;
+    background-color: #B2C0D9;
+    border: 1px solid #686260;
+    border-radius: 18px;
+    margin: 2% 1% 2% 1%;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+}
+
+.btn:hover{
+    color: #DDCFE7 ;
+    background-color: #5C446D;
+    border: 1px solid #ADDAD7
+}
+
+.btnGoogle{
+    padding-left: 13%;
+}
+
+.btn2 {
+         position: relative;
+        font-family: 'Inconsolata';
+        font-size: 1.2em;
+        text-align: center;
+        height: 2em;
+        width: 12em;
+        color:#ADDAD7 ;
+        background-color:  #5C446D;
+        border: 1px solid #ADDAD7 ;
+        border-radius: 2px;
+        margin: 2% 1% 2% 1%;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn2:hover{
+        color: #5C446D ;
+        background-color: #ADDAD7;
+        border: 1px solid #5C446D  ;
+    }
+
+.warning {
+    top: 9%;
+    position: absolute;
+    color: #5C446D;
+    text-align: center;
+}
+
+
+.noCoincidence{
+    top: 3.5em;
+    position: absolute;
+    color: #5C446D;
+    text-align: center;
+}
+
+
+
+.a{
+    padding: 4%;
+    border: 1px solid #5C446D;
+    border-style: dashed;
+    border-radius: 8px;
+    text-decoration: none;
+    /* width: 40%; */
+    /* height: 5%; */
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Inconsolata';
+    font-weight: bolder;
+    color: #5C446D;
+    font-size: 1.2em;
+    top: 86%;
+    position: absolute;
+    color: #3D274E;
+}
+
+.a:hover{
+    background-color: #5C446D;
+    border: 1px solid #daf5f3;
+    color: #daf5f3;
+}
+
+.icono{
+    width: 12%;
+    margin-bottom: 20%;
+    position: absolute;
+    left: 2%;
+    top: 14%;
+}
+
+.homeHead{
+    background-color: #B3C5E7;
+    width: 100%;
+    height: 20%;
+}
+
+
+.logout{
+    background-image: url(img/logout.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 10%;
+
+}
+/* color de fondo 255 247 244  */
+
+/* mediaquerys */
+/* small laptop 1024 x 600 */
+
+@media screen and (min-width: 800px){
+     
+    body{
+        background-image: url(./img/gradienteWeb.png);
+    }
+    .logo {
+        font-size: 6vw;
+        padding-top: 1%;
+        padding-bottom: 2%;
+        background-position-x: 40%;
+        background-position-y: 60%;
+        background-size: 8%;
+        padding-left: 48%;
+    } 
+    .title {
+        height: 2.7em;
+        top: -0.7em;
+    }
+    
+    .form{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
+    /* box-shadow: #addad7 -18px 10px 0px 7px, #686260 -18px 10px 0px 8px; */
+    left: 0;
+    right: 0;
+    width: 30em;
+    height: 22em;
+    display: flex;
+    justify-content: center;
+    background-color: #FFEEE8;
+    border-radius: 5px;
+    border-color: transparent #686260 #686260;
+    border-style: solid;
+    border-width: 1px;
+    align-content: center;
+    
+    
+    }
+
+    .boxTitle {
+        position: relative;
+        top: 19%;
+        width: 30em;
+        height: 3em;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .eye, .eye2{
+    width: 7%;
+    height: 4%;
+    top: 1.5em;
+    left:-3.7em;
+    z-index: 2;
+    }
+
+    .input{
+    position: relative;
+    font-family: 'Inconsolata';
+    font-size: 117%;
+    text-align: left;
+    height: 10%;
+    width: 70%;
+    margin: 3%;
+    border-radius: 2px;
+    border: 1px solid #686260;
+    background-color: transparent;
+    }
+
+    .input2{
+        height: 10%;
+        width: 70%;
+        margin-left: 10%;
+    }
+
+    .btn{
+    height: 1.8em;
+    width: 13.7em;
+   }
+
+    .a{
+        border-style: none;
+        margin-top: 1.5%;
+        font-size: 1em;
+          
+    }
+
+    .a:hover{
+        border-style: none;
+        background-color:transparent;
+        border: 0px solid #daf5f3;
+        color: #f72bc4;
+          
+    }
+
+    .icono{
+        width: 8%;
+        margin-bottom: 20%;
+        position: absolute;
+        left: 2%;
+        top: 14%;
+    }
+
+    
+    
+};
+    
