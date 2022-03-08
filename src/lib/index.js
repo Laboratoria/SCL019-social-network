@@ -1,8 +1,8 @@
 
-import { signIn } from "/vistas/SignIn.js";
-import { signUp } from "/vistas/SignUp.js";
-import { firstscreen } from "/vistas/muro.js";
-import { welcome } from "/vistas/welcome.js"
+import { signIn } from "../vistas/SignIn.js";
+import { signUp } from "../vistas/SignUp.js";
+import { firstscreen } from "../vistas/muro.js";
+import { welcome } from "../vistas/welcome.js"
 
 export const changeRouter = (hash) => {
     const containerRoot = document.getElementById('root');

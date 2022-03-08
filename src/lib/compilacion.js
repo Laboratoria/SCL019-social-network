@@ -2,8 +2,8 @@ import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-a
 import { getFirestore, collection, addDoc  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import { getAuth, signInWithPopup, GoogleAuthProvider,
      createUserWithEmailAndPassword, signInWithEmailAndPassword,
-      sendEmailVerification,updateProfile 
-      // onAuthStateChanged, signOut
+      sendEmailVerification, signOut
+      // onAuthStateChanged, updateProfile
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
 
@@ -62,42 +62,27 @@ export const register = (email, password) => {
     console.log(user);
     const userName= document.querySelector('#user').value;
     user.displayName = userName;
-    console.log(userName);
-    
+   console.log(userName);
+   
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+       // alert("Ya estás Registrad@")
+        console.log(errorCode, errorMessage);
+    });
     sendEmailVerification(auth.currentUser)
-    .then(() => {
-        alert("Email verification sent!")
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        .then(() => {
+            alert("Email verification sent!")
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
     });
-
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        if (errorCode === "auth/missing-email") {
-            alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email") {
-            alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error") {
-            alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password") {
-            alert ("Tú contraseña es inválida")}
-        if (errorCode === "auth/email-already-in-use") {
-            alert ("Ya estás Registrad@")}
-    });
-    // sendEmailVerification(auth.currentUser)
-    //     .then(() => {
-    //         alert("Email verification sent!")
-    //     }).catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //         console.log(errorCode, errorMessage);
-    // });
 }
 
+        
+
+           
 // Iniciar Sesión con Usuario Guardado
 
 export const iniciaSesion = (email, password) => {
@@ -111,16 +96,9 @@ export const iniciaSesion = (email, password) => {
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+       alert("tú contraseña es inválida");
         console.log(errorCode); 
         console.log(errorMessage);
-        if (errorCode === "auth/missing-email") {
-            alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email") {
-            alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error") {
-            alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password") {
-            alert ("Tú contraseña es inválida")}
     });
 }
 
