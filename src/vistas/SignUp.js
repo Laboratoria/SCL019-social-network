@@ -13,7 +13,6 @@ export const signUp = () => {
      <input type="text" placeholder="Nombre de Usuario" id="user" required>
      <input type="email" placeholder="Correo electrónico" id="Email" required>
      <input type="password" placeholder="Contraseña" id="password" required>
-     <input type="password" placeholder="Contraseña" id="password1" required>
 
   <button type="button" class="primary"  id="button-SignUp">Regístrate</button>
   <button type="submit" class= "primary2" id="iniciaGoogle">Ingresa con Google</button>
@@ -25,7 +24,7 @@ export const signUp = () => {
  sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
     e.preventDefault();
     authGoogle();
-   
+    window.location.hash = '#/muro';
   });
 
   sectSignUp.querySelector('#button-SignUp').addEventListener('click', () => {

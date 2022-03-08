@@ -19,16 +19,15 @@ export const signIn = () => {
   </div>
   `;
 
-
     sectSignIn.querySelector('#buttonRegistrar').addEventListener('click', (e) => {
         e.preventDefault();
         window.location.hash = '#/registrar';
     });
 
-    sectSignIn.querySelector('#iniciaGoogle').addEventListener('click', () => {
-
+    sectSignIn.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
+        e.preventDefault();
         authGoogle();
-
+        window.location.hash = '#/muro';
     });
 
     sectSignIn.querySelector('#buttoninicia').addEventListener('click', (e) => {
@@ -42,6 +41,4 @@ export const signIn = () => {
     });
 
     return sectSignIn;
-
-
 }

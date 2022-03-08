@@ -22,6 +22,15 @@ body {
   line-height: 1.5;
 }
 
+.contenedor-muro {
+  margin:auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+}
+
  .gridContainer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
