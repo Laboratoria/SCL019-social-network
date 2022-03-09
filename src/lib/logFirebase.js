@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
 
 // const authLog = getAuth();
 
@@ -8,7 +8,7 @@ export const login = (e) => {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
 
-  signInWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
+  signInWithEmailAndPassword(autenticacion, email, password).then((userCredential) => { // Signed in
     const user = userCredential.user;
   }).catch((error) => {
     const errorCode = error.code;
@@ -16,12 +16,14 @@ export const login = (e) => {
   });
 };
 
-export const googleAuth = (e) => {
+export const loginGoogleAuth = (e, autenticacion) => {
   e.preventDefault();
+  console.log('holi')
   const provider = new GoogleAuthProvider();
-  getRedirectResult(auth);
-  signInWithPopup(auth, provider)
+  
+  signInWithPopup(autenticacion, provider)
     .then((result) => {
+      console.log('pasó then')
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
@@ -29,11 +31,13 @@ export const googleAuth = (e) => {
       const user = result.user;
       // ...
     }).catch((error) => {
+      
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
       // The email of the user's account used.
       const email = error.email;
+      console.log(error.message)
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       // console.log(errorCode, errorMessage, email, credential);

@@ -1,4 +1,4 @@
-import { googleAuth } from '../../lib/regFirebase.js';
+import { loginGoogleAuth } from '../../lib/logFirebase.js';
 import { login } from '../../lib/logFirebase.js';
 import { showPassword, emptyInput } from '../helpers/validate.js';
 
@@ -82,7 +82,7 @@ export const ingresar = (autenticacion) => {
   btnGoogle.className = 'btn';
   btnGoogle.textContent = 'Ingresar con Google';
   formLog.appendChild(btnGoogle);
-  btnGoogle.addEventListener('click', (e) => googleAuth(e, autenticacion));
+  btnGoogle.addEventListener('click', (e) => loginGoogleAuth(e, autenticacion));
 
   const googleIco = document.createElement('img');
   googleIco.className = 'icono';

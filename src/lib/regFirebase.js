@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  getRedirectResult,
   sendEmailVerification,
 } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
 
@@ -47,7 +46,7 @@ export const register = (e, autenticacion) => {
 export const googleAuth = (e, autenticacion) => {
   e.preventDefault();
   const provider = new GoogleAuthProvider();
-  getRedirectResult(autenticacion);
+ 
 
   signInWithPopup(autenticacion, provider)
     .then((result) => {
@@ -65,7 +64,7 @@ export const googleAuth = (e, autenticacion) => {
       const email = error.email;
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
-      console.log(errorCode, errorMessage, email, credential);
+      // console.log(errorCode, errorMessage, email, credential);
     });
 };
 
