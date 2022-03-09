@@ -1,6 +1,6 @@
 import { loginGoogleAuth } from '../../lib/logFirebase.js';
 import { login } from '../../lib/logFirebase.js';
-import { showPassword, emptyInputLog } from '../helpers/validate.js';
+import { showPassword3, emptyInputLog } from '../helpers/validate.js';
 
 export const ingresar = (autenticacion) => {
   const content = document.createElement('div');
@@ -51,7 +51,7 @@ export const ingresar = (autenticacion) => {
   eye2.className = 'eye2';
   eye2.src = './assets/img/eye.png';
   formLog.appendChild(eye2);
-  eye2.addEventListener('click', showPassword);
+  eye2.addEventListener('click', showPassword3);
 
   const btnLogin = document.createElement('button');
   btnLogin.className = 'btn';
