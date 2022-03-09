@@ -108,19 +108,19 @@ export const iniciaSesion = (email, password) => {
         console.log(user);
         // ...
         window.location.hash='#/muro';
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode); 
-        console.log(errorMessage);
-        if (errorCode === "auth/missing-email") {
-            alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email") {
-            alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error") {
-            alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password") {
-            alert ("Tú contraseña es inválida")}
+    // }).catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorCode); 
+    //     console.log(errorMessage);
+    //     if (errorCode === "auth/missing-email") {
+    //         alert ("Ingresa un correo")}
+    //     if (errorCode === "auth/invalid-email") {
+    //         alert ("Ingresa un correo válido")}
+    //     if (errorCode === "auth/internal-error") {
+    //         alert ("Error! Intenta con datos correctos")}
+    //     if (errorCode === "auth/wrong-password") {
+    //         alert ("Tú contraseña es inválida")}
     });
 }
 
