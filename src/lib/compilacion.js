@@ -62,21 +62,31 @@ export const register = (email, password) => {
     console.log(user);
     const userName= document.querySelector('#user').value;
     user.displayName = userName;
-   console.log(userName);
-   
+    console.log(userName);
+    
+     sendEmailVerification(auth.currentUser)
+     .then(() => {
+         alert("Email verification sent!")
+     }).catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         console.log(errorCode, errorMessage);
+     });
+
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-       // alert("Ya estás Registrad@")
         console.log(errorCode, errorMessage);
-    });
-    sendEmailVerification(auth.currentUser)
-        .then(() => {
-            alert("Email verification sent!")
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
+        if (errorCode === "auth/missing-email") {
+            alert ("Ingresa un correo")}
+        if (errorCode === "auth/invalid-email") {
+            alert ("Ingresa un correo válido")}
+        if (errorCode === "auth/internal-error") {
+            alert ("Error! Intenta con datos correctos")}
+        if (errorCode === "auth/wrong-password") {
+            alert ("Tú contraseña es inválida")}
+        if (errorCode === "auth/email-already-in-use") {
+            alert ("Ya estás Registrad@")}
     });
 }
 
@@ -93,19 +103,19 @@ export const iniciaSesion = (email, password) => {
         console.log(user);
         // ...
         window.location.hash='#/muro';
-     }).catch((error) => {
-         const errorCode = error.code;
-       const errorMessage = error.message;
-         console.log(errorCode); 
-         console.log(errorMessage);
-         if (errorCode === "auth/missing-email") {
-             alert ("Ingresa un correo")}
-         if (errorCode === "auth/invalid-email") {
-             alert ("Ingresa un correo válido")}
-         if (errorCode === "auth/internal-error") {
-             alert ("Error! Intenta con datos correctos")}
-         if (errorCode === "auth/wrong-password") {
-             alert ("Tú contraseña es inválida")}
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode); 
+        console.log(errorMessage);
+        if (errorCode === "auth/missing-email") {
+            alert ("Ingresa un correo")}
+        if (errorCode === "auth/invalid-email") {
+            alert ("Ingresa un correo válido")}
+        if (errorCode === "auth/internal-error") {
+            alert ("Error! Intenta con datos correctos")}
+        if (errorCode === "auth/wrong-password") {
+            alert ("Tú contraseña es inválida")}
     });
 }
 
