@@ -14,5 +14,21 @@ export const home = () => {
   const homeLogout = document.createElement('div');
   homeLogout.className = 'logout';
   homeHead.appendChild(homeLogout);
+  
+
+  const formWall = document.createElement('form');
+  formWall.className = 'wall';
+  homeCont.appendChild(formWall);
+
+  const inputWall = document.createElement('input');
+  inputWall.className = 'inputWall';
+  formWall.appendChild(inputWall);
+
+  const btnPost = document.createElement('button');
+  btnPost.className = 'btnPost';
+  formWall.appendChild(btnPost);
+  
+
   return homeCont;
+
 };
