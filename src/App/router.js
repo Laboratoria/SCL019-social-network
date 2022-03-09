@@ -12,10 +12,10 @@ const showView = (routers, autenticacion) => {
       root.appendChild(formulario(autenticacion));
       break;
     case 'ingresar':
-      root.appendChild(ingresar());
+      root.appendChild(ingresar(autenticacion));
       break;
     case 'home':
-      root.appendChild(home());
+      root.appendChild(home(autenticacion));
       break;
     default:
       root.appendChild(formulario(autenticacion));
