@@ -1,4 +1,6 @@
-export const home = () => {
+// import { salir } from "../../lib/logFirebase";
+
+export const home = (autenticacion) => {
   const homeCont = document.createElement('div');
   homeCont.className = 'homeCont';
 
@@ -11,9 +13,10 @@ export const home = () => {
   homeLogo.textContent = 'Kitter';
   homeHead.appendChild(homeLogo);
 
-  const homeLogout = document.createElement('div');
+  const homeLogout = document.createElement('button');
   homeLogout.className = 'logout';
   homeHead.appendChild(homeLogout);
+  // homeLogout.addEventListener('click', (e) => salir(e, autenticacion));
   
 
   const formWall = document.createElement('form');
