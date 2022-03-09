@@ -2,17 +2,24 @@ import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,} from 
 
 // const authLog = getAuth();
 
-export const login = (e) => {
+export const login = (e, autenticacion) => {
   e.preventDefault();
 
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
+  const email = document.getElementById('emailLogin').value;
+  const password = document.getElementById('password').value;
+  console.log(email);
+  console.log(password);
 
-  signInWithEmailAndPassword(autenticacion, email, password).then((userCredential) => { // Signed in
+  signInWithEmailAndPassword(autenticacion, email, password)
+  .then((userCredential) => { // Signed in
     const user = userCredential.user;
-  }).catch((error) => {
+    console.log('entró');
+
+  })
+  .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
   });
 };
 

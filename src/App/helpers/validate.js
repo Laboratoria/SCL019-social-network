@@ -11,6 +11,13 @@ export const comparePassword = (password, confPassword) => {
   }
   return false;
 };
+//crear validaciones para log
+export const emptyInputLog = (email, password) => {
+if (email.length === 0 || password.length === 0){
+  return true;
+ }
+ return false;
+};
 
 export const showPassword = (e) => {
   e.preventDefault();

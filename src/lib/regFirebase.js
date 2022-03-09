@@ -39,6 +39,7 @@ export const register = (e, autenticacion) => {
     // Signed in
       const user = userCredential.user;
       sendEmail(autenticacion);
+      console.log(user);
     })
     .catch((error) => showRegErrors(error));
 };
