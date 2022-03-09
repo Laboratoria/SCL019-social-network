@@ -38,8 +38,6 @@ export const authGoogle = () => {
         const user = result.user;
         console.log(user);
 
-          window.location.hash='#/muro';
-        // ...
     }).catch((error) => { // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -56,8 +54,7 @@ export const authGoogle = () => {
 export const register = (email, password) => {
     auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password).then((userCredential) => { 
-    window.location.hash='#/muro';
-    // Signed in
+        // Signed in
     const user = userCredential.user;
     console.log(user);
     const userName= document.querySelector('#user').value;
@@ -102,7 +99,6 @@ export const iniciaSesion = (email, password) => {
         const user = userCredential.user;
         console.log(user);
         // ...
-        window.location.hash='#/muro';
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -119,7 +115,7 @@ export const iniciaSesion = (email, password) => {
     });
 }
 
-export const signOut=() => {
+export const signingOut=() => {
     auth = getAuth();
     signOut(auth).then(() => {
         //window.location.hash = '#/login';

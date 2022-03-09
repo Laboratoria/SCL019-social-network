@@ -1,3 +1,5 @@
+import {signingOut} from "../lib/compilacion.js";
+
  export const firstscreen = () => {
      const muro = document.createElement("div");
      muro.className='muropost';
@@ -11,6 +13,7 @@
 
      muro.querySelector('#signOut').addEventListener('click', (e) => {
         e.preventDefault();
+        signingOut();
         window.location.hash = '#/welcome';
     });
 

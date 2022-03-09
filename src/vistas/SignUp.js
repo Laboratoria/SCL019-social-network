@@ -32,11 +32,11 @@ export const signUp = () => {
     const password = sectSignUp.querySelector('#password').value;
     //const name = sectSignUp.querySelector('#user').value;
     console.log(email);
-  register(email, password);
-   
+    register(email, password);
+    window.location.hash='#/muro';
   });
-  firebaseInit();
 
+  firebaseInit();
   return sectSignUp;
   
   };
