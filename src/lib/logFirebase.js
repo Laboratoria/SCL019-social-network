@@ -13,6 +13,7 @@ export const login = (e, autenticacion) => {
     signInWithEmailAndPassword(autenticacion, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
         console.log('entró');
+        window.location.hash='#/home';
 
     }).catch((error) => {
         const errorCode = error.code;
@@ -28,6 +29,7 @@ export const loginGoogleAuth = (e, autenticacion) => {
 
     signInWithPopup(autenticacion, provider).then((result) => {
         console.log('pasó then')
+        window.location.hash='#/home';
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;

@@ -39,7 +39,8 @@ export const register = (e, autenticacion) => {
     // Signed in
       const user = userCredential.user;
       sendEmail(autenticacion);
-      console.log(user);
+      alert('Registro exitoso. Revisa tu correo para validar tu cuenta');
+      window.location.hash='#/login';
     })
     .catch((error) => showRegErrors(error));
 };
@@ -56,6 +57,7 @@ export const googleAuth = (e, autenticacion) => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
+      window.location.hash='#/login';
       // ...
     }).catch((error) => {
       // Handle Errors here.
