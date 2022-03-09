@@ -1,6 +1,6 @@
 import { loginGoogleAuth } from '../../lib/logFirebase.js';
 import { login } from '../../lib/logFirebase.js';
-import { showPassword, emptyInput } from '../helpers/validate.js';
+import { showPassword, emptyInputLog } from '../helpers/validate.js';
 
 export const ingresar = (autenticacion) => {
   const content = document.createElement('div');
@@ -59,17 +59,18 @@ export const ingresar = (autenticacion) => {
   btnLogin.textContent = 'Ingresar';
   formLog.appendChild(btnLogin);
 
-  btnLogin.addEventListener('click', login);
+
   btnLogin.addEventListener('click', (event) => {
     event.preventDefault();
     const message = `<p class='campos'>Hay campos vacíos</p>`;
     const mail = email.value;
     const pass = password.value;
-    const valid = emptyInput(mail, pass);
-    if (valid === false) {
+    const valid = emptyInputLog(mail, pass);
+    if (valid === true) {
       warning.innerHTML = message;
     }
   });
+  btnLogin.addEventListener('click',(e) => login(e, autenticacion));
 
   const btnCreateAccount = document.createElement('a');
   btnCreateAccount.className = 'a';
