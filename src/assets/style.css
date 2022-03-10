@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
 
 body {
-    background-image: url(./img/gradiente\ mobile.png);
-    background-image: no-repeat;
-    background-position: 55% 30%;
+    background: linear-gradient(157.14deg, rgba(168, 227, 220, 0.47) 8.14%, rgba(173, 160, 210, 0.66) 49.9%, rgba(119, 135, 196, 0.63) 100%), #FFF7F4;
+    /* background-position: 55% 30%; */
     background-size: cover;
-    
 }
 
 .logo {
@@ -256,7 +254,7 @@ body {
 @media screen and (min-width: 800px){
      
     body{
-        background-image: url(./img/gradienteWeb.png);
+        background: linear-gradient(157.14deg, rgba(168, 227, 220, 0.47) 8.14%, rgba(173, 160, 210, 0.66) 49.9%, rgba(119, 135, 196, 0.63) 100%), #FFF7F4;
     }
     .logo {
         font-size: 6vw;
