@@ -17,6 +17,10 @@ export const home = (autenticacion) => {
   homeLogout.className = 'logout';
   homeHead.appendChild(homeLogout);
   // homeLogout.addEventListener('click', (e) => salir(e, autenticacion));
+ homeLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.hash = '#/login';
+});
   
 
   const formWall = document.createElement('form');
