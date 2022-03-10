@@ -10,16 +10,16 @@ export const login = (e, autenticacion) => {
     console.log(email);
     console.log(password);
 
+    if (email.length === 0 || password.length === 0) {
+      return console.log('aquí para');
+    };
+
     signInWithEmailAndPassword(autenticacion, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
         console.log('entró');
         window.location.hash='#/home';
 
-    }).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-    });
+    }).catch((error) => showLogErrors(error));
 };
 
 export const loginGoogleAuth = (e, autenticacion) => {
@@ -54,3 +54,22 @@ export const loginGoogleAuth = (e, autenticacion) => {
 //     }).catch((error) => { // An error happened.
 //     });
 // };
+
+const showLogErrors = (error) => {
+  // const errorCode1 = validateReg;
+  const errorCode = error.code;
+
+  switch (errorCode) {
+    case 'auth/invalid-email':
+      warning.innerHTML = 'Correo inválido';
+      break;
+    case 'auth/user-not-found':
+      warning.innerHTML = 'Este correo no se encuentra registrado';
+      break;
+    case 'auth/wrong-password':
+      warning.innerHTML = 'La contraseña es incorrecta';
+      break;
+    default:
+      warning.innerHTML = 'Hay campos vacios';
+  }
+};
