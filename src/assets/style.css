@@ -67,7 +67,7 @@ body {
     left: 0;
     right: 0;
     width: 18em;
-    height: 28em;
+    height: 27em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,7 +80,7 @@ body {
     
 }
 
-.campos, .validMail{
+.campos{
     font-family: 'arial'; 
     color: #5C446D;
     text-align: center;
@@ -173,19 +173,12 @@ body {
         border: 1px solid #5C446D  ;
     }
 
-.warning {
+.warning, .validMail, .noCoincidence{
     top: 9%;
     position: absolute;
     color: #5C446D;
     text-align: center;
-}
-
-
-.noCoincidence{
-    top: 3.5em;
-    position: absolute;
-    color: #5C446D;
-    text-align: center;
+    font-family: 'Inconsolata';
 }
 
 
@@ -281,7 +274,7 @@ body {
     left: 0;
     right: 0;
     width: 30em;
-    height: 22em;
+    height: 27em;
     display: flex;
     justify-content: center;
     background-color: #FFEEE8;
@@ -303,6 +296,13 @@ body {
         align-items: center;
     }
 
+    .warning, .validMail, .noCoincidence{
+        top: 5%;
+        position: absolute;
+        color: #5C446D;
+        text-align: center;
+        font-family: 'Inconsolata';
+    }
 
     .eye, .eye2{
     width: 7%;
