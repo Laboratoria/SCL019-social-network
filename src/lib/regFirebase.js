@@ -25,15 +25,12 @@ export const register = (e, autenticacion) => {
   console.log(password);
 
   if (email.length === 0) {
-    /* eslint-disable no-console */
     return console.log('aquí para');
-    /* eslint-enable no-console */
-  }
+  };
   if (password !== confPassword) {
-    /* eslint-disable no-console */
     return console.log('para aqui2');
-    /* eslint-enable no-console */
-  }
+  };
+
   createUserWithEmailAndPassword(autenticacion, email, password)
     .then((userCredential) => {
     // Signed in

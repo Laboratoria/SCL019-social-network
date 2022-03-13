@@ -70,6 +70,7 @@ export const ingresar = (autenticacion) => {
       warning.innerHTML = message;
     }
   });
+
   btnLogin.addEventListener('click',(e) => login(e, autenticacion));
 
   const btnCreateAccount = document.createElement('a');
