@@ -40,7 +40,21 @@ export const home = (autenticacion) => {
   const arrowPost = document.createElement('div');
   arrowPost.className = 'arrowPost';
   contPost.appendChild(arrowPost);
-  
+
+  const anuncio = document.createElement('div');
+  anuncio.className = 'anuncio';
+  contPost.appendChild(anuncio);
+
+  const avisoTexto = document.createElement('p');
+  avisoTexto.className = 'avisoTexto';
+  avisoTexto.textContent = 'Pagina en construcción';
+  anuncio.appendChild(avisoTexto);
+
+  const aviso = document.createElement('img');
+  aviso.className = 'aviso';
+  aviso.src = './assets/img/working-pusheen.gif';
+  anuncio.appendChild(aviso);
+
 
   return homeCont;
 
