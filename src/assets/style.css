@@ -80,17 +80,11 @@ body {
     
 }
 
-.campos{
-    font-family: 'arial'; 
-    color: #5C446D;
-    text-align: center;
-}
 
- 
 .cry{
-    width: 17%;
-    height: auto;
-    margin-left: auto;
+    width: 35px;
+    height: 35px;
+    margin-left: -48px;
     margin-right: auto;
     left: 0;
     right: 0;
@@ -173,12 +167,15 @@ body {
         border: 1px solid #5C446D  ;
     }
 
-.warning, .validMail, .noCoincidence{
+.warning /*.validMail, .noCoincidence*/{
     top: 9%;
     position: absolute;
     color: #5C446D;
     text-align: center;
     font-family: 'Inconsolata';
+    font-weight: bold;
+
+
 }
 
 

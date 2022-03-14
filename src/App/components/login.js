@@ -62,12 +62,13 @@ export const ingresar = (autenticacion) => {
 
   btnLogin.addEventListener('click', (event) => {
     event.preventDefault();
-    const message = `<p class='campos'>Hay campos vacíos</p>`;
+    // const message = `<p class='campos'>Hay campos vacíos</p>`;
     const mail = email.value;
     const pass = password.value;
+    const cat = `<img src = './assets/img/cryCat.png' class='cry'>`;
     const valid = emptyInputLog(mail, pass);
     if (valid === true) {
-      warning.innerHTML = message;
+      warning.innerHTML = cat + 'Hay campos vacíos';
     }
   });
 
