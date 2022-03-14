@@ -241,8 +241,35 @@ body {
     margin-top: -80px;
     z-index: 100;
     position: absolute;
-    
+}
 
+.anuncio{
+    color: #5C446D;
+    font-family: 'Inconsolata';
+    font-weight: 900;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 16em;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    margin-top: 14em;
+}
+
+.aviso {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 16em;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
 }
 /* color de fondo 255 247 244  */
 

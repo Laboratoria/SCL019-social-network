@@ -31,6 +31,21 @@ export const home = (autenticacion) => {
   inputWall.className = 'inputWall';
   formWall.appendChild(inputWall);
 
+  const anuncio = document.createElement('div');
+  anuncio.className = 'anuncio';
+  homeCont.appendChild(anuncio);
+
+  const avisoTexto = document.createElement('p');
+  avisoTexto.className = 'avisoTexto';
+  avisoTexto.textContent = 'Pagina en construcción';
+  anuncio.appendChild(avisoTexto);
+
+  const aviso = document.createElement('img');
+  aviso.className = 'aviso';
+  aviso.src = './assets/img/working-pusheen.gif';
+  anuncio.appendChild(aviso);
+
+
   const btnPost = document.createElement('button');
   btnPost.className = 'btnPost';
   formWall.appendChild(btnPost);
