@@ -1,5 +1,5 @@
 // importamos la funcion que vamos a testear
-import { emptyInput, comparePassword } from "../src/App/helpers/validate";
+import { emptyInput, comparePassword, emptyInputLog, showPassword } from "../src/App/helpers/validate";
 
 describe("Function emptyInput", () => {
   it("emptyInput debe ser una funcion", () => {
@@ -139,4 +139,63 @@ describe("Function comparePassword", () => {
     //Assert
     expect(result).toBe(false);
   });
+});
+
+describe('Function emptyInputLog', () =>{
+  it ('emptyInputLog debe ser una función', () =>{
+    expect(typeof emptyInputLog).toBe('function');
+  });
+  it('Si recibe email vacío retorna true', () =>{
+    //Arrange
+    const email = '';
+    const password = '123456';
+
+    //Act 
+    const result = emptyInputLog(email, password);
+
+    //Assert
+    expect(result).toBe(true);
+  });
+
+  it('Si recibe password vacío retorna true', () =>{
+    //Arrange
+    const email = 'hola@hola.cl';
+    const password = '';
+
+    //Act
+    const result = emptyInputLog(email, password);
+
+    //Assert
+    expect(result).toBe(true);
+  });
+
+  it('Si recibe email vacío y password vacío retorna true', () =>{
+     //Arrange
+     const email = '';
+     const password = '';
+ 
+     //Act
+     const result = emptyInputLog(email, password);
+ 
+     //Assert
+     expect(result).toBe(true);
+  });
+
+  it('Si recibe los parámetros de email y password no vacíos retorna false', () =>{
+    
+    const email = 'holi@holi.com';
+    const password = '654321';
+
+    const result = emptyInputLog(email, password);
+
+    expect(result).toBe(false);
+  });
+});
+
+describe('Function showPassword', () =>{
+  it('showPassword debe ser una función', () =>{
+    expect(typeof showPassword).toBe('function');
+  });
+
+  it()
 });
