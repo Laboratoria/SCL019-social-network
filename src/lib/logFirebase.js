@@ -16,9 +16,14 @@ export const login = (e, autenticacion) => {
 
     signInWithEmailAndPassword(autenticacion, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
+        console.log(user)
+        if(user.emailVerified){
         console.log('entró');
         window.location.hash='#/home';
-
+        }else{
+           alert('Usuario no verificado');
+           window.location.hash='#/login';
+        }
     }).catch((error) => showLogErrors(error));
 };
 
