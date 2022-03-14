@@ -8,8 +8,8 @@ describe('Function emptyInput', () => {
   it('Si emptyInput recibe un mail vacio va a retornar true', () => {
     // Arrange
     const email = '';
-    const password = '98965656';
-    const confPassword = '98965656';
+    const password = '989656';
+    const confPassword = '989656';
 
     // Act 
     const result = emptyInput(email, password, confPassword);
@@ -18,7 +18,33 @@ describe('Function emptyInput', () => {
     expect(result).toBe(true);
   });
 
-  it('Si emptyInput recibe parametros vacios va a retornar false', () => {
+  it('Si emptyInput recibe un password vacio va a retornar true', () => {
+    // Arrange
+    const email = 'email@email.cl';
+    const password = '';
+    const confPassword = '123456';
+
+    // Act 
+    const result = emptyInput(email, password, confPassword);
+
+    // Assert
+    expect(result).toBe(true);
+  });
+
+  it('Si emptyInput recibe una confirmación de password vacio va a retornar true', () => {
+    // Arrange
+    const email = 'email@email.cl';
+    const password = '123456';
+    const confPassword = '';
+
+    // Act 
+    const result = emptyInput(email, password, confPassword);
+
+    // Assert
+    expect(result).toBe(true);
+  });
+
+  it('Si emptyInput recibe todos los parametros vacios va a retornar true', () => {
     // Arrange
     const email = '';
     const password = '';
@@ -33,9 +59,9 @@ describe('Function emptyInput', () => {
 
   it('Si emptyInput recibe parametros no vacios va a retornar false', () => {
     // Arrange
-    const email = '8989898';
+    const email = 'email@email.cl';
     const password = '989898';
-    const confPassword = '98989';
+    const confPassword = '989898';
 
     // Act 
     const result = emptyInput(email, password, confPassword);
