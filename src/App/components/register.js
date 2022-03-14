@@ -1,11 +1,10 @@
 import { register, googleAuth } from '../../lib/regFirebase.js';
 import {
   emptyInput,
-  comparePassword,
-  showPassword,
+  comparePassword} from '../helpers/validate.js';
+import{showPassword,
   showPassword2,
-  showPassword3,
-} from '../helpers/validate.js';
+  showPassword3} from '../helpers/showPassword.js';
 
 export const formulario = (autenticacion) => {
   const content = document.createElement('div');

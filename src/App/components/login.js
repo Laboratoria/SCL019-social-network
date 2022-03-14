@@ -1,6 +1,7 @@
 import { loginGoogleAuth } from '../../lib/logFirebase.js';
 import { login } from '../../lib/logFirebase.js';
-import { showPassword3, emptyInputLog } from '../helpers/validate.js';
+import { emptyInputLog } from '../helpers/validate.js';
+import { showPassword3 } from '../helpers/showPassword.js';
 
 export const ingresar = (autenticacion) => {
   const content = document.createElement('div');

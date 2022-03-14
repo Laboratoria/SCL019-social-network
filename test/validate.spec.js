@@ -1,5 +1,5 @@
 // importamos la funcion que vamos a testear
-import { emptyInput, comparePassword, emptyInputLog, showPassword } from "../src/App/helpers/validate";
+import { emptyInput, comparePassword, emptyInputLog } from "../src/App/helpers/validate";
 
 describe("Function emptyInput", () => {
   it("emptyInput debe ser una funcion", () => {
@@ -192,10 +192,3 @@ describe('Function emptyInputLog', () =>{
   });
 });
 
-describe('Function showPassword', () =>{
-  it('showPassword debe ser una función', () =>{
-    expect(typeof showPassword).toBe('function');
-  });
-
-  it()
-});
