@@ -76,9 +76,9 @@ export const formulario = (autenticacion) => {
 
   btnCrear.addEventListener('click', (event) => {
     event.preventDefault();
-    const message = `<p class='campos'>Hay campos vacíos</p>`;
-    const message2 = `<p class='campos'>Las contraseñas no coinciden</p>
-    <img src = './assets/img/cryCat.png' class='cry'>`;
+    // const message = `<p class='campos'>Hay campos vacíos</p>`;
+    // const message2 = `<p class='campos'>Las contraseñas no coinciden</p>
+    const cat = `<img src = './assets/img/cryCat.png' class='cry'>`;
 
     const mail = email.value;
     const pass = password.value;
@@ -87,12 +87,12 @@ export const formulario = (autenticacion) => {
     const comparePasswordV = comparePassword(pass, conf);
 
     if (emptyInputV === true) {
-      warning.innerHTML = message;
+      warning.innerHTML = cat + 'Hay campos vacíos';
     } 
     if (comparePasswordV === false) {
       password.setAttribute('id', 'password');
     } else {
-      warning.innerHTML = message2;
+      warning.innerHTML = cat + ' Las contraseñas no coinciden';
     }
   });
 

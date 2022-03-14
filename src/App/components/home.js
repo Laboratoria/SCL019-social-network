@@ -23,13 +23,13 @@ export const home = (autenticacion) => {
 });
   
 
-  const formWall = document.createElement('form');
-  formWall.className = 'wall';
-  homeCont.appendChild(formWall);
+  const contPost = document.createElement ('div');
+  contPost.className = 'contPost';
+  homeCont.appendChild(contPost);
 
-  const inputWall = document.createElement('input');
-  inputWall.className = 'inputWall';
-  formWall.appendChild(inputWall);
+  const userProfile = document.createElement('div');
+  userProfile.className = 'userProfile';
+  contPost.appendChild(userProfile);
 
   const anuncio = document.createElement('div');
   anuncio.className = 'anuncio';
@@ -49,6 +49,15 @@ export const home = (autenticacion) => {
   const btnPost = document.createElement('button');
   btnPost.className = 'btnPost';
   formWall.appendChild(btnPost);
+  const inputPost = document.createElement('input');
+  inputPost.className = 'post';
+  inputPost.placeholder = ' Escribe tu publicación'
+  contPost.appendChild(inputPost);
+
+
+  const arrowPost = document.createElement('div');
+  arrowPost.className = 'arrowPost';
+  contPost.appendChild(arrowPost);
   
 
   return homeCont;
