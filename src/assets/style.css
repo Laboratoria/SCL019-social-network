@@ -388,9 +388,15 @@ body {
     
     }
 
-    .boxTitle {
+    .box {
         position: absolute;
-        top: 15%;
+        left: 0;
+        right: 0;
+        top: 191px;
+    }
+
+    .boxTitle {
+        /* top: 18%; */
         width: 40em;
         height: 3em;
         display: flex;
@@ -502,4 +508,3 @@ body {
     
     
 };
-    
