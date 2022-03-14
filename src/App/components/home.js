@@ -31,9 +31,19 @@ export const home = (autenticacion) => {
   userProfile.className = 'userProfile';
   contPost.appendChild(userProfile);
 
+  const inputPost = document.createElement('input');
+  inputPost.className = 'post';
+  inputPost.placeholder = ' Escribe tu publicación'
+  contPost.appendChild(inputPost);
+
+
+  const arrowPost = document.createElement('div');
+  arrowPost.className = 'arrowPost';
+  contPost.appendChild(arrowPost);
+
   const anuncio = document.createElement('div');
   anuncio.className = 'anuncio';
-  homeCont.appendChild(anuncio);
+  contPost.appendChild(anuncio);
 
   const avisoTexto = document.createElement('p');
   avisoTexto.className = 'avisoTexto';
@@ -45,20 +55,6 @@ export const home = (autenticacion) => {
   aviso.src = './assets/img/working-pusheen.gif';
   anuncio.appendChild(aviso);
 
-
-  const btnPost = document.createElement('button');
-  btnPost.className = 'btnPost';
-  formWall.appendChild(btnPost);
-  const inputPost = document.createElement('input');
-  inputPost.className = 'post';
-  inputPost.placeholder = ' Escribe tu publicación'
-  contPost.appendChild(inputPost);
-
-
-  const arrowPost = document.createElement('div');
-  arrowPost.className = 'arrowPost';
-  contPost.appendChild(arrowPost);
-  
 
   return homeCont;
 
