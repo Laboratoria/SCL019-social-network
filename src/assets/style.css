@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Shizuru&family=Supermercado+One&display=swap');
 
-html{
+html {
     height: 100%;
 }
+
 body {
     background: linear-gradient(157.14deg, rgba(168, 227, 220, 0.47) 8.14%, rgba(173, 160, 210, 0.66) 49.9%, rgba(119, 135, 196, 0.63) 100%), #FFF7F4;
     /* background-position: 55% 30%; */
     background-size: cover;
     height: 100%;
-    
+
 }
 
 .logo {
@@ -24,7 +25,7 @@ body {
     background-position-y: 57%;
     background-size: 16%;
 }
- 
+
 
 .boxTitle {
     z-index: 2;
@@ -63,7 +64,7 @@ body {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
+    box-shadow: #ADDAD7 -16px 17px, #686260 -16px 17px 0px 1px;
     left: 0;
     right: 0;
     width: 18em;
@@ -77,11 +78,11 @@ body {
     border-style: solid;
     border-width: 1px;
     align-content: center;
-    
+
 }
 
 
-.cry{
+.cry {
     width: 35px;
     height: 35px;
     margin-left: -48px;
@@ -93,7 +94,8 @@ body {
 }
 
 
-.eye, .eye2{
+.eye,
+.eye2 {
     width: 12%;
     height: 4%;
     cursor: pointer;
@@ -103,12 +105,15 @@ body {
     z-index: 2;
 }
 
-.eye2{
+.eye2 {
     top: -2.4em;
 }
 
 
-.input, .input2, .input3, .input4 {
+.input,
+.input2,
+.input3,
+.input4 {
     position: relative;
     font-family: 'Inconsolata';
     font-size: 117%;
@@ -120,12 +125,14 @@ body {
     border: 1px solid #686260;
     background-color: transparent;
 }
-.input, .input2 {
+
+.input,
+.input2 {
     position: relative;
     top: 3%;
 }
 
-.btn{
+.btn {
     position: relative;
     font-family: 'Inconsolata';
     font-size: 1.2em;
@@ -143,39 +150,42 @@ body {
     letter-spacing: -0.3px;
 }
 
-.btn:hover{
-    color: #DDCFE7 ;
+.btn:hover {
+    color: #DDCFE7;
     background-color: #5C446D;
     border: 1px solid #ADDAD7
 }
 
-.btnGoogle{
+.btnGoogle {
     padding-left: 13%;
 }
 
 .btn2 {
-         position: relative;
-        font-family: 'Inconsolata';
-        font-size: 1.2em;
-        text-align: center;
-        height: 2em;
-        width: 12em;
-        color:#ADDAD7 ;
-        background-color:  #5C446D;
-        border: 1px solid #ADDAD7 ;
-        border-radius: 2px;
-        margin: 2% 1% 2% 1%;
-        font-weight: bold;
-        cursor: pointer;
-    }
+    position: relative;
+    font-family: 'Inconsolata';
+    font-size: 1.2em;
+    text-align: center;
+    height: 2em;
+    width: 12em;
+    color: #ADDAD7;
+    background-color: #5C446D;
+    border: 1px solid #ADDAD7;
+    border-radius: 2px;
+    margin: 2% 1% 2% 1%;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-    .btn2:hover{
-        color: #5C446D ;
-        background-color: #ADDAD7;
-        border: 1px solid #5C446D  ;
-    }
+.btn2:hover {
+    color: #5C446D;
+    background-color: #ADDAD7;
+    border: 1px solid #5C446D;
+}
 
-.warning /*.validMail, .noCoincidence*/{
+.warning
+
+/*.validMail, .noCoincidence*/
+    {
     top: 14%;
     position: absolute;
     color: #5C446D;
@@ -188,7 +198,7 @@ body {
 
 
 
-.a{
+.a {
     padding: 4%;
     border: 1px solid #5C446D;
     border-style: dashed;
@@ -207,13 +217,13 @@ body {
     color: #3D274E;
 }
 
-.a:hover{
+.a:hover {
     background-color: #5C446D;
     border: 1px solid #daf5f3;
     color: #daf5f3;
 }
 
-.icono{
+.icono {
     width: 12%;
     margin-bottom: 20%;
     position: absolute;
@@ -223,32 +233,32 @@ body {
 
 /* Estructura home */
 
-.homeCont{
+.homeCont {
     display: flex;
     justify-content: center;
-    
+
 }
 
-.homeHead{
+.homeHead {
     background-color: #FFEEE8;
     width: 96%;
     height: 15%;
-    z-index:1;
+    z-index: 1;
     position: absolute;
     margin: auto;
     box-shadow: 1px 1px 5px black;
 
-    
+
 }
 
-.homeLogo{
+.homeLogo {
     width: 50%;
     z-index: 1;
     margin-right: 50px;
-    
+
 }
 
-.logout{
+.logout {
     background-image: url(./img/logout.png);
     background-color: transparent;
     border: transparent;
@@ -262,7 +272,7 @@ body {
     position: absolute;
 }
 
-.anuncio{
+.anuncio {
     color: #5C446D;
     font-family: 'Inconsolata';
     font-weight: 900;
@@ -289,19 +299,19 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 3em;
-  }
+}
 
-  .contPost{
+.contPost {
     background-color: #FFEEE8;
     margin-top: 10em;
     width: 90%;
     height: 18%;
     position: absolute;
-    border:solid 1px #3D274E;
+    border: solid 1px #3D274E;
     border-radius: 5px;
 }
 
-.userProfile{
+.userProfile {
     background-image: url('./img/userProfile.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -310,46 +320,46 @@ body {
     position: absolute;
     margin-left: 0.2em;
     margin-top: 0.5em;
-   
-    
-        
+
+
+
 }
 
-.post{
-     margin-top: 0.7em;
-     margin-left: 6.4em;
-     border:solid 1px #3D274E;
-     border-radius: 5px;
-     position: relative;
-     width: 65%;
-     height: 54%;
-     z-index: 100;
-     font-family: 'Inconsolata';
-     font-weight: bold;
-     
+.post {
+    margin-top: 0.7em;
+    margin-left: 6.4em;
+    border: solid 1px #3D274E;
+    border-radius: 5px;
+    position: relative;
+    width: 65%;
+    height: 54%;
+    z-index: 100;
+    font-family: 'Inconsolata';
+    font-weight: bold;
+
 }
 
-.arrowPost{
-  background-image: url('./img/arrowPost.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 18%;
-  height: 18%;
-  position: relative;
-  margin-top: 0.5em;
-  margin-left: 15em;
-  cursor: pointer;
- 
+.arrowPost {
+    background-image: url('./img/arrowPost.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 18%;
+    height: 18%;
+    position: relative;
+    margin-top: 0.5em;
+    margin-left: 15em;
+    cursor: pointer;
+
 }
 
-  
+
 /* color de fondo 255 247 244  */
 
 /* mediaquerys */
 /* small laptop 1024 x 600 */
 
-@media screen and (min-width: 800px){
-     
+@media screen and (min-width: 800px) {
+
     /* body{
         background: linear-gradient(157.14deg, rgba(168, 227, 220, 0.47) 8.14%, rgba(173, 160, 210, 0.66) 49.9%, rgba(119, 135, 196, 0.63) 100%), #FFF7F4;
     } */
@@ -361,43 +371,50 @@ body {
         background-position-y: 37%;
         background-size: 8%;
         padding-left: 46%;
-    } 
+    }
+
     .title {
         height: 2.7em;
         top: -0.7em;
     }
-    
-    .form{
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: #addad7 -22px 23px, #686260 -22px 23px 0px 1px;
-    left: 0;
-    right: 0;
-    width: 40em;
-    height: 30em;
-    display: flex;
-    justify-content: center;
-    background-color: #FFEEE8;
-    border-radius: 5px;
-    border-color: transparent #686260 #686260;
-    border-style: solid;
-    border-width: 1px;
-    align-content: center;
-    
-    
+
+    .form {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: #addad7 -22px 23px, #686260 -22px 23px 0px 1px;
+        left: 0;
+        right: 0;
+        width: 40em;
+        height: 30em;
+        display: flex;
+        justify-content: center;
+        background-color: #FFEEE8;
+        border-radius: 5px;
+        border-color: transparent #686260 #686260;
+        border-style: solid;
+        border-width: 1px;
+        align-content: center;
+    }
+
+    .box {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 191px;
     }
 
     .boxTitle {
-        position: absolute;
-        top: 15%;
+        /* top: 18%; */
         width: 40em;
         height: 3em;
         display: flex;
         align-items: center;
     }
 
-    .warning, .validMail, .noCoincidence{
+    .warning,
+    .validMail,
+    .noCoincidence {
         top: 13%;
         position: absolute;
         color: #5C446D;
@@ -405,43 +422,21 @@ body {
         font-family: 'Inconsolata';
     }
 
-    .eye, .eye2{
-     width: 7%;
-     height: 4%;
-     top: 4.2em;
-     left: -4.7em;
-     z-index: 2;
+    .eye,
+    .eye2 {
+        width: 7%;
+        height: 4%;
+        top: 4.2em;
+        left: -4.7em;
+        z-index: 2;
     }
 
-    .eye2{
+    .eye2 {
         top: 2.1em;
         left: -3.7em;
     }
 
-    .input{
-    position: relative;
-    font-family: 'Inconsolata';
-    font-size: 117%;
-    text-align: left;
-    height: 9%;
-    width: 70%;
-    margin: 3%;
-    border-radius: 2px;
-    border: 1px solid #686260;
-    background-color: transparent;
-    top: 7%;
-
-    }
-
-    .input2{
-        height: 9%;
-        width: 70%;
-        margin-left: 10%;
-        top: 7%;
-        
-    }
-
-    .input3, .input4{
+    .input {
         position: relative;
         font-family: 'Inconsolata';
         font-size: 117%;
@@ -451,47 +446,71 @@ body {
         margin: 3%;
         border-radius: 2px;
         border: 1px solid #686260;
-        background-color: transparent; 
+        background-color: transparent;
+        top: 7%;
+
     }
 
-    .input4{
+    .input2 {
+        height: 9%;
+        width: 70%;
+        margin-left: 10%;
+        top: 7%;
+
+    }
+
+    .input3,
+    .input4 {
+        position: relative;
+        font-family: 'Inconsolata';
+        font-size: 117%;
+        text-align: left;
+        height: 9%;
+        width: 70%;
+        margin: 3%;
+        border-radius: 2px;
+        border: 1px solid #686260;
+        background-color: transparent;
+    }
+
+    .input4 {
         left: 3.5%;
     }
 
-    .btn{
-     top: 4%;
-     height: 2.3em;
-     width: 13.7em;
-     margin-left: 29%;
-     left: 0;
-     right: 0;
-     margin-right: auto;
-     margin-bottom: auto;
-   }
+    .btn {
+        top: 4%;
+        height: 2.3em;
+        width: 13.7em;
+        margin-left: 29%;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
 
-   /* #btnCrear{
+    /* #btnCrear{
        left: -3%;
    } */
 
-    .a{
+    .a {
         border-style: none;
         margin-top: -0.5%;
         font-size: 1em;
     }
 
-    .a:hover{
+    .a:hover {
         border-style: none;
-        background-color:transparent;
+        background-color: transparent;
         border: 0px solid #daf5f3;
         color: #f72bc4;
-          
+
     }
 
-    #a{
+    #a {
         top: 90%;
     }
 
-    .icono{
+    .icono {
         width: 8%;
         margin-bottom: 20%;
         position: absolute;
@@ -499,7 +518,8 @@ body {
         top: 14%;
     }
 
-    
-    
-};
-    
+
+
+}
+
+;
