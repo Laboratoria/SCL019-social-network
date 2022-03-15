@@ -1,4 +1,4 @@
-// import { salir } from "../../lib/logFirebase";
+import { logOut } from "../../lib/homeFirebase.js";
 
 export const home = (autenticacion) => {
   const homeCont = document.createElement('div');
@@ -16,12 +16,11 @@ export const home = (autenticacion) => {
   const homeLogout = document.createElement('button');
   homeLogout.className = 'logout';
   homeHead.appendChild(homeLogout);
-  // homeLogout.addEventListener('click', (e) => salir(e, autenticacion));
- homeLogout.addEventListener('click', (e) => {
+  homeLogout.addEventListener('click', (e) => {
+    logOut(e, autenticacion)
     e.preventDefault();
     window.location.hash = '#/login';
-});
-  
+  });
 
   const contPost = document.createElement ('div');
   contPost.className = 'contPost';

@@ -11,7 +11,7 @@ const showView = (routers, autenticacion) => {
     case 'formulario':
       root.appendChild(formulario(autenticacion));
       break;
-    case 'ingresar':
+    case 'login':
       root.appendChild(ingresar(autenticacion));
       break;
     case 'home':
@@ -25,11 +25,11 @@ const showView = (routers, autenticacion) => {
 
 export const changeView = (hash, autenticacion) => {
   if (hash === '#/' || hash === '' || hash === '#') {
-    return showView('#/ingresar', autenticacion);
-  } if (hash === '#/formulario' || hash === '#/ingresar' || hash === '#/home') {
+    return showView('#/login', autenticacion);
+  } if (hash === '#/formulario' || hash === '#/login' || hash === '#/home') {
     return showView(hash, autenticacion);
   }
-  return showView('#/ingresar', autenticacion);
+  return showView('#/login', autenticacion);
 };
 
 export const initRouter = (autenticacion) => {
