@@ -1,10 +1,13 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, onSnapshot  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+//querySnapshot
 import { getAuth, signInWithPopup, GoogleAuthProvider,
      createUserWithEmailAndPassword, signInWithEmailAndPassword,
       sendEmailVerification, signOut
       // onAuthStateChanged, updateProfile
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+
 
 
 // Your web app's Firebase configuration
@@ -74,20 +77,18 @@ export const register = (email, password) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        if (errorCode === "auth/missing-email") {
+        if (errorCode === "auth/missing-email"){
             alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email") {
+        if (errorCode === "auth/invalid-email"){
             alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error") {
+        if (errorCode === "auth/internal-error"){
             alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password") {
+        if (errorCode === "auth/wrong-password"){
             alert ("Tú contraseña es inválida")}
-        if (errorCode === "auth/email-already-in-use") {
+        if (errorCode === "auth/email-already-in-use"){
             alert ("Ya estás Registrad@")}
     });
 }
-
-        
 
            
 // Iniciar Sesión con Usuario Guardado
@@ -104,13 +105,13 @@ export const iniciaSesion = (email, password) => {
         const errorMessage = error.message;
         console.log(errorCode); 
         console.log(errorMessage);
-        if (errorCode === "auth/missing-email") {
+        if (errorCode === "auth/missing-email"){
             alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email") {
+        if (errorCode === "auth/invalid-email"){
             alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error") {
+        if (errorCode === "auth/internal-error"){
             alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password") {
+        if (errorCode === "auth/wrong-password"){
             alert ("Tú contraseña es inválida")}
     });
 }
@@ -124,6 +125,44 @@ export const signingOut=() => {
       // An error happened.
     });
     }
+
+
+export const guardarPost = async(title, description) => {
+        const comenzar = await addDoc(collection(db, "Mensaje"), {
+            title,
+            description
+});
+         console.log(comenzar.id); 
+    }
+    
+
+
+export const getTasks= () => getDocs(collection(db, "Mensaje"));
+
+export const muroBazinga = async () => {
+    const bazingaposts = document.getElementById('muroBazinga');
+ // const querySnapshot = await getDocs(collection(db, "Mensaje"));
+onSnapshot(collection(db, "Mensaje"), (querySnapshot) => {
+    let html= " ";
+  querySnapshot.forEach((doc) => {
+      const info= doc.data();
+    html += `
+    <div> 
+    <h3>${info.title}</h3>
+    <p>${info.description}</p>
+
+    </div>
+    `
+  console.log(doc.data())
+});
+bazingaposts.innerHTML= html
+})
+  
+}
+ 
+
+//console.log(`${doc.id} => ${doc.data()}`);
+
 
 /*export const observador= () => {
     auth = getAuth();
