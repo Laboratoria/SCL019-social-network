@@ -25,7 +25,12 @@ body {
     background-position-y: 57%;
     background-size: 16%;
 }
-
+.box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+}
 
 .boxTitle {
     z-index: 2;
@@ -518,14 +523,6 @@ body {
         top: 14%;
     }
 
-<<<<<<< HEAD
-
-
-}
-
-;
-=======
     
     
 };
->>>>>>> 6b61d0b06273b3e5097ce5e1b862dc4f82702a14
