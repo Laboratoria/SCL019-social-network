@@ -29,7 +29,7 @@ body {
 .boxTitle {
     z-index: 2;
     position: absolute;
-    top: 15%;
+    top: 19%;
     width: 18em;
     height: 2.7em;
     margin-left: auto;
@@ -67,7 +67,7 @@ body {
     left: 0;
     right: 0;
     width: 18em;
-    height: 27em;
+    height: 28em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -97,14 +97,18 @@ body {
     width: 12%;
     height: 4%;
     cursor: pointer;
-    top: -2.4em;
+    top: -1.4em;
     left: 6.3em;
     position: relative;
     z-index: 2;
 }
 
+.eye2{
+    top: -2.4em;
+}
 
-.input, .input2 {
+
+.input, .input2, .input3, .input4 {
     position: relative;
     font-family: 'Inconsolata';
     font-size: 117%;
@@ -115,6 +119,10 @@ body {
     border-radius: 2px;
     border: 1px solid #686260;
     background-color: transparent;
+}
+.input, .input2 {
+    position: relative;
+    top: 3%;
 }
 
 .btn{
@@ -168,7 +176,7 @@ body {
     }
 
 .warning /*.validMail, .noCoincidence*/{
-    top: 9%;
+    top: 14%;
     position: absolute;
     color: #5C446D;
     text-align: center;
@@ -347,12 +355,12 @@ body {
     } */
     .logo {
         font-size: 6vw;
-        padding-top: 1%;
+        padding-top: 0%;
         padding-bottom: 2%;
         background-position-x: 40%;
-        background-position-y: 60%;
+        background-position-y: 37%;
         background-size: 8%;
-        padding-left: 48%;
+        padding-left: 46%;
     } 
     .title {
         height: 2.7em;
@@ -363,12 +371,11 @@ body {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: #ADDAD7 -16px 17px,#686260 -16px 17px 0px 1px;
-    /* box-shadow: #addad7 -18px 10px 0px 7px, #686260 -18px 10px 0px 8px; */
+    box-shadow: #addad7 -22px 23px, #686260 -22px 23px 0px 1px;
     left: 0;
     right: 0;
-    width: 30em;
-    height: 27em;
+    width: 40em;
+    height: 30em;
     display: flex;
     justify-content: center;
     background-color: #FFEEE8;
@@ -381,17 +388,23 @@ body {
     
     }
 
+    .box {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 191px;
+    }
+
     .boxTitle {
-        position: relative;
-        top: 19%;
-        width: 30em;
+        /* top: 18%; */
+        width: 40em;
         height: 3em;
         display: flex;
         align-items: center;
     }
 
     .warning, .validMail, .noCoincidence{
-        top: 5%;
+        top: 13%;
         position: absolute;
         color: #5C446D;
         text-align: center;
@@ -399,11 +412,16 @@ body {
     }
 
     .eye, .eye2{
-    width: 7%;
-    height: 4%;
-    top: 1.5em;
-    left:-3.7em;
-    z-index: 2;
+     width: 7%;
+     height: 4%;
+     top: 4.2em;
+     left: -4.7em;
+     z-index: 2;
+    }
+
+    .eye2{
+        top: 2.1em;
+        left: -3.7em;
     }
 
     .input{
@@ -411,30 +429,60 @@ body {
     font-family: 'Inconsolata';
     font-size: 117%;
     text-align: left;
-    height: 10%;
+    height: 9%;
     width: 70%;
     margin: 3%;
     border-radius: 2px;
     border: 1px solid #686260;
     background-color: transparent;
+    top: 7%;
+
     }
 
     .input2{
-        height: 10%;
+        height: 9%;
         width: 70%;
         margin-left: 10%;
+        top: 7%;
+        
+    }
+
+    .input3, .input4{
+        position: relative;
+        font-family: 'Inconsolata';
+        font-size: 117%;
+        text-align: left;
+        height: 9%;
+        width: 70%;
+        margin: 3%;
+        border-radius: 2px;
+        border: 1px solid #686260;
+        background-color: transparent; 
+    }
+
+    .input4{
+        left: 3.5%;
     }
 
     .btn{
-    height: 1.8em;
-    width: 13.7em;
+     top: 4%;
+     height: 2.3em;
+     width: 13.7em;
+     margin-left: 29%;
+     left: 0;
+     right: 0;
+     margin-right: auto;
+     margin-bottom: auto;
    }
+
+   /* #btnCrear{
+       left: -3%;
+   } */
 
     .a{
         border-style: none;
-        margin-top: 1.5%;
+        margin-top: -0.5%;
         font-size: 1em;
-          
     }
 
     .a:hover{
@@ -443,6 +491,10 @@ body {
         border: 0px solid #daf5f3;
         color: #f72bc4;
           
+    }
+
+    #a{
+        top: 90%;
     }
 
     .icono{
@@ -456,4 +508,3 @@ body {
     
     
 };
-    

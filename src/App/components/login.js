@@ -29,24 +29,24 @@ export const ingresar = (autenticacion) => {
   formLog.className = 'form';
   box.appendChild(formLog);
 
-  const warning = document.createElement('div');
-  warning.id = 'warning';
-  warning.className = 'warning';
-  formLog.appendChild(warning);
-
   const email = document.createElement('input');
-  email.className = 'input';
+  email.className = 'input3';
   email.id = 'emailLogin';
   email.placeholder = 'Correo electrónico';
   formLog.appendChild(email);
 
   const password = document.createElement('input');
-  password.className = 'input2';
+  password.className = 'input4';
   password.id = 'password';
   password.placeholder = 'Contraseña';
   password.type = 'password';
   password.maxLength = '6';
   formLog.appendChild(password);
+
+  const warning = document.createElement('div');
+  warning.id = 'warning';
+  warning.className = 'warning';
+  formLog.appendChild(warning);
 
   const eye2 = document.createElement('img');
   eye2.className = 'eye2';
@@ -77,7 +77,6 @@ export const ingresar = (autenticacion) => {
 
   const btnCreateAccount = document.createElement('a');
   btnCreateAccount.className = 'a';
-  btnCreateAccount.id = 'btnCrear';
   btnCreateAccount.textContent = 'Crear cuenta';
   btnCreateAccount.setAttribute('href', '#/formulario');
   formLog.appendChild(btnCreateAccount);

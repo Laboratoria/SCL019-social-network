@@ -69,7 +69,7 @@ export const formulario = (autenticacion) => {
 
   const btnCrear = document.createElement('button');
   btnCrear.className = 'btn';
-  btnCrear.id = 'btnCrear';
+  btnCrear.id = 'btnCrear1';
   btnCrear.textContent = 'Crear cuenta';
   form.appendChild(btnCrear);
 
@@ -112,6 +112,7 @@ export const formulario = (autenticacion) => {
   const registeredUser = document.createElement('a');
   registeredUser.textContent = '¿Ya tienes una cuenta?';
   registeredUser.className = 'a';
+  registeredUser.id = 'a';
   registeredUser.setAttribute('href', '#/login');
   form.appendChild(registeredUser);
   // registeredUser.addEventListener('click', showView('#/login'));
