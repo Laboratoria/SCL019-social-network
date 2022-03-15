@@ -24,7 +24,12 @@ body {
     background-position-y: 57%;
     background-size: 16%;
 }
- 
+.box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+}
 
 .boxTitle {
     z-index: 2;
