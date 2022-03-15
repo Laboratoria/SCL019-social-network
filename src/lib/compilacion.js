@@ -1,10 +1,11 @@
-import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, onSnapshot  } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 //querySnapshot
-import { getAuth, signInWithPopup, GoogleAuthProvider,
-     createUserWithEmailAndPassword, signInWithEmailAndPassword,
-      sendEmailVerification, signOut
-      // onAuthStateChanged, updateProfile
+import {
+    getAuth, signInWithPopup, GoogleAuthProvider,
+    createUserWithEmailAndPassword, signInWithEmailAndPassword,
+    sendEmailVerification, signOut, onAuthStateChanged
+    // onAuthStateChanged, updateProfile
 } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
 
@@ -56,41 +57,46 @@ export const authGoogle = () => {
 // Iniciando autenficación con Usuario email and password
 export const register = (email, password) => {
     auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => { 
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
         // Signed in
-    const user = userCredential.user;
-    console.log(user);
-    const userName= document.querySelector('#user').value;
-    user.displayName = userName;
-    console.log(userName);
-    
-     sendEmailVerification(auth.currentUser)
-     .then(() => {
-         alert("Email verification sent!")
-     }).catch((error) => {
-         const errorCode = error.code;
-         const errorMessage = error.message;
-         console.log(errorCode, errorMessage);
-     });
+        const user = userCredential.user;
+        console.log(user);
+        const userName = document.querySelector('#user').value;
+        user.displayName = userName;
+        console.log(userName);
+
+        sendEmailVerification(auth.currentUser)
+            .then(() => {
+                alert("Email verification sent!")
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
 
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        if (errorCode === "auth/missing-email"){
-            alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email"){
-            alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error"){
-            alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password"){
-            alert ("Tú contraseña es inválida")}
-        if (errorCode === "auth/email-already-in-use"){
-            alert ("Ya estás Registrad@")}
+        if (errorCode === "auth/missing-email") {
+            alert("Ingresa un correo")
+        }
+        if (errorCode === "auth/invalid-email") {
+            alert("Ingresa un correo válido")
+        }
+        if (errorCode === "auth/internal-error") {
+            alert("Error! Intenta con datos correctos")
+        }
+        if (errorCode === "auth/wrong-password") {
+            alert("Tú contraseña es inválida")
+        }
+        if (errorCode === "auth/email-already-in-use") {
+            alert("Ya estás Registrad@")
+        }
     });
 }
 
-           
+
 // Iniciar Sesión con Usuario Guardado
 
 export const iniciaSesion = (email, password) => {
@@ -103,63 +109,94 @@ export const iniciaSesion = (email, password) => {
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode); 
+        console.log(errorCode);
         console.log(errorMessage);
-        if (errorCode === "auth/missing-email"){
-            alert ("Ingresa un correo")}
-        if (errorCode === "auth/invalid-email"){
-            alert ("Ingresa un correo válido")}
-        if (errorCode === "auth/internal-error"){
-            alert ("Error! Intenta con datos correctos")}
-        if (errorCode === "auth/wrong-password"){
-            alert ("Tú contraseña es inválida")}
+        if (errorCode === "auth/missing-email") {
+            alert("Ingresa un correo")
+        }
+        if (errorCode === "auth/invalid-email") {
+            alert("Ingresa un correo válido")
+        }
+        if (errorCode === "auth/internal-error") {
+            alert("Error! Intenta con datos correctos")
+        }
+        if (errorCode === "auth/wrong-password") {
+            alert("Tú contraseña es inválida")
+        }
     });
 }
 
-export const signingOut=() => {
+export const signingOut = () => {
     auth = getAuth();
     signOut(auth).then(() => {
         //window.location.hash = '#/login';
-      // Sign-out successful.
+        // Sign-out successful.
     }).catch((error) => {
-      // An error happened.
+        // An error happened.
     });
-    }
+}
 
-
-export const guardarPost = async(title, description) => {
-        const comenzar = await addDoc(collection(db, "Mensaje"), {
-            title,
-            description
-});
-         console.log(comenzar.id); 
-    }
+export const observer = () => {
     
+    onAuthStateChanged(auth, (user) => {
+        console.log(user)
+        if (user === null) {
+            // si user es null osea no hay usuario logeado no dejamos a pasar adelante, en muro
+            alert("No hay usuario");
+            return window.location.hash = '#/welcome';
+        }
+        if (user.emailVerified) {
+            // si user existe y tiene verificado su correo que pase
+            window.location.hash = '#/muro';
+            // User is signed in.
+        }
+        if (!user.emailVerified && window.location.hash != '#/welcome') {
+            //si derepente no esta verificado el correo y por alguna razon paso al muro lo redireccionamos al login
+            alert("Por favor revisa su correo para verificar!")
+            window.location.hash = '#/signIn';
+        }
+    })
+}
 
 
-export const getTasks= () => getDocs(collection(db, "Mensaje"));
+export const guardarPost = async (title, description) => {
+    const comenzar = await addDoc(collection(db, "Mensaje"), {
+        title,
+        description
+    });
+    console.log(comenzar.id);
+}
+
+
+export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
 export const muroBazinga = async () => {
     const bazingaposts = document.getElementById('muroBazinga');
- // const querySnapshot = await getDocs(collection(db, "Mensaje"));
-onSnapshot(collection(db, "Mensaje"), (querySnapshot) => {
-    let html= " ";
-  querySnapshot.forEach((doc) => {
-      const info= doc.data();
-    html += `
+    // const querySnapshot = await getDocs(collection(db, "Mensaje"));
+    onSnapshot(collection(db, "Mensaje"), (querySnapshot) => {
+        let html = " ";
+        querySnapshot.forEach((doc) => {
+            const info = doc.data();
+            html += `
     <div> 
     <h3>${info.title}</h3>
     <p>${info.description}</p>
-
+    <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
     </div>
     `
-  console.log(doc.data())
-});
-bazingaposts.innerHTML= html
-})
-  
+            console.log(doc.data());
+        });
+        bazingaposts.innerHTML = html;
+
+        const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
+        btnsDelete.forEach(btn => {
+            btn.addEventListener('click', ({ target: { dataset } }) => {
+                deleteDoc(doc(db, 'Mensaje', dataset.id));
+            })
+        })
+    });
 }
- 
+
 
 //console.log(`${doc.id} => ${doc.data()}`);
 

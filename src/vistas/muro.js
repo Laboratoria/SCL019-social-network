@@ -1,9 +1,9 @@
-import {signingOut, guardarPost, muroBazinga } from "../lib/compilacion.js";
+import { observer, signingOut, guardarPost, muroBazinga } from "../lib/compilacion.js";
 
- export const firstscreen = () => {
-     const muro = document.createElement("div");
-     muro.className='muropost';
-     muro.innerHTML= `
+export const firstscreen = () => {
+    const muro = document.createElement("div");
+    muro.className = 'muropost';
+    muro.innerHTML = `
  <div class= "muro-grid">
      <header class= "element-1">
          <a href="" class='url'>Usuario</a> <img class='' src=""/>
@@ -18,34 +18,30 @@ import {signingOut, guardarPost, muroBazinga } from "../lib/compilacion.js";
      </div>
     <div id = "muroBazinga" class= "containerpost">
     </div>
- 
       <button type="submit" class="salir" id="signOut">Cerrar Sesión</button>
  </div>
      `;
 
-
-     muro.querySelector('#signOut').addEventListener('click', (e) => {
+    muro.querySelector('#signOut').addEventListener('click', (e) => {
         e.preventDefault();
         signingOut();
         window.location.hash = '#/welcome';
     });
 
-const btnSendPost= muro.querySelector('#enviarMsj');
+    const btnSendPost = muro.querySelector('#enviarMsj');
 
-btnSendPost.addEventListener('click', (e) =>{
-    e.preventDefault();
-    const title = muro.querySelector('#title').value;
-    const description = muro.querySelector('#description').value;
-    guardarPost(title, description);
-    muroBazinga();
-   
-//btnSendPost.reset()
-} 
-);
+    btnSendPost.addEventListener('click', (e) => {
+        e.preventDefault();
+        const title = muro.querySelector('#title').value;
+        const description = muro.querySelector('#description').value;
+        guardarPost(title, description);
+        muroBazinga();
 
+        //btnSendPost.reset()
+    }
+    );
 
+    observer();
 
-
-
-     return muro;
- }
+    return muro;
+}

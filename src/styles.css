@@ -176,9 +176,10 @@ grid-template-columns: repeat(12, 1fr);
 }
 
 .muro-grid > .salir{
- justify-self: end;
+ /* justify-self: end; */
  align-self:center;
   grid-row: 1;
+  grid-column: 1;
   background-color: #97E128;
   border-radius: 4px;
   border: 1px solid #97E128;
