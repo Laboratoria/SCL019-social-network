@@ -16,8 +16,7 @@ export const firstscreen = async () => {
        <button type="submit" class="enviarMsj" id="enviarMsj">Postear</button>
        </form>
      </div>
-    <div id = "muroBazinga" class= "containerpost">
-    </div>
+    <div id = "muroBazinga" class= "containerpost"></div>
       <button type="submit" class="salir" id="signOut">Cerrar Sesión</button>
  </div>
      `;
@@ -28,7 +27,35 @@ export const firstscreen = async () => {
         window.location.hash = '#/welcome';
     });
 
+    await muroBazinga();
     const btnSendPost = muro.querySelector('#enviarMsj');
+    const feedContainer = muro.querySelector('#muroBazinga');
+    const jokesFeed = (info) => {
+        // muroBazinga.forEach 
+        info.forEach (() => {
+        feedContainer.innerHTML += `
+        <div> 
+        <h3>${info.title}</h3>
+        <p>${info.description}</p>
+        <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
+        </div>
+        `})
+
+
+
+        const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
+        btnsDelete.forEach(btn => {
+            btn.addEventListener('click', ({ target: { dataset } }) => {
+                deleteDoc(doc(db, 'Mensaje', dataset.id));
+            })
+        })
+    }
+return muroBazinga();
+
+    console.log(jokesFeed);
+    window.addEventListener("load", () => { // cargar todos los poster al cargar la página
+        jokesFeed();
+    });
 
     btnSendPost.addEventListener('click', (e) => {
         e.preventDefault();

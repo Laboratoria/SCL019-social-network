@@ -171,9 +171,6 @@ export const guardarPost = async (title, description) => {
 
 export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
-
-
-
 export const muroBazinga = async () => {
  // const querySnapshot = await getDocs(collection(db, "Mensaje"));
 onSnapshot (collection(db, "Mensaje"), (querySnapshot) => {
