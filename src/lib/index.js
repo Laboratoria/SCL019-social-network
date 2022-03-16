@@ -4,7 +4,7 @@ import { signUp } from "../vistas/SignUp.js";
 import { firstscreen } from "../vistas/muro.js";
 import { welcome } from "../vistas/welcome.js"
 
-export const changeRouter = (hash) => {
+export const changeRouter = async (hash) => {
     const containerRoot = document.getElementById('root');
     containerRoot.innerHTML = '';
     
@@ -24,7 +24,7 @@ switch (hash) {
       break;
       
       case '#/muro':
-      containerRoot.appendChild(firstscreen());
+      containerRoot.appendChild(await firstscreen());
         break;
       }
     }

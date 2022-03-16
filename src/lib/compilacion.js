@@ -136,7 +136,7 @@ export const signingOut = () => {
     });
 }
 
-export const observer = () => {
+/*export const observer = () => {
     
     onAuthStateChanged(auth, (user) => {
         console.log(user)
@@ -157,7 +157,7 @@ export const observer = () => {
         }
     })
 }
-
+*/
 
 export const guardarPost = async (title, description) => {
     const comenzar = await addDoc(collection(db, "Mensaje"), {
@@ -166,39 +166,42 @@ export const guardarPost = async (title, description) => {
     });
     console.log(comenzar.id);
 }
-
+ //
+    // const querySnapshot = await getDocs(collection(db, "Mensaje"));
 
 export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
-export const muroBazinga = async () => {
-    const bazingaposts = document.getElementById('muroBazinga');
-    // const querySnapshot = await getDocs(collection(db, "Mensaje"));
-    onSnapshot(collection(db, "Mensaje"), (querySnapshot) => {
-        let html = " ";
-        querySnapshot.forEach((doc) => {
-            const info = doc.data();
-            html += `
-    <div> 
-    <h3>${info.title}</h3>
-    <p>${info.description}</p>
-    <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
-    </div>
-    `
-            console.log(doc.data());
-        });
-        bazingaposts.innerHTML = html;
 
-        const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
+
+
+export const muroBazinga = async () => {
+ // const querySnapshot = await getDocs(collection(db, "Mensaje"));
+onSnapshot (collection(db, "Mensaje"), (querySnapshot) => {
+    //let html= " ";
+ querySnapshot.forEach((doc) => { 
+ const info= doc.data();
+ 
+console.log(info);
+return info;
+    
+});
+ 
+})
+}
+
+//console.log(`${doc.id} => ${doc.data()}`);
+
+
+   /*     const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
         btnsDelete.forEach(btn => {
             btn.addEventListener('click', ({ target: { dataset } }) => {
                 deleteDoc(doc(db, 'Mensaje', dataset.id));
             })
-        })
-    });
-}
+        })*/
+//});
+//}
 
 
-//console.log(`${doc.id} => ${doc.data()}`);
 
 
 /*export const observador= () => {
@@ -219,7 +222,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-/*const guardarUser = () => {
+const guardarUser = () => {
 try {
   const docRef = await addDoc(collection(db, "users"), {
     first: "Ada",
@@ -230,4 +233,4 @@ try {
 } catch (e) {
   console.error("Error adding document: ", e);
 }
-}*/
+*/

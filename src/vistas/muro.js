@@ -1,6 +1,6 @@
-import { observer, signingOut, guardarPost, muroBazinga } from "../lib/compilacion.js";
-
-export const firstscreen = () => {
+import {signingOut, guardarPost, muroBazinga, getTasks} from "../lib/compilacion.js";
+// observer
+export const firstscreen = async () => {
     const muro = document.createElement("div");
     muro.className = 'muropost';
     muro.innerHTML = `
@@ -35,13 +35,38 @@ export const firstscreen = () => {
         const title = muro.querySelector('#title').value;
         const description = muro.querySelector('#description').value;
         guardarPost(title, description);
-        muroBazinga();
+        // muroBazinga();
+        // btnSendPost.reset()
+    });
+    
+    // observer();
+    // getTasks();
+    
+   await muroBazinga();
+//console.log(aparecer)
+    return muro;   
 
-        //btnSendPost.reset()
-    }
-    );
-
-    observer();
-
-    return muro;
 }
+
+const deSred = () => {
+const bazingaposts = document.getElementById('muroBazinga');
+const aparecer= muroBazinga();
+}
+  
+
+//const aparecer = bazingaposts.innerHTML= html
+
+
+
+/* let html = " ";
+  querySnapShot.forEach((doc) => {
+          const info = doc.data();
+          html += `
+              <div> 
+              <h3>${info.title}</h3>
+              <p>${info.description}</p>
+              <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
+              </div>
+              ` 
+            bazingaposts.innerHTML = html;
+  })*/
