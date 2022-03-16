@@ -167,36 +167,22 @@ export const guardarPost = async (title, description) => {
     console.log(comenzar.id);
 }
 
-
 export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
 export const muroBazinga = async () => {
-    const bazingaposts = document.getElementById('muroBazinga');
-    // const querySnapshot = await getDocs(collection(db, "Mensaje"));
-    onSnapshot(collection(db, "Mensaje"), (querySnapshot) => {
-        let html = " ";
-        querySnapshot.forEach((doc) => {
-            const info = doc.data();
-            html += `
-    <div> 
-    <h3>${info.title}</h3>
-    <p>${info.description}</p>
-    <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
-    </div>
-    `
-            console.log(doc.data());
-        });
-        bazingaposts.innerHTML = html;
-
-        const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-        btnsDelete.forEach(btn => {
-            btn.addEventListener('click', ({ target: { dataset } }) => {
-                deleteDoc(doc(db, 'Mensaje', dataset.id));
-            })
-        })
-    });
+ // const querySnapshot = await getDocs(collection(db, "Mensaje"));
+onSnapshot (collection(db, "Mensaje"), (querySnapshot) => {
+    //let html= " ";
+ querySnapshot.forEach((doc) => { 
+ const info= doc.data();
+ 
+// console.log(info);
+return info;
+    
+});
+ 
+})
 }
-
 
 //console.log(`${doc.id} => ${doc.data()}`);
 
