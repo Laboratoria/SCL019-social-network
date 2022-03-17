@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs,  onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-//querySnapshot deleteDoc, doc,
+import { getFirestore, collection, addDoc, getDocs,  onSnapshot, deleteDoc, doc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+//querySnapshot
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
     createUserWithEmailAndPassword, signInWithEmailAndPassword,
@@ -174,17 +174,10 @@ export const muroBazinga = async () => {
    const querySnapshot = await getDocs(collection(db, "Mensaje"));
    console.log(querySnapshot);
    const arr = [];
-   querySnapshot.forEach(post => arr.push(post.data()) ) 
+   querySnapshot.forEach(post => arr.push(Object.assign(post.data(), {'id': post.id})) ) 
   return arr;
 }
 
-
-   /*     const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-        btnsDelete.forEach(btn => {
-            btn.addEventListener('click', ({ target: { dataset } }) => {
-                deleteDoc(doc(db, 'Mensaje', dataset.id));
-            })
-        })*/
-//});
-//}
-
+export const deleteJoke = async (id) => {
+    await deleteDoc(doc(db, 'Mensaje', id));
+};

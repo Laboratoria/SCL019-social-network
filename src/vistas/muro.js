@@ -1,4 +1,4 @@
-import {signingOut, guardarPost, getTasks, muroBazinga} from "../lib/compilacion.js";
+import {signingOut, guardarPost, getTasks, muroBazinga, deleteJoke} from "../lib/compilacion.js";
 // observer ,
 export const firstscreen = async () => {
     const muro = document.createElement("div");
@@ -68,20 +68,20 @@ export const firstscreen = async () => {
             <p>${
             info.description
         }</p>
-            <button class='btn-delete' data-id='${
+            <button class='btn-delete' value='${
             info.id
         }'>Eliminar</button>
             </div>
             `
     })
 
-
-    /*  const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-            btnsDelete.forEach(btn => {
-                btn.addEventListener('click', ({ target: { dataset } }) => {
-                    deleteDoc(doc(db, 'Mensaje', dataset.id));
-                })
-            })*/
+    const btnsDelete = feedContainer.querySelectorAll('.btn-delete');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // console.log(btn)
+            deleteJoke(btn.value);
+        })
+    })
 
     muro.querySelector('#signOut').addEventListener('click', (e) => {
         e.preventDefault();
