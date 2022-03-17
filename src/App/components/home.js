@@ -1,4 +1,5 @@
-import { logOut, post } from "../../lib/homeFirebase.js";
+import { logOut, post, getPost } from "../../lib/homeFirebase.js";
+
 
 export const home = (autenticacion, db) => {
   const homeCont = document.createElement('div');
@@ -44,19 +45,28 @@ export const home = (autenticacion, db) => {
     await post(db, autenticacion)
   });
 
-  const anuncio = document.createElement('div');
-  anuncio.className = 'anuncio';
-  contPost.appendChild(anuncio);
+  const content = document.createElement('div');
+  content.className = 'content';
+  content.id = 'content'
+  homeCont.appendChild(content);
 
-  const avisoTexto = document.createElement('p');
-  avisoTexto.className = 'avisoTexto';
-  avisoTexto.textContent = 'Pagina en construcción';
-  anuncio.appendChild(avisoTexto);
+  window.addEventListener('load', async () => {
+        await getPost(db)
+  });
 
-  const aviso = document.createElement('img');
-  aviso.className = 'aviso';
-  aviso.src = './assets/img/working-pusheen.gif';
-  anuncio.appendChild(aviso);
+  // const anuncio = document.createElement('div');
+  // anuncio.className = 'anuncio';
+  // contPost.appendChild(anuncio);
+
+  // const avisoTexto = document.createElement('p');
+  // avisoTexto.className = 'avisoTexto';
+  // avisoTexto.textContent = 'Pagina en construcción';
+  // anuncio.appendChild(avisoTexto);
+
+  // const aviso = document.createElement('img');
+  // aviso.className = 'aviso';
+  // aviso.src = './assets/img/working-pusheen.gif';
+  // anuncio.appendChild(aviso);
 
 
   return homeCont;
