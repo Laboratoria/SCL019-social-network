@@ -17,8 +17,8 @@ export const home = (autenticacion, db) => {
   homeLogout.className = 'logout';
   homeHead.appendChild(homeLogout);
   homeLogout.addEventListener('click', (e) => {
-    logOut(e, autenticacion)
     e.preventDefault();
+    logOut(autenticacion)
     window.location.hash = '#/login';
   });
 
@@ -30,17 +30,18 @@ export const home = (autenticacion, db) => {
   userProfile.className = 'userProfile';
   contPost.appendChild(userProfile);
 
-  const inputPost = document.createElement('input');
-  inputPost.className = 'post';
-  inputPost.placeholder = ' Escribe tu publicación'
-  contPost.appendChild(inputPost);
+  const textPost = document.createElement('textarea');
+  textPost.className = 'post';
+  textPost.id = 'post'
+  textPost.placeholder = 'Escribe tu publicación'
+  contPost.appendChild(textPost);
 
   const arrowPost = document.createElement('button');
   arrowPost.className = 'arrowPost';
   contPost.appendChild(arrowPost);
   arrowPost.addEventListener('click', async (e) => {
     e.preventDefault()
-    await post(db)
+    await post(db, autenticacion)
   });
 
   const anuncio = document.createElement('div');
