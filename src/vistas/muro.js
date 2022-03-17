@@ -1,25 +1,87 @@
-import {signingOut, guardarPost, muroBazinga, getTasks} from "../lib/compilacion.js";
-// observer
+import {signingOut, guardarPost, getTasks, muroBazinga} from "../lib/compilacion.js";
+// observer ,
 export const firstscreen = async () => {
     const muro = document.createElement("div");
     muro.className = 'muropost';
     muro.innerHTML = `
  <div class= "muro-grid">
-     <header class= "element-1">
-         <a href="" class='url'>Usuario</a> <img class='' src=""/>
-       </header>
+     <header class= "element-1"> 
+     </header>
        <img src= "images/logo-1.png" alt="Bazinga_Speech_Bubble" id="logo" class="element-2">
       <div class= 'posts-main'>
-      <form>
+      <form id= form-Post>
        <textarea class= "textareaT" name="title" id="title" rows='6' cols='38' placeholder="Nombre o Título" ></textarea>
        <textarea class="textareaD" name="description" id="description" rows='50' cols='38' placeholder= "Escribe aquí tu Broma" ></textarea>
        <button type="submit" class="enviarMsj" id="enviarMsj">Postear</button>
        </form>
      </div>
-    <div id = "muroBazinga" class= "containerpost"></div>
+    <div id = "muroBazingaa" class= "containerpost"></div>
       <button type="submit" class="salir" id="signOut">Cerrar Sesión</button>
  </div>
      `;
+
+    const btnSendPost = muro.querySelector('#enviarMsj');
+
+    btnSendPost.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const form = muro.querySelector('#form-Post');
+        const title = muro.querySelector('#title').value;
+        const description = muro.querySelector('#description').value;
+        guardarPost(title, description);
+        // observer();
+        getTasks();
+        form.reset();
+        const muroBa = await muroBazinga();
+        const feedContainer = muro.querySelector('#muroBazingaa');
+        console.log(feedContainer);
+        feedContainer.innerHTML = '';
+        muroBa.forEach((info) => {
+
+            feedContainer.innerHTML += `
+          <div> 
+          <h3>${
+                info.title
+            }</h3>
+          <p>${
+                info.description
+            }</p>
+          <button class='btn-delete' data-id='${
+                info.id
+            }'>Eliminar</button>
+          </div>
+          `
+        })
+    });
+
+    const muroBa = await muroBazinga();
+    console.log(muroBa);
+
+    const feedContainer = muro.querySelector('#muroBazingaa');
+    console.log(feedContainer);
+    muroBa.forEach((info) => {
+
+        feedContainer.innerHTML += `
+            <div> 
+            <h3>${
+            info.title
+        }</h3>
+            <p>${
+            info.description
+        }</p>
+            <button class='btn-delete' data-id='${
+            info.id
+        }'>Eliminar</button>
+            </div>
+            `
+    })
+
+
+    /*  const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
+            btnsDelete.forEach(btn => {
+                btn.addEventListener('click', ({ target: { dataset } }) => {
+                    deleteDoc(doc(db, 'Mensaje', dataset.id));
+                })
+            })*/
 
     muro.querySelector('#signOut').addEventListener('click', (e) => {
         e.preventDefault();
@@ -27,73 +89,5 @@ export const firstscreen = async () => {
         window.location.hash = '#/welcome';
     });
 
-    await muroBazinga();
-    const btnSendPost = muro.querySelector('#enviarMsj');
-    const feedContainer = muro.querySelector('#muroBazinga');
-    const jokesFeed = (info) => {
-        // muroBazinga.forEach 
-        info.forEach (() => {
-        feedContainer.innerHTML += `
-        <div> 
-        <h3>${info.title}</h3>
-        <p>${info.description}</p>
-        <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
-        </div>
-        `})
-
-
-
-        const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-        btnsDelete.forEach(btn => {
-            btn.addEventListener('click', ({ target: { dataset } }) => {
-                deleteDoc(doc(db, 'Mensaje', dataset.id));
-            })
-        })
-    }
-return muroBazinga();
-
-    console.log(jokesFeed);
-    window.addEventListener("load", () => { // cargar todos los poster al cargar la página
-        jokesFeed();
-    });
-
-    btnSendPost.addEventListener('click', (e) => {
-        e.preventDefault();
-        const title = muro.querySelector('#title').value;
-        const description = muro.querySelector('#description').value;
-        guardarPost(title, description);
-        // muroBazinga();
-        // btnSendPost.reset()
-    });
-    
-    // observer();
-    // getTasks();
-    
-   await muroBazinga();
-//console.log(aparecer)
-    return muro;   
-
+    return muro;
 }
-
-const deSred = () => {
-const bazingaposts = document.getElementById('muroBazinga');
-const aparecer= muroBazinga();
-}
-  
-
-//const aparecer = bazingaposts.innerHTML= html
-
-
-
-/* let html = " ";
-  querySnapShot.forEach((doc) => {
-          const info = doc.data();
-          html += `
-              <div> 
-              <h3>${info.title}</h3>
-              <p>${info.description}</p>
-              <button class='btn-delete' data-id='${doc.id}'>Eliminar</button>
-              </div>
-              ` 
-            bazingaposts.innerHTML = html;
-  })*/

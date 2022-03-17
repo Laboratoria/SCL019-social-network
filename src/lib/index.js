@@ -24,7 +24,7 @@ switch (hash) {
       break;
       
       case '#/muro':
-      containerRoot.appendChild(await firstscreen());
+      containerRoot.appendChild( await firstscreen());
         break;
       }
     }

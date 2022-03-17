@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-//querySnapshot
+import { getFirestore, collection, addDoc, getDocs,  onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+//querySnapshot deleteDoc, doc,
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
     createUserWithEmailAndPassword, signInWithEmailAndPassword,
@@ -166,27 +166,17 @@ export const guardarPost = async (title, description) => {
     });
     console.log(comenzar.id);
 }
- //
-    // const querySnapshot = await getDocs(collection(db, "Mensaje"));
+
 
 export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
 export const muroBazinga = async () => {
- // const querySnapshot = await getDocs(collection(db, "Mensaje"));
-onSnapshot (collection(db, "Mensaje"), (querySnapshot) => {
-    //let html= " ";
- querySnapshot.forEach((doc) => { 
- const info= doc.data();
- 
-console.log(info);
-return info;
-    
-});
- 
-})
+   const querySnapshot = await getDocs(collection(db, "Mensaje"));
+   console.log(querySnapshot);
+   const arr = [];
+   querySnapshot.forEach(post => arr.push(post.data()) ) 
+  return arr;
 }
-
-//console.log(`${doc.id} => ${doc.data()}`);
 
 
    /*     const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
@@ -198,36 +188,3 @@ return info;
 //});
 //}
 
-
-
-
-/*export const observador= () => {
-    auth = getAuth();
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-  }
-});
-
-}
-
-
-
-const guardarUser = () => {
-try {
-  const docRef = await addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-}
-*/
