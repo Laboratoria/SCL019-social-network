@@ -1,6 +1,6 @@
-import { logOut } from "../../lib/homeFirebase.js";
+import { logOut, post } from "../../lib/homeFirebase.js";
 
-export const home = (autenticacion) => {
+export const home = (autenticacion, db) => {
   const homeCont = document.createElement('div');
   homeCont.className = 'homeCont';
 
@@ -35,10 +35,13 @@ export const home = (autenticacion) => {
   inputPost.placeholder = ' Escribe tu publicación'
   contPost.appendChild(inputPost);
 
-
-  const arrowPost = document.createElement('div');
+  const arrowPost = document.createElement('button');
   arrowPost.className = 'arrowPost';
   contPost.appendChild(arrowPost);
+  arrowPost.addEventListener('click', async (e) => {
+    e.preventDefault()
+    await post(db)
+  });
 
   const anuncio = document.createElement('div');
   anuncio.className = 'anuncio';
