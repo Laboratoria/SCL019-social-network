@@ -50,8 +50,10 @@ export const home = (autenticacion, db) => {
   content.id = 'content'
   homeCont.appendChild(content);
 
-  window.addEventListener('load', async () => {
-        await getPost(db)
+
+
+  window.addEventListener('load', () => {
+       getPost(db)
   });
 
   // const anuncio = document.createElement('div');
