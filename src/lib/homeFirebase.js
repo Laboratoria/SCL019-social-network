@@ -2,9 +2,9 @@ import { signOut } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.
 import {
     collection,
     addDoc, 
-    getDocs,
+    // getDocs,
     onSnapshot,
-    orderBy
+    // orderBy
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
 
 export const logOut = (autenticacion) => {
