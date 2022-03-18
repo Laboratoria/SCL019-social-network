@@ -45,10 +45,10 @@ export const home = (autenticacion, db) => {
     await post(db, autenticacion)
   });
 
-  const content = document.createElement('div');
-  content.className = 'content';
-  content.id = 'content'
-  homeCont.appendChild(content);
+  const contentPost = document.createElement('div');
+  contentPost.className = 'contentPost';
+  contentPost.id = 'contentPost'
+  homeCont.appendChild(contentPost);
 
 
 

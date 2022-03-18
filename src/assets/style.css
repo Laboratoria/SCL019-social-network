@@ -359,7 +359,7 @@ body {
 
 }
 
-.content{
+.contentPost{
     display: grid;
     grid-template-rows: repeat(2, 20%);
     /* background-color: #FFEEE8; */

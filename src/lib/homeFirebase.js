@@ -35,7 +35,7 @@ export const post = async (db, autenticacion) => {
 
 export const getPost = (db) => {
     onSnapshot(collection(db, "publicaciones"), (querySnapshot) =>{
-        const cont = document.getElementById('content');
+        const cont = document.getElementById('contentPost');
         cont.innerHTML = '';
 
         querySnapshot.forEach((doc) => {
