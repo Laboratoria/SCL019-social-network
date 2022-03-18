@@ -50,12 +50,8 @@ export const home = (autenticacion, db) => {
   contentPost.id = 'contentPost'
   homeCont.appendChild(contentPost);
 
+  getPost(db);
 
-
-  window.addEventListener('load', (e) => {
-       e.preventDefault();
-       getPost(db);
-  });
 
   // const anuncio = document.createElement('div');
   // anuncio.className = 'anuncio';
