@@ -1,5 +1,6 @@
 import {signingOut, guardarPost, getTasks, muroBazinga, deleteJoke} from "../lib/compilacion.js";
 // observer ,
+
 export const firstscreen = async () => {
     const muro = document.createElement("div");
     muro.className = 'muropost';
@@ -19,6 +20,34 @@ export const firstscreen = async () => {
       <button type="submit" class="salir" id="signOut">Cerrar Sesión</button>
  </div>
      `;
+     const feedJokes = async () => {
+        const muroBa = await muroBazinga();
+        const feedContainer = muro.querySelector('#muroBazingaa');
+        feedContainer.innerHTML = '';
+        muroBa.forEach((info) => {
+                feedContainer.innerHTML += `
+              <div> 
+              <h3>${
+                    info.title
+                }</h3>
+              <p>${
+                    info.description
+                }</p>
+              <button class='btn-delete' value='${
+                    info.id
+                }'>Eliminar</button>
+              </div>
+              `
+            })
+            const btnsDelete = feedContainer.querySelectorAll('.btn-delete');
+            btnsDelete.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    console.log(btn.value);
+                    await deleteJoke(btn.value);
+                    await feedJokes();
+                })
+            })
+    }
 
     const btnSendPost = muro.querySelector('#enviarMsj');
 
@@ -31,57 +60,50 @@ export const firstscreen = async () => {
         // observer();
         getTasks();
         form.reset();
-        const muroBa = await muroBazinga();
-        const feedContainer = muro.querySelector('#muroBazingaa');
-        console.log(feedContainer);
-        feedContainer.innerHTML = '';
-        muroBa.forEach((info) => {
+        await feedJokes();
+        // const muroBa = await muroBazinga();
+        // const feedContainer = muro.querySelector('#muroBazingaa');
+        // console.log(feedContainer);
+        // feedContainer.innerHTML = '';
+        // muroBa.forEach((info) => {
 
-            feedContainer.innerHTML += `
-          <div> 
-          <h3>${
-                info.title
-            }</h3>
-          <p>${
-                info.description
-            }</p>
-          <button class='btn-delete' data-id='${
-                info.id
-            }'>Eliminar</button>
-          </div>
-          `
-        })
+        //     feedContainer.innerHTML += `
+        //   <div> 
+        //   <h3>${
+        //         info.title
+        //     }</h3>
+        //   <p>${
+        //         info.description
+        //     }</p>
+        //   <button class='btn-delete' data-id='${
+        //         info.id
+        //     }'>Eliminar</button>
+        //   </div>
+        //   `
+        // })
     });
+    await feedJokes();
+    // const muroBa = await muroBazinga();
+    // console.log(muroBa);
 
-    const muroBa = await muroBazinga();
-    console.log(muroBa);
+    // const feedContainer = muro.querySelector('#muroBazingaa');
+    // console.log(feedContainer);
+    // muroBa.forEach((info) => {
 
-    const feedContainer = muro.querySelector('#muroBazingaa');
-    console.log(feedContainer);
-    muroBa.forEach((info) => {
-
-        feedContainer.innerHTML += `
-            <div> 
-            <h3>${
-            info.title
-        }</h3>
-            <p>${
-            info.description
-        }</p>
-            <button class='btn-delete' value='${
-            info.id
-        }'>Eliminar</button>
-            </div>
-            `
-    })
-
-    const btnsDelete = feedContainer.querySelectorAll('.btn-delete');
-    btnsDelete.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // console.log(btn)
-            deleteJoke(btn.value);
-        })
-    })
+    //     feedContainer.innerHTML += `
+    //         <div> 
+    //         <h3>${
+    //         info.title
+    //     }</h3>
+    //         <p>${
+    //         info.description
+    //     }</p>
+    //         <button class='btn-delete' value='${
+    //         info.id
+    //     }'>Eliminar</button>
+    //         </div>
+    //         `
+    // })
 
     muro.querySelector('#signOut').addEventListener('click', (e) => {
         e.preventDefault();

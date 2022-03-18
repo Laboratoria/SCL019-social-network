@@ -174,10 +174,11 @@ export const muroBazinga = async () => {
    const querySnapshot = await getDocs(collection(db, "Mensaje"));
    console.log(querySnapshot);
    const arr = [];
-   querySnapshot.forEach(post => arr.push(Object.assign(post.data(), {'id': post.id})) ) 
+   querySnapshot.forEach(post => arr.push(Object.assign(post.data(), {'id': post.id}))) 
   return arr;
 }
 
 export const deleteJoke = async (id) => {
+    console.log(id);
     await deleteDoc(doc(db, 'Mensaje', id));
 };
