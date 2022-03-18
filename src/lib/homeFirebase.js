@@ -33,7 +33,7 @@ export const post = async (db, autenticacion) => {
 };
 
 
-export const getPost = (db) => {
+export const getPost = (db, autenticacion) => {
     onSnapshot(collection(db, "publicaciones"), (querySnapshot) =>{
         const cont = document.getElementById('contentPost');
         cont.innerHTML = '';
@@ -50,6 +50,14 @@ export const getPost = (db) => {
             posteo.className = 'posteo';
             posteo.textContent = doc.data().publicacion;
             cont.appendChild(posteo);
+// console.log(autenticacion.currentUser);
+// const auth = autenticacion;
+// const user = auth.currentUser;
+//             if (doc.data().email === user.email){
+//                 const deletePost = document.createElement('button');
+//                 deletePost.className = 'deletePost'
+//                 posteo.appendChild(deletePost);
+//             }
             
         });
     })
