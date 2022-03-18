@@ -52,7 +52,6 @@ export const home = (autenticacion, db) => {
 
   getPost(db);
 
-
   // const anuncio = document.createElement('div');
   // anuncio.className = 'anuncio';
   // contPost.appendChild(anuncio);
