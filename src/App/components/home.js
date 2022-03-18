@@ -52,8 +52,9 @@ export const home = (autenticacion, db) => {
 
 
 
-  window.addEventListener('load', () => {
-       getPost(db)
+  window.addEventListener('load', (e) => {
+       e.preventDefault();
+       getPost(db);
   });
 
   // const anuncio = document.createElement('div');
