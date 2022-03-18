@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs,  onSnapshot } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-//querySnapshot deleteDoc, doc,
+import { getFirestore, collection, addDoc, getDocs,  deleteDoc, doc, } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+//
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
     createUserWithEmailAndPassword, signInWithEmailAndPassword,
@@ -179,12 +179,9 @@ export const muroBazinga = async () => {
 }
 
 
-   /*     const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-        btnsDelete.forEach(btn => {
-            btn.addEventListener('click', ({ target: { dataset } }) => {
-                deleteDoc(doc(db, 'Mensaje', dataset.id));
-            })
-        })*/
-//});
-//}
-
+export const deletePost =  async (idPost) => {
+ const confirmacion  = window.confirm('¿Seguro que desea eliminar su Broma?');
+ if (confirmacion){
+    await deleteDoc(doc(db, 'Mensaje', idPost));     
+  } console.log(deletePost)
+};

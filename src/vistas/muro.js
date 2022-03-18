@@ -1,4 +1,4 @@
-import {signingOut, guardarPost, getTasks, muroBazinga} from "../lib/compilacion.js";
+import {signingOut, guardarPost, getTasks, muroBazinga, deletePost} from "../lib/compilacion.js";
 // observer ,
 export const firstscreen = async () => {
     const muro = document.createElement("div");
@@ -62,31 +62,33 @@ export const firstscreen = async () => {
 
         feedContainer.innerHTML += `
             <div> 
-            <h3>${
+        <h3>${
             info.title
         }</h3>
-            <p>${
+         <p>${
             info.description
         }</p>
             <button class='btn-delete' data-id='${
             info.id
         }'>Eliminar</button>
             </div>
-            `
-    })
+            `;
+
+    const btnsDelete = docu.querySelector('.btn-delete');
+     // botón de eliminar
+  btnsDelete.forEach((info) => {
+    info.addEventListener('click', () => {
+        deletePost(info.value);
+    });
+  });
+})
+ 
 
 
-    /*  const btnsDelete = bazingaposts.querySelectorAll('.btn-delete');
-            btnsDelete.forEach(btn => {
-                btn.addEventListener('click', ({ target: { dataset } }) => {
-                    deleteDoc(doc(db, 'Mensaje', dataset.id));
-                })
-            })*/
-
-    muro.querySelector('#signOut').addEventListener('click', (e) => {
-        e.preventDefault();
-        signingOut();
-        window.location.hash = '#/welcome';
+ muro.querySelector('#signOut').addEventListener('click', (e) => {
+    e.preventDefault();
+    signingOut();
+    window.location.hash = '#/welcome';
     });
 
     return muro;
