@@ -39,6 +39,7 @@ export const home = (autenticacion, db) => {
 
   const arrowPost = document.createElement('button');
   arrowPost.className = 'arrowPost';
+  arrowPost.id = 'arrowPost';
   contPost.appendChild(arrowPost);
   arrowPost.addEventListener('click', async (e) => {
     e.preventDefault()

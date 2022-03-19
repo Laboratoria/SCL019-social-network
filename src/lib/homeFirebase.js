@@ -6,7 +6,8 @@ import {
     onSnapshot,
     // orderBy
     deleteDoc,
-    doc
+    doc,
+    updateDoc
 } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js";
 
 export const logOut = (autenticacion) => {
@@ -21,6 +22,9 @@ export const post = async (db, autenticacion) => {
     let publicar = document.getElementById("post").value;
     const user = autenticacion.currentUser;
     const email = user.email;
+    if(publicar.length === 0){
+        alert('Escribe algo para publicar')
+    }
     try {
         const docRef = await addDoc(collection(db, "publicaciones"), {
             publicacion: publicar,
@@ -73,20 +77,40 @@ export const getPost = (db, autenticacion, id) => {
                     eliminarPost(db, id)
                 });
 
+                const dataPost = doc.data().publicacion;
+
                 const editPost = document.createElement('button');
                 editPost.className = 'editPost';
                 editPost.textContent = 'Editar';
                 posteo.appendChild(editPost);
+                editPost.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    editarPost(db, id, dataPost)
+                });
             }
 
         });
     })
 };
 
+const editarPost = (db, id, dataPost) => {
+
+    const boton = document.getElementById('arrowPost');
+    boton.setAttribute('id', 'editPost');
+    const botonEdit = document.getElementById('editPost');
+    document.getElementById('post').value = dataPost;
+    const editRef = doc(db, "publicaciones", id);
+    let publicar = document.getElementById("post").value;
+
+    botonEdit.addEventListener('click',(e) => {
+        e.preventDefault()
+        updateDoc(editRef, {publicacion: publicar});
+    })
+}
+
 // export const editarPost = () => {
 
 // }
-
 
 
 // para ordenar pero no funcinó
