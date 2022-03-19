@@ -249,7 +249,7 @@ body {
     width: 96%;
     height: 15%;
     z-index: 1;
-    position: absolute;
+    position: fixed;
     margin: auto;
     box-shadow: 1px 1px 5px black;
 
@@ -311,9 +311,10 @@ body {
     margin-top: 10em;
     width: 90%;
     height: 18%;
-    position: absolute;
+    position: fixed;
     border: solid 1px #3D274E;
     border-radius: 5px;
+
 }
 
 .userProfile {

@@ -39,6 +39,7 @@ export const home = (autenticacion, db) => {
 
   const arrowPost = document.createElement('button');
   arrowPost.className = 'arrowPost';
+  arrowPost.id = 'arrowPost';
   contPost.appendChild(arrowPost);
   arrowPost.addEventListener('click', async (e) => {
     e.preventDefault()
@@ -50,8 +51,13 @@ export const home = (autenticacion, db) => {
   contentPost.id = 'contentPost'
   homeCont.appendChild(contentPost);
 
-  getPost(db);
+  // const deletePost = document.getElementsByClassName('deletePost');
+  // deletePost.addEventListener('click', async (e) => {
+  //   e.preventDefault()
+  //   await eliminarPost(db)
+  // });
 
+  getPost(db, autenticacion);
   // const anuncio = document.createElement('div');
   // anuncio.className = 'anuncio';
   // contPost.appendChild(anuncio);
