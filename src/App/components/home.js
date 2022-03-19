@@ -50,8 +50,13 @@ export const home = (autenticacion, db) => {
   contentPost.id = 'contentPost'
   homeCont.appendChild(contentPost);
 
-  getPost(db);
+  // const deletePost = document.getElementsByClassName('deletePost');
+  // deletePost.addEventListener('click', async (e) => {
+  //   e.preventDefault()
+  //   await eliminarPost(db)
+  // });
 
+  getPost(db, autenticacion);
   // const anuncio = document.createElement('div');
   // anuncio.className = 'anuncio';
   // contPost.appendChild(anuncio);
