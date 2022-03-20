@@ -8,7 +8,7 @@ body {
     background: linear-gradient(157.14deg, rgba(168, 227, 220, 0.47) 8.14%, rgba(173, 160, 210, 0.66) 49.9%, rgba(119, 135, 196, 0.63) 100%), #FFF7F4;
     /* background-position: 55% 30%; */
     background-size: cover;
-    height: 100%;
+    background-attachment: fixed;
 
 }
 
@@ -25,6 +25,7 @@ body {
     background-position-y: 57%;
     background-size: 16%;
 }
+
 .box {
     position: absolute;
     left: 0;
@@ -238,10 +239,14 @@ body {
 
 /* Estructura home */
 
+.homeContent {
+    display: flex;
+    justify-content: center;
+}
+
 .homeCont {
     display: flex;
     justify-content: center;
-
 }
 
 .homeHead {
@@ -326,9 +331,6 @@ body {
     position: absolute;
     margin-left: 0.2em;
     margin-top: 0.5em;
-
-
-
 }
 
 .post {
@@ -360,21 +362,51 @@ body {
 
 }
 
-#editButton{
+#editButton {
     display: none;
 }
 
-.contentPost{
+.contentPost {
     display: grid;
-    grid-template-rows: repeat(10, 5%);
-    /* background-color: #FFEEE8; */
-    /* width: 90%;
-    height: 40%; */
-    margin-top: 400px;
-    z-index: 2;
-    position: absolute; 
+    width: 90%;
+    height: 100%;
+    margin-top: 343px;
+    padding: 33px;
+    z-index: 5;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
+.posteo {
+    background-color: #FFEEE8;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #646262;
+    margin: 0%;
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #686260;
+    box-sizing: border-box;
+    padding: 2em;
+}
+
+.nameUser {
+    background-color: #B2C0D9;
+    border: 1px solid #686260;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0px 0px;
+    height: 100%;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 2px;
+    text-align: center;
+    color: #3D274E;
+    padding: 1em;
+}
 
 /* color de fondo 255 247 244  */
 
@@ -541,6 +573,8 @@ body {
         top: 14%;
     }
 
-    
-    
-};
+
+
+}
+
+;

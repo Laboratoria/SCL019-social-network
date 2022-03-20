@@ -2,8 +2,13 @@ import { logOut, post, getPost } from "../../lib/homeFirebase.js";
 
 
 export const home = (autenticacion, db) => {
+
+  // const homeContent = document.createElement('div');
+  // homeContent.className = 'homeContent';
+
   const homeCont = document.createElement('div');
   homeCont.className = 'homeCont';
+  // homeContent.appendChild(homeCont);
 
   const homeHead = document.createElement('div');
   homeHead.className = 'homeHead';
