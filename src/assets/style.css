@@ -360,6 +360,10 @@ body {
 
 }
 
+#editButton{
+    display: none;
+}
+
 .contentPost{
     display: grid;
     grid-template-rows: repeat(10, 5%);

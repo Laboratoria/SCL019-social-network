@@ -45,6 +45,15 @@ export const home = (autenticacion, db) => {
     e.preventDefault()
     await post(db, autenticacion)
   });
+  arrowPost.addEventListener('click', (e) =>{
+    e.preventDefault();
+    textPost.value = '';
+  })
+
+  const editButton = document.createElement('button');
+  editButton.id = 'editButton';
+  editButton.textContent = 'Guardar cambios'
+  contPost.appendChild(editButton); 
 
   const contentPost = document.createElement('div');
   contentPost.className = 'contentPost';

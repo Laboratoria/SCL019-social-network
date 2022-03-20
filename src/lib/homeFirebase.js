@@ -77,15 +77,20 @@ export const getPost = (db, autenticacion, id) => {
                     eliminarPost(db, id)
                 });
 
-                const dataPost = doc.data().publicacion;
+                let dataPost = doc.data().publicacion;
 
                 const editPost = document.createElement('button');
                 editPost.className = 'editPost';
                 editPost.textContent = 'Editar';
                 posteo.appendChild(editPost);
                 editPost.addEventListener('click', (e) => {
-                    e.preventDefault()
-                    editarPost(db, id, dataPost)
+                    e.preventDefault();
+                    editarPost(db, id, dataPost);
+                });
+                editPost.addEventListener('click', (e) =>{
+                    e.preventDefault();
+                    document.getElementById('editButton').style.display = 'block';
+                    document.getElementById('arrowPost').style.display = 'none';
                 });
             }
 
@@ -95,22 +100,21 @@ export const getPost = (db, autenticacion, id) => {
 
 const editarPost = (db, id, dataPost) => {
 
-    const boton = document.getElementById('arrowPost');
-    boton.setAttribute('id', 'editPost');
-    const botonEdit = document.getElementById('editPost');
+    const edit = document.getElementById('editButton');
     document.getElementById('post').value = dataPost;
     const editRef = doc(db, "publicaciones", id);
-    let publicar = document.getElementById("post").value;
 
-    botonEdit.addEventListener('click',(e) => {
-        e.preventDefault()
+       edit.addEventListener('click', () => {
+        let publicar = document.getElementById("post").value;
         updateDoc(editRef, {publicacion: publicar});
-    })
+        let publicar1 = document.getElementById("post");
+        publicar1.value = '';
+        edit.style.display = 'none';
+        document.getElementById('arrowPost').style.display = 'block';
+       });
+    
 }
 
-// export const editarPost = () => {
-
-// }
 
 
 // para ordenar pero no funcinó
