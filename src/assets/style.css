@@ -16,13 +16,13 @@ body {
     font-family: 'Shizuru';
     color: #8E768A;
     font-size: 10vw;
-    padding: 10%;
-    padding-left: 42%;
-    padding-bottom: 8%;
+    padding: 5%;
+    padding-left: 43%;
+    padding-bottom: 7%;
     background-image: url(./img/logo2.fw.png);
     background-repeat: no-repeat;
-    background-position-x: 28%;
-    background-position-y: 57%;
+    background-position-x: 29%;
+    background-position-y: 39%;
     background-size: 16%;
 }
 
@@ -251,14 +251,13 @@ body {
 
 .homeHead {
     background-color: #FFEEE8;
-    width: 96%;
+    width: 100%;
     height: 15%;
     z-index: 1;
     position: fixed;
     margin: auto;
     box-shadow: 1px 1px 5px black;
-
-
+    top: 0;
 }
 
 .homeLogo {
@@ -276,10 +275,10 @@ body {
     height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-left: 343px;
-    margin-top: -80px;
     z-index: 100;
     position: absolute;
+    top: 31%;
+    left: 85%;
 }
 
 .anuncio {
@@ -313,7 +312,7 @@ body {
 
 .contPost {
     background-color: #FFEEE8;
-    margin-top: 10em;
+    margin-top: 7em;
     width: 90%;
     height: 18%;
     position: fixed;
@@ -370,12 +369,13 @@ body {
     display: grid;
     width: 90%;
     height: 100%;
-    margin-top: 343px;
-    padding: 33px;
-    z-index: 5;
+    margin-top: 239px;
+    padding: 15px;
+    z-index: -5;
     position: absolute;
     flex-wrap: wrap;
     flex-direction: column;
+    overflow: scroll;
 }
 
 .posteo {
