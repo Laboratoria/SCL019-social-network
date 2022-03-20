@@ -67,11 +67,20 @@ export const getPost = (db, autenticacion, id) => {
             posteo.className = 'posteo';
             posteo.textContent = doc.data().publicacion;
             cont.appendChild(posteo);
+
+            const barra = document.createElement('div')
+            barra.className = 'barra';
+            cont.appendChild(barra);
+
+            const like = document.createElement('div');
+            like.className = 'like';
+            barra.appendChild(like);
+
             if (doc.data().email === user.email) {
                 const deletePost = document.createElement('button');
                 deletePost.className = 'deletePost';
                 deletePost.textContent = 'Borrar';
-                posteo.appendChild(deletePost);
+                barra.appendChild(deletePost);
                 deletePost.addEventListener('click', (e) => {
                     e.preventDefault()
                     eliminarPost(db, id)
@@ -82,7 +91,7 @@ export const getPost = (db, autenticacion, id) => {
                 const editPost = document.createElement('button');
                 editPost.className = 'editPost';
                 editPost.textContent = 'Editar';
-                posteo.appendChild(editPost);
+                barra.appendChild(editPost);
                 editPost.addEventListener('click', (e) => {
                     e.preventDefault();
                     editarPost(db, id, dataPost);
