@@ -75,7 +75,7 @@ export const register = (email, password,name) => {
                 console.log(errorCode, errorMessage);
             });
 
-            window.location.hash='#/muro';
+            window.location.hash='#/login';
             return user
     }).catch((error) => {
         const errorCode = error.code;
@@ -169,7 +169,7 @@ const comenzar = await addDoc(collection(db, "Mensaje"), {
 }
 
 
-export const getTasks = () => getDocs(collection(db, "Mensaje").orderBy("", "asc"));
+export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
 export const muroBazinga = async () => {
    const querySnapshot = await getDocs(collection(db, "Mensaje"))

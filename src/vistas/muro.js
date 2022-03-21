@@ -66,7 +66,7 @@ export const firstscreen = async () => {
 // editar post!
        const btnEdit = feedContainer.querySelectorAll('.btn-edit');
       btnEdit.forEach(edit => {
-        edit.addEventListener('click', async(e) => {
+        edit.addEventListener('click', async() => {
          const doc= await getPost(edit.value);
          //console.log(doc);
          const task = doc.data();
@@ -99,11 +99,11 @@ export const firstscreen = async () => {
           guardarPost (title, description,)
         }else{
          editJoke(yep, {
-           userId,
            title,
             description,
          });
         }
+        
         editStatus=false;
         
         form.reset();
