@@ -1,6 +1,5 @@
-import {signingOut, guardarPost, getTasks, muroBazinga, deleteJoke, editJoke, getPost, observer} from "../lib/compilacion.js";
+import {signingOut, guardarPost, getTasks, muroBazinga, deleteJoke, editJoke, getPost, auth, observer} from "../lib/compilacion.js";
 
- //editJokemuroBazinga
 export const firstscreen = async () => {
     const muro = document.createElement("div");
     muro.className = 'muropost';
@@ -22,7 +21,7 @@ export const firstscreen = async () => {
      `;
   
      let editStatus=false;
-     let id= '';
+     let yep= '';
 
      const feedJokes = async () => {
       const muroBa = await muroBazinga();
@@ -30,6 +29,8 @@ export const firstscreen = async () => {
       console.log(feedContainer);
       feedContainer.innerHTML = '';
       muroBa.forEach((info) => {
+        console.log(info.userName, "infoid");
+        console.log(auth.currentUser.uid, "uid");
            feedContainer.innerHTML += `
               <div class='post'> 
               <div class='post1'> 
@@ -40,20 +41,22 @@ export const firstscreen = async () => {
             </form>
             </div>
         </div> `
-        if(info.userName !== observer())
+        if(info.userId === auth.currentUser.uid){
+      
           feedContainer.innerHTML +=
+
           `   <div class= "bottonesmuro">
               <button class='btn-delete' value='${info.id}'>Eliminar</button>
               <button class='btn-edit' value='${info.id}'>Editar</button>        
               </div> 
-            `
-  ; 
+            ` }
+  ;
           })
          
           const btnsDelete = feedContainer.querySelectorAll('.btn-delete');
           btnsDelete.forEach(btn => {
               btn.addEventListener('click', async () => {
-                  console.log(btn.value);
+                  //console.log(btn.value);
                   await deleteJoke(btn.value);
                   await feedJokes();
               })
@@ -65,15 +68,15 @@ export const firstscreen = async () => {
       btnEdit.forEach(edit => {
         edit.addEventListener('click', async(e) => {
          const doc= await getPost(edit.value);
-         console.log(doc);
+         //console.log(doc);
          const task = doc.data();
-         console.log(task);
+        // console.log(task);
 
          muro.querySelector('#title').value = task.title
          muro.querySelector('#description').value = task.description
 
          editStatus=true;
-         id = doc.id;
+         yep = doc.id;
 
       muro.querySelector('#enviarMsj').innerText= "Actualizar"
 
@@ -93,9 +96,10 @@ export const firstscreen = async () => {
         const description = muro.querySelector('#description').value;
         
         if (!editStatus){
-          guardarPost (title, description)
+          guardarPost (title, description,)
         }else{
-         editJoke(id, {
+         editJoke(yep, {
+           userId,
            title,
             description,
          });
@@ -116,6 +120,7 @@ export const firstscreen = async () => {
       e.preventDefault();
       signingOut();
       window.location.hash = '#/welcome'; 
+      location.reload();
     });
 
     

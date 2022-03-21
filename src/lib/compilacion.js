@@ -149,31 +149,30 @@ export const observer = () => {
     })
 }
 
-    
+   
 
-export const guardarPost = async (title, description) => {
+export const guardarPost = async (title, description,) => {
    let userName;
-    // si el usuario se registró sin google (es decir no se guardó su displayName)
-    // al momento de crear el post
-    // su nombre será el email.
     if (auth.currentUser.displayName === null) {
       userName = auth.currentUser.email;
     } else {
       userName = auth.currentUser.displayName;
     };
 const comenzar = await addDoc(collection(db, "Mensaje"), {
+        userId: auth.currentUser.uid,
         title,
         description,
         userName,
+        
     });
-    console.log(comenzar.id);
+    console.log(comenzar.userId);
 }
 
 
-export const getTasks = () => getDocs(collection(db, "Mensaje"));
+export const getTasks = () => getDocs(collection(db, "Mensaje").orderBy("", "asc"));
 
 export const muroBazinga = async () => {
-   const querySnapshot = await getDocs(collection(db, "Mensaje"));
+   const querySnapshot = await getDocs(collection(db, "Mensaje"))
    console.log(querySnapshot);
    const arr = [];
    querySnapshot.forEach(post => arr.push(Object.assign(post.data(), {'id': post.id}))) 
@@ -184,7 +183,8 @@ export const deleteJoke = async (id) => {
     console.log(id);
     await deleteDoc(doc(db, 'Mensaje', id));
 };
- export const getPost = (id) => getDoc(doc(db, 'Mensaje', id ));
+
+export const getPost = (id) => getDoc(doc(db, 'Mensaje', id ));
 
 export const editJoke = (id, title, description) => 
     updateDoc(doc(db, 'Mensaje', id),

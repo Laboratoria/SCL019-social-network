@@ -189,14 +189,17 @@ grid-template-columns: repeat(12, 1fr);
 .muro-grid > .containerpost {
   grid-column: 5;
   grid-row:4;
-  /*border-color: #a628e1;*/
+  
+  margin: 1em
+  /*border-color: #a628e1;padding: 1em;*/
 }
 .post{
  border: 1px solid #2F8DFA;
  border-radius: 0.5em;
- padding: 0.3em;
+ padding: 0.2em;
   line-height: 1.0;
   align-items: center;
+  margin-bottom: 1em;
 }
 .post1{
   border: 1px solid  #fffb00;
