@@ -2,7 +2,7 @@
 
 ## Índice
 
-* [1. DEFINICIÓN DEL PRODUCTO](#1-definición-del-producto)
+* [1. CARACTERÍSTICAS DEL PRODUCTO](#1-definición-del-producto)
 * [2. HISTORIAS DE USUARIO](#2-historias-de-usuarios)
 * [3. PROTOTIPOS](#3-prototipos)
 * [4. TEST DE USABILIDAD](#4-test-de-usabilidad)
@@ -14,7 +14,10 @@
  Kitter es una red social que invita a dueños y dueñas de gatos a unirse para compartir información de utilidad acerca de los mininos y su óptimo cuidado. Esta red social consiste en una SPA responsiva, elaborada bajo el concepto "mobile first" que invita a los usuarios a registrarse con un correo electrónico y una contraseña. También ofrece la opción de registro con google. Una vez registrado, el usuario deberá confirmar su registro dando click al link de verificación que llegará a su correo electrónico. De este modo, podrá ingresar, con los datos proporcionados al crear la cuenta, a un muro en el que podrá escribir posts públicos.
 Cada usuario podrá editar y borrar sus propios post si así lo desea. Tam,bién habrá un botón para desloguearse y salir del muro.
 
-<img src="src/img/vista1.png>
+<img src="src/img/vista1.png">
+<img src="src/img/vista2.png">
+<img src="src/img/vista3.png">
+          
 
 
 ### 2. HISTORIAS DE USUARIO
