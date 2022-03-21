@@ -1,3 +1,4 @@
+
 import {authGoogle, iniciaSesion} from "../lib/compilacion.js";
 
 export const signIn = () => {
@@ -26,18 +27,18 @@ export const signIn = () => {
 
     sectSignIn.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
         e.preventDefault();
-        authGoogle();
-        window.location.hash = '#/muro';
-    });
+       authGoogle()
+         
+      });
 
     sectSignIn.querySelector('#buttoninicia').addEventListener('click', (e) => {
         e.preventDefault();
         const email = sectSignIn.querySelector('#ingresaEmail').value;
         const password = sectSignIn.querySelector('#ingresaContrasena').value;
         console.log(email);
-        iniciaSesion(email,password);
-        window.location.hash='#/muro';
-    });
+        iniciaSesion(email,password)
+        
+    }); 
 
     return sectSignIn;
 }

@@ -24,16 +24,15 @@ export const signUp = () => {
  sectSignUp.querySelector('#iniciaGoogle').addEventListener('click', (e) => {
     e.preventDefault();
     authGoogle();
-    window.location.hash = '#/muro';
   });
 
   sectSignUp.querySelector('#button-SignUp').addEventListener('click', () => {
     const email = sectSignUp.querySelector('#Email').value;
     const password = sectSignUp.querySelector('#password').value;
-    //const name = sectSignUp.querySelector('#user').value;
+    const name = sectSignUp.querySelector('#user').value;
     console.log(email);
-    register(email, password);
-    window.location.hash='#/muro';
+    register(email, password, name); 
+    
   });
 
   firebaseInit();

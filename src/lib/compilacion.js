@@ -1,5 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs,  deleteDoc, doc, } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, 
+        addDoc, getDocs,
+        deleteDoc, doc,  updateDoc, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 //
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
@@ -21,7 +23,7 @@ const firebaseConfig = {
     appId: "1:396585377938:web:d70f44b54d835342c7864b"
 };
 
-let auth;
+export let auth;
 let provider;
 let db;
 // Initialize Firebase
@@ -41,7 +43,7 @@ export const authGoogle = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
-
+        window.location.hash = '#/muro' 
     }).catch((error) => { // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -55,15 +57,14 @@ export const authGoogle = () => {
 
 
 // Iniciando autenficación con Usuario email and password
-export const register = (email, password) => {
+export const register = (email, password,name) => {
     auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+    createUserWithEmailAndPassword(auth, email, password, name).then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        const userName = document.querySelector('#user').value;
-        user.displayName = userName;
-        console.log(userName);
+         name = user.displayName; 
+         console.log(name);
 
         sendEmailVerification(auth.currentUser)
             .then(() => {
@@ -74,6 +75,8 @@ export const register = (email, password) => {
                 console.log(errorCode, errorMessage);
             });
 
+            window.location.hash='#/login';
+            return user
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -101,12 +104,12 @@ export const register = (email, password) => {
 
 export const iniciaSesion = (email, password) => {
     auth = getAuth();
-
-    signInWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
+   signInWithEmailAndPassword(auth, email, password).then((userCredential) => { // Signed in
         const user = userCredential.user;
         console.log(user);
-        // ...
-    }).catch((error) => {
+        window.location.hash='#/muro'
+       //  ...
+}).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode);
@@ -123,65 +126,79 @@ export const iniciaSesion = (email, password) => {
         if (errorCode === "auth/wrong-password") {
             alert("Tú contraseña es inválida")
         }
+        if (errorCode === "auth/user-not-found") {
+            alert("Si quieres entrar a Bazinga, Regístrate")
+        }
+       
     });
+      
 }
 
-export const signingOut = () => {
-    auth = getAuth();
-    signOut(auth).then(() => {
-        //window.location.hash = '#/login';
-        // Sign-out successful.
-    }).catch((error) => {
-        // An error happened.
-    });
-}
 
-/*export const observer = () => {
-    
+
+export const observer = () => { 
     onAuthStateChanged(auth, (user) => {
         console.log(user)
-        if (user === null) {
-            // si user es null osea no hay usuario logeado no dejamos a pasar adelante, en muro
+            const uid = auth.currentUser.uid;
+            console.log(user);  
+
+            if(user == null){
             alert("No hay usuario");
-            return window.location.hash = '#/welcome';
-        }
-        if (user.emailVerified) {
-            // si user existe y tiene verificado su correo que pase
-            window.location.hash = '#/muro';
-            // User is signed in.
-        }
-        if (!user.emailVerified && window.location.hash != '#/welcome') {
-            //si derepente no esta verificado el correo y por alguna razon paso al muro lo redireccionamos al login
-            alert("Por favor revisa su correo para verificar!")
-            window.location.hash = '#/signIn';
-        }
+            return window.location.hash = '#/login';
+            }
     })
 }
-*/
 
-export const guardarPost = async (title, description) => {
-    const comenzar = await addDoc(collection(db, "Mensaje"), {
+   
+
+export const guardarPost = async (title, description,) => {
+   let userName;
+    if (auth.currentUser.displayName === null) {
+      userName = auth.currentUser.email;
+    } else {
+      userName = auth.currentUser.displayName;
+    };
+const comenzar = await addDoc(collection(db, "Mensaje"), {
+        userId: auth.currentUser.uid,
         title,
-        description
+        description,
+        userName,
+        
     });
-    console.log(comenzar.id);
+    console.log(comenzar.userId);
 }
 
 
 export const getTasks = () => getDocs(collection(db, "Mensaje"));
 
 export const muroBazinga = async () => {
-   const querySnapshot = await getDocs(collection(db, "Mensaje"));
+   const querySnapshot = await getDocs(collection(db, "Mensaje"))
    console.log(querySnapshot);
    const arr = [];
-   querySnapshot.forEach(post => arr.push(post.data()) ) 
+   querySnapshot.forEach(post => arr.push(Object.assign(post.data(), {'id': post.id}))) 
   return arr;
 }
 
-
-export const deletePost =  async (idPost) => {
- const confirmacion  = window.confirm('¿Seguro que desea eliminar su Broma?');
- if (confirmacion){
-    await deleteDoc(doc(db, 'Mensaje', idPost));     
-  } console.log(deletePost)
+export const deleteJoke = async (id) => {
+    console.log(id);
+    await deleteDoc(doc(db, 'Mensaje', id));
 };
+
+export const getPost = (id) => getDoc(doc(db, 'Mensaje', id ));
+
+export const editJoke = (id, title, description) => 
+    updateDoc(doc(db, 'Mensaje', id),
+    title,
+    description,
+    );
+
+
+export const signingOut = () => {
+    auth = getAuth();
+    signOut(auth).then(() => {
+        window.location.hash = '#/welcome';
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
+}
