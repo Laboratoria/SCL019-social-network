@@ -35,12 +35,12 @@ Este proyecto fue elaborado para responder a tres historias de usuario, las cual
 ### 3. PROTOTIPOS
 
 #### a) Prototipo de baja fidelidad
-<img src="src/assets/img/prototypeLD" align="center" width="450" height="330" > 
+<img src="src/assets/img/prototypeLD.png"> 
 
 
 
 #### b) Prototipo de alta fidelidad
-<img src="src/assets/img/prototypeHD" align="center" width="450" height="330" > 
+<img src="src/assets/img/prototypeHD.png"> 
 
 
 
