@@ -1,4 +1,4 @@
-# 😸 Kitter - Social Network 😹
+<h1 align="center"># 😸 Kitter - Social Network 😹 </div>
 
 
 ## Índice
@@ -7,8 +7,9 @@
 * [2. HISTORIAS DE USUARIO](#2-historias-de-usuarios)
 * [3. PROTOTIPOS](#3-prototipos)
 * [4. TEST DE USABILIDAD](#4-test-de-usabilidad)
-
-
+<br>
+  <br>
+   <br>
 
  ### 1. CARACTERÍSTICAS DEL PRODUCTO ✔
  
@@ -22,9 +23,9 @@ Cada usuario podrá editar y borrar sus propios post si así lo desea. Tam,bién
  <div align="center">
 <img src="src/assets/img/vista1.png" align="center" width="450" height="330" > 
  </div>
-
-
-          
+<br>
+  <br>
+   <br>      
 
 
 ### 2. HISTORIAS DE USUARIO ✔
@@ -35,24 +36,26 @@ Este proyecto fue elaborado para responder a tres historias de usuario, las cual
 - Registro o creación de cuenta con email y contraseña o cuenta de google.
 - Ingreso con datos proporcionados en el registro o con cuenta de google.
 - Muro para escribir y leer post con la opcíon de editar y borrar post propios.
-
   </div>
-
+<br>
+  <br>
+   <br>
 
 
 ### 3. PROTOTIPOS
 
-<div align="justify">
+<div align="center">
 #### a) Prototipo de baja fidelidad
 <img src="src/assets/img/PrototypeLD.png" width="233" height="408" > 
+</div>
 
-
-
+<div align="center">
 #### b) Prototipo de alta fidelidad
 <img src="src/assets/img/PrototypeHD.png"> 
  </div>
-
-
+<br>
+  <br>
+   <br>
 
 ### 4. TEST DE USUARIOS
 
