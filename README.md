@@ -1,4 +1,5 @@
-# Creando una Red Social
+# 😸 Kitter - Social Network 😹
+
 
 ## Índice
 
@@ -9,18 +10,18 @@
 
 
 
- ### 1. CARACTERÍSTICAS DEL PRODUCTO
+ ### 1. CARACTERÍSTICAS DEL PRODUCTO ✔
  
  Kitter es una red social que invita a dueños y dueñas de gatos a unirse para compartir información de utilidad acerca de los mininos y su óptimo cuidado. Esta red social consiste en una SPA responsiva, elaborada bajo el concepto "mobile first" que invita a los usuarios a registrarse con un correo electrónico y una contraseña. También ofrece la opción de registro con google. Una vez registrado, el usuario deberá confirmar su registro dando click al link de verificación que llegará a su correo electrónico. De este modo, podrá ingresar, con los datos proporcionados al crear la cuenta, a un muro en el que podrá escribir posts públicos.
 Cada usuario podrá editar y borrar sus propios post si así lo desea. Tam,bién habrá un botón para desloguearse y salir del muro.
 
-<img src="src/assets/img/vista1.png" width="450" height="330" align="center"> 
+<img src="src/assets/img/vista1.png" align="center" width="450" height="330" > 
 
 
           
 
 
-### 2. HISTORIAS DE USUARIO
+### 2. HISTORIAS DE USUARIO ✔
 
 Este proyecto fue elaborado para responder a tres historias de usuario, las cuales abordan los siguientes aspectos:
 
@@ -29,14 +30,22 @@ Este proyecto fue elaborado para responder a tres historias de usuario, las cual
 - Muro para escribir y leer post con la opcíon de editar y borrar post propios.
 
 
+
+
 ### 3. PROTOTIPOS
 
 #### a) Prototipo de baja fidelidad
+<img src="src/assets/img/prototypeLD" align="center" width="450" height="330" > 
+
+
 
 #### b) Prototipo de alta fidelidad
+<img src="src/assets/img/prototypeHD" align="center" width="450" height="330" > 
 
 
 
 ### 4. TEST DE USUARIOS
 
 Se realizó una encuesta usando un google form en la que las usuarias, antes de responder, debían registrarse y confirmar su registro con el link de verificación para luego ingresar y crear un post.
+
+Link del formulario: https://docs.google.com/forms/d/e/1FAIpQLScUBvE1vSUhaC47Y-2YzSZKimLntGplTzBufczJyr5CGQ7_EA/viewform
