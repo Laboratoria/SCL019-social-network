@@ -21,7 +21,7 @@ export const firstscreen = async () => {
      `;
   
      let editStatus=false;
-     let yep= '';
+     let id= '';
 
      const feedJokes = async () => {
       const muroBa = await muroBazinga();
@@ -76,7 +76,7 @@ export const firstscreen = async () => {
          muro.querySelector('#description').value = task.description
 
          editStatus=true;
-         yep = doc.id;
+         id = doc.id;
 
       muro.querySelector('#enviarMsj').innerText= "Actualizar"
 
@@ -98,7 +98,7 @@ export const firstscreen = async () => {
         if (!editStatus){
           guardarPost (title, description,)
         }else{
-         editJoke(yep, {
+         editJoke(id, {
            title,
             description,
          });
