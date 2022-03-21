@@ -16,8 +16,12 @@
  Kitter es una red social que invita a dueños y dueñas de gatos a unirse para compartir información de utilidad acerca de los mininos y su óptimo cuidado. Esta red social consiste en una SPA responsiva, elaborada bajo el concepto "mobile first" que invita a los usuarios a registrarse con un correo electrónico y una contraseña. También ofrece la opción de registro con google. Una vez registrado, el usuario deberá confirmar su registro dando click al link de verificación que llegará a su correo electrónico. De este modo, podrá ingresar, con los datos proporcionados al crear la cuenta, a un muro en el que podrá escribir posts públicos.
 Cada usuario podrá editar y borrar sus propios post si así lo desea. Tam,bién habrá un botón para desloguearse y salir del muro.
  </div>
-
+ <br>
+  <br>
+   <br>
+ <div align="center">
 <img src="src/assets/img/vista1.png" align="center" width="450" height="330" > 
+ </div>
 
 
           
@@ -25,17 +29,20 @@ Cada usuario podrá editar y borrar sus propios post si así lo desea. Tam,bién
 
 ### 2. HISTORIAS DE USUARIO ✔
 
+<div align="justify">
 Este proyecto fue elaborado para responder a tres historias de usuario, las cuales abordan los siguientes aspectos:
 
 - Registro o creación de cuenta con email y contraseña o cuenta de google.
 - Ingreso con datos proporcionados en el registro o con cuenta de google.
 - Muro para escribir y leer post con la opcíon de editar y borrar post propios.
 
+  </div>
 
 
 
 ### 3. PROTOTIPOS
 
+<div align="justify">
 #### a) Prototipo de baja fidelidad
 <img src="src/assets/img/PrototypeLD.png" width="233" height="408" > 
 
@@ -43,11 +50,14 @@ Este proyecto fue elaborado para responder a tres historias de usuario, las cual
 
 #### b) Prototipo de alta fidelidad
 <img src="src/assets/img/PrototypeHD.png"> 
+ </div>
 
 
 
 ### 4. TEST DE USUARIOS
 
+  <div align="justify">
 Se realizó una encuesta usando un google form en la que las usuarias, antes de responder, debían registrarse y confirmar su registro con el link de verificación para luego ingresar y crear un post.
 
 Link del formulario: https://docs.google.com/forms/d/e/1FAIpQLScUBvE1vSUhaC47Y-2YzSZKimLntGplTzBufczJyr5CGQ7_EA/viewform
+  </div>
