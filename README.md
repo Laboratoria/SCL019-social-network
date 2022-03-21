@@ -35,7 +35,7 @@ Este proyecto fue elaborado para responder a tres historias de usuario, las cual
 
 - Registro o creación de cuenta con email y contraseña o cuenta de google.
 - Ingreso con datos proporcionados en el registro o con cuenta de google.
-- Muro para escribir y leer post con la opcíon de editar y borrar post propios.
+- Muro para escribir y leer posts con la opcíon de editar y borrar posts propios.
   </div>
 <br>
   <br>
