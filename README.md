@@ -1,15 +1,7 @@
-# Creando una Red Social
+# Creando una Red Social para Comedians "Bazinga"
+## Prototipo
 
-## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FaxEdltRBbEte9tZ8mVzfq8%2FBazinga%3Fnode-id%3D905%253A368%26scaling%3Dmin-zoom%26page-id%3D0%253A1%26starting-point-node-id%3D905%253A368" allowfullscreen></iframe>
 
 ## 1. Preámbulo
 
